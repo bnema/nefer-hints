@@ -8,8 +8,8 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GF
 
 Export complete (0.7s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
-Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640 
-Validate:        yolo val task=detect model=weights/model.onnx imgsz=640  
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=640
 Visualize:       https://netron.app
 Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
 YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
@@ -22,8 +22,8 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GF
 
 Export complete (1.3s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
-Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640 
-Validate:        yolo val task=detect model=weights/model.onnx imgsz=640  
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=640
 Visualize:       https://netron.app
 Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
 YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
@@ -47,8 +47,8 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GF
 
 Export complete (0.6s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.torchscript[0m
-Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=640 
-Validate:        yolo val task=detect model=weights/model.torchscript imgsz=640  
+Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=640
+Validate:        yolo val task=detect model=weights/model.torchscript imgsz=640
 Visualize:       https://netron.app
 Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
 YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
@@ -60,8 +60,8 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 G
 
 Export complete (1.3s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
-Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280 
-Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280  
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280
 Visualize:       https://netron.app
 Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
 YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
@@ -74,8 +74,8 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 G
 
 Export complete (1.9s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
-Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280 
-Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280  
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280
 Visualize:       https://netron.app
 Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
 YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
@@ -95,6 +95,6 @@ YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 G
 
 Export complete (1.3s)
 Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.torchscript[0m
-Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=1280 
-Validate:        yolo val task=detect model=weights/model.torchscript imgsz=1280  
+Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=1280
+Validate:        yolo val task=detect model=weights/model.torchscript imgsz=1280
 Visualize:       https://netron.app

@@ -1,98 +1,108 @@
-# Extended detector evaluation — partial implementation
+# Extended clickable-target evaluation
 
 ## Present state
 
-No evaluation scenes have been captured or annotated here. `scenes.json` and
-`split.json` are intentionally empty; there are **no measured dataset results**.
-Do not substitute historical PoC scores or the synthetic integration test for
-extended-set accuracy. Capture/DOM extraction, native annotation, visual review,
-stratified assignment and tune miss analysis remain unfinished.
+22 captured, annotated 1920×1080 scenes: 13 Chromium web (including two dark
+variants), 8 native GTK, one Firefox hamburger scene. 1,440 targets. Primary GT
+is DOM for web (with recorded visual corrections), manual for native/Firefox.
+Every web `_gt.png` was opened for visual mapping review. Fullscreen viewport
+origin is (0,0), DPR 1; Chromium startup alone left an 87px toolbar, fixed by F11.
+Single-annotator exploratory set, not a comprehensive clickability benchmark.
+[Scene inventory, measurements and miss counts](results/table.md).
 
-Privacy cleanup removed both historical `nautilus-home` and `nautilus-menu`
-frames, annotated frames, hint dumps and GT from the OmniParser PoC. The latter
-also showed the real home directory. No result images existed there. Historical
-numeric results were not recomputed. This does not erase earlier Git history.
-
-## Implemented scoring
+## Reproduce
 
 ```sh
 python -m venv --system-site-packages venv
+venv/bin/pip install websocket-client==1.9.2
+# Pillow and NumPy supplied by system site packages; never replace system torch.
+dbus-run-session -- venv/bin/python eval/capture_web.py
+# Capture saves verified:false. Open every overlay before setting true.
+# review_web.py records the corrections for THESE saved frames, not future pages.
+dbus-run-session -- venv/bin/python eval/capture_native.py
+# annotate_native.py / annotate_firefox.py record manual coordinates for saved frames.
 venv/bin/python -m unittest discover -s eval -v
 venv/bin/python eval/score.py --runner-root ../ncnn-runner
+venv/bin/python eval/report.py
 ```
 
-Pillow and NumPy are required (available in the system Python during checks).
-The final command deliberately fails until scenes exist. Supply a checkout with
-`build/nefer-hints` and `models/`; the existing `tests/protocol.py` client is reused
-without modifying its public contract. Its stderr log is written under that
-checkout's ignored `weights/` directory.
+Capture scripts use the provided NeferWL binary and grim. External pages change:
+manual coordinates and GT must be reviewed anew after recapture, never blindly
+reapplied. DOM extraction uses innermost matching elements, per-client-rect boxes,
+viewport/overflow clipping, ancestor visibility/opacity, minimum 4×4 dimensions,
+and centre hit testing. Light DOM misses shadow DOM and iframe controls; visible
+corrections are explicitly recorded in `review_web.py`. Computed pointer cursor
+is inherited; some innermost fragments are consequently classified `other`.
+No detector predictions were used to construct GT.
 
-For each scene, add:
+`scenes.json` maps scene to category; `split.json` assigns 11 tune/11 test,
+covering dense text, content, modern web, forms, sidebar docs, themes, GTK and
+menus. HN light/dark stay in tune, but Arch light/dark cross splits: the test is
+scene-level, **not independent by site/application**. No tuning was performed.
+No old PoC scenes are included.
 
-- `frames/<scene>.png`: original capture, target 1920×1080.
-- `gt/<scene>.json`: `boxes`, parallel `kinds`, `source` (`dom` or `manual`),
-  `notes`, and `verified: true` **only after visual inspection**.
-- `gt/<scene>_gt.png`: inspected overlay (capture tooling still pending).
-- `scenes.json`: mapping scene name to `{"category": "dense_text"}` etc.
-- `split.json`: mapping each scene to `"tune"` or `"test"`.
+## Privacy
 
-Scoring uses whole-frame 1280 inference at .05 and .25, IoU NMS .7, and maximum
-bipartite centre-inside matching. Duplicate predictions remain in the precision
-denominator. `results/scores.json` contains scene/split/category micro P/R,
-frame-level inference/protocol latency and kind recall/miss counts;
-`results/predictions.json` preserves raw responses and matching.
-`out/<scene>_<threshold>.png`: GT green, missed GT yellow, TP blue, FP red.
+Apps ran under a private dbus-run-session and headless Wayland display, with
+HOME `/tmp/nh-eval/home`, XDG config/data/cache/state below it, fresh Chromium
+profiles and a dedicated fresh Firefox profile, no accounts except fictional
+local Mattermost users. NEFERWL_STATE, NEFERWL_SLOT and DISPLAY are removed.
+File managers opened only `Fictional/` with Documents, Music, Pictures, Projects,
+notes.txt and a fictional report. `GIO_USE_VOLUME_MONITOR=unix` disables GVfs
+host-volume names; initial captures exposing those labels were overwritten and
+never committed. No weights, venvs, builds or browser profiles are tracked.
+Historical real-home PoC images and associated GT/dumps were removed, including
+nautilus-menu; old numeric scores were not recomputed. Git history is unchanged.
 
-Kind precision is explicitly null: this detector has no kind labels, and false
-positives have no ground-truth kind. Latency is frame-level, not attributable to
-individual kinds. Timing is one sample per scene/threshold, not a benchmark.
-Miss-by-kind counts do not establish causes such as merged adjacent links;
-those require manual tune-overlay review. No cause counts are claimed yet.
+## Scoring and results
 
-## Checks completed
+Persistent ncnn Vulkan runner, RX 9070 XT; whole frames, imgsz 1280, IoU NMS .7,
+thresholds .05/.25. Maximum bipartite centre-inside matching; duplicates count in
+the prediction denominator. Micro P/R aggregates by scene, split, category;
+kind recall/miss counts in `results/scores.json`. Kind precision is null because
+unmatched predictions have no GT kind; latency is frame-level, not per kind.
 
-- Six unit tests: augmenting path, duplicate denominator, empty sets,
-  centre-vs-IoU, boundary inclusion, micro aggregation.
-- Empty dataset is rejected before launching the detector.
-- Temporary synthetic white 1920×1080 frame exercised both thresholds against
-  the real ncnn Vulkan runner (RX 9070 XT), JSON results and both PNG overlays.
-  The synthetic frame is not part of the dataset.
+| Split | Threshold | Precision | Recall | Protocol median ms |
+|---|---:|---:|---:|---:|
+| tune | .05 | 62.77% | 57.68% | 28.55 |
+| test | .05 | 62.81% | 66.35% | 26.74 |
+| tune | .25 | 77.75% | 37.08% | 26.82 |
+| test | .25 | 78.16% | 49.30% | 26.70 |
 
-## Capture privacy requirements (not yet exercised)
+One timing sample per scene/threshold, excluding PNG decode; not a stable latency
+benchmark. Protocol includes transport/preprocessing/NMS, inference excludes them.
+`out/`: GT green, TP blue, FP red, missed yellow. Raw predictions and matching
+are preserved in `results/predictions.json`.
 
-Every app must run under `dbus-run-session`, in headless NeferWL only, with fresh
-`HOME=/tmp/nh-eval/home`, XDG config/data/cache below it, fictional files, fresh
-Chromium/Firefox profiles, and `env -u NEFERWL_STATE -u NEFERWL_SLOT` plus the
-headless `WAYLAND_DISPLAY`. Never capture real profiles/accounts. Review every
-frame and GT overlay before adding it. Public pages must be logged out.
-Mattermost must use only seeded fictional users/posts and a disposable rootless
-container, removed at the end. No app/container was launched during these checks.
+Tune misses at .05: 240 small text links, 76 other fragments, 6 other text links,
+6 icons/buttons, 6 menu items, 4 fields, 1 row/file (339 total). At .25: 325 small
+text links, 133 other fragments, 16 icons/buttons, 12 other links, 10 fields,
+6 menu items, 2 rows (504 total). Small = height <18 or width <16. These are
+reproducible **morphology proxies**, not experimentally established causes;
+merged-adjacent-link attribution remains pending manual prediction review.
 
-## Pending scene inventory
+## Failed / pending work
 
-| Category | Planned scenes | Captured | Split / GT source |
-|---|---|---:|---|
-| Web | HN, Reddit (or fallback), Lobsters, Wikipedia Wayland, MDN article, Arch, news, GitHub Linux, login, forms, YouTube, Go docs | 0 | pending / DOM |
-| Theme variants | Two web dark variants | 0 | pending / DOM |
-| Mattermost | Channel, thread panel, switcher/menu | 0 | pending / DOM |
-| Native GTK | Nautilus icons/list/context/main menu + light/dark variants; Thunar window/menu; text editor window/menu | 0 | pending / manual |
-| Firefox | Page/chrome with hamburger menu | 0 | pending / manual |
-| Scale variants | Three scenes at 1.5 | 0 | pending |
+- Reddit returned “Your request has been blocked due to a network policy”;
+  excluded, Lobsters used. Guardian/BBC/W3Schools/YouTube produced no visible
+  targets after the bounded wait; skipped, httpbin form and Python docs added.
+  `results/web-capture-errors.json` records failures.
+- Mattermost preview image digest and exact failure in
+  `results/mattermost-status.json`. Rootless localhost container started; seed
+  created five fictional users, one team, four channels, 32 posts, 16 replies,
+  eight reactions. Initial signup 403 fixed with environment configuration.
+  CDP login navigation returned no `value` (KeyError) for all three captures;
+  no Mattermost scene admitted. Container removed with `docker rm -f`.
+  Seed: run `seed_mattermost.py` against a **new disposable** preview container
+  published only at `127.0.0.1:8065`, with
+  `MM_TEAMSETTINGS_ENABLEOPENSERVER=true` and
+  `MM_SERVICESETTINGS_ENABLELOCALMODE=true`. Always remove it afterwards.
+- GTK light/dark paired variants not completed (captured Nautilus is dark).
+- Scale 1.5 documented as `output.<name>.scale` in NeferWL config, not yet
+  exercised; three scale variants pending, not declared unsupported.
+- VSCodium, Dolphin, gnome-control-center not installed; pending, not installed.
+- Target ~26 scenes not reached; 22 admitted. Manual annotation quality and
+  full causal miss review would benefit from a second annotator.
 
-NeferWL `docs/config.md` documents `output.<name>.scale` (1–4, including 1.5);
-headless operation at that scale has **not** been tested, so variants are pending,
-not classified as unsupported. The headless documentation was read.
-Missing installed apps: VSCodium, Dolphin, gnome-control-center remain pending;
-do not install them for this evaluation.
-
-## Results
-
-| Split | Threshold | Precision | Recall |
-|---|---:|---:|---:|
-| tune | .05 | not measured | not measured |
-| tune | .25 | not measured | not measured |
-| test | .05 | not measured | not measured |
-| test | .25 | not measured | not measured |
-
-The requested extended evaluation is not complete. No detector tuning, public
-contract changes, dependency installation, model copying, push or merge occurred.
+Six matching/aggregation unit tests pass, and the scorer ran successfully on all
+22 frames at both thresholds. No public contracts changed, no push or merge.

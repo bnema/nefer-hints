@@ -1,1 +1,24 @@
-{}
+{
+  "hn": "tune",
+  "lobsters": "test",
+  "wiki": "tune",
+  "mdn": "test",
+  "arch": "tune",
+  "github": "test",
+  "login": "tune",
+  "go": "test",
+  "hn-dark": "tune",
+  "arch-dark": "test",
+  "mdn-forms": "tune",
+  "httpbin-form": "test",
+  "python-docs": "tune",
+  "nautilus": "tune",
+  "nautilus-list": "test",
+  "nautilus-context": "tune",
+  "nautilus-menu": "test",
+  "thunar": "tune",
+  "thunar-menu": "test",
+  "editor": "test",
+  "editor-menu": "tune",
+  "firefox-menu": "test"
+}

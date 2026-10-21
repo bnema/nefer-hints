@@ -1,0 +1,2552 @@
+{
+  "device": "AMD Radeon RX 9070 XT (RADV GFX1201)",
+  "imgsz": 1280,
+  "rows": [
+    {
+      "scene": "hn",
+      "split": "tune",
+      "category": "dense_text",
+      "threshold": 0.05,
+      "tp": 88,
+      "predictions": 146,
+      "targets": 218,
+      "protocol_ms": 34.27964399452321,
+      "inference_ms": 16.373247146606445,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 60,
+          "tp": 34
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 158,
+          "tp": 54
+        }
+      }
+    },
+    {
+      "scene": "hn",
+      "split": "tune",
+      "category": "dense_text",
+      "threshold": 0.25,
+      "tp": 20,
+      "predictions": 39,
+      "targets": 218,
+      "protocol_ms": 29.320804998860694,
+      "inference_ms": 17.52284812927246,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 60,
+          "tp": 7
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 158,
+          "tp": 13
+        }
+      }
+    },
+    {
+      "scene": "lobsters",
+      "split": "test",
+      "category": "dense_text",
+      "threshold": 0.05,
+      "tp": 53,
+      "predictions": 64,
+      "targets": 156,
+      "protocol_ms": 24.400636000791565,
+      "inference_ms": 14.240608215332031,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 32,
+          "tp": 4
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 124,
+          "tp": 49
+        }
+      }
+    },
+    {
+      "scene": "lobsters",
+      "split": "test",
+      "category": "dense_text",
+      "threshold": 0.25,
+      "tp": 33,
+      "predictions": 34,
+      "targets": 156,
+      "protocol_ms": 24.312455992912874,
+      "inference_ms": 14.872218132019043,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 32,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 124,
+          "tp": 33
+        }
+      }
+    },
+    {
+      "scene": "wiki",
+      "split": "tune",
+      "category": "content",
+      "threshold": 0.05,
+      "tp": 80,
+      "predictions": 114,
+      "targets": 96,
+      "protocol_ms": 29.498285002773628,
+      "inference_ms": 16.646957397460938,
+      "kinds": {
+        "field": {
+          "targets": 9,
+          "tp": 5
+        },
+        "icon_button": {
+          "targets": 11,
+          "tp": 10
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 27,
+          "tp": 16
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 49,
+          "tp": 49
+        }
+      }
+    },
+    {
+      "scene": "wiki",
+      "split": "tune",
+      "category": "content",
+      "threshold": 0.25,
+      "tp": 70,
+      "predictions": 90,
+      "targets": 96,
+      "protocol_ms": 26.63268501055427,
+      "inference_ms": 15.308816909790039,
+      "kinds": {
+        "field": {
+          "targets": 9,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 11,
+          "tp": 10
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 27,
+          "tp": 14
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 49,
+          "tp": 45
+        }
+      }
+    },
+    {
+      "scene": "mdn",
+      "split": "test",
+      "category": "content",
+      "threshold": 0.05,
+      "tp": 51,
+      "predictions": 99,
+      "targets": 75,
+      "protocol_ms": 26.655316003598273,
+      "inference_ms": 16.522287368774414,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 7,
+          "tp": 6
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 47,
+          "tp": 31
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 3,
+          "tp": 2
+        },
+        "text_link": {
+          "targets": 16,
+          "tp": 10
+        }
+      }
+    },
+    {
+      "scene": "mdn",
+      "split": "test",
+      "category": "content",
+      "threshold": 0.25,
+      "tp": 34,
+      "predictions": 64,
+      "targets": 75,
+      "protocol_ms": 25.063636014238,
+      "inference_ms": 15.945657730102539,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 7,
+          "tp": 6
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 47,
+          "tp": 17
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 3,
+          "tp": 1
+        },
+        "text_link": {
+          "targets": 16,
+          "tp": 8
+        }
+      }
+    },
+    {
+      "scene": "arch",
+      "split": "tune",
+      "category": "content",
+      "threshold": 0.05,
+      "tp": 71,
+      "predictions": 93,
+      "targets": 72,
+      "protocol_ms": 23.979536010301672,
+      "inference_ms": 14.246796607971191,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 4,
+          "tp": 4
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 67,
+          "tp": 66
+        }
+      }
+    },
+    {
+      "scene": "arch",
+      "split": "tune",
+      "category": "content",
+      "threshold": 0.25,
+      "tp": 55,
+      "predictions": 60,
+      "targets": 72,
+      "protocol_ms": 25.683635991299525,
+      "inference_ms": 14.868707656860352,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 4,
+          "tp": 3
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 67,
+          "tp": 51
+        }
+      }
+    },
+    {
+      "scene": "github",
+      "split": "test",
+      "category": "modern_web",
+      "threshold": 0.05,
+      "tp": 92,
+      "predictions": 110,
+      "targets": 158,
+      "protocol_ms": 30.51012499781791,
+      "inference_ms": 16.48268699645996,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 5
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 74,
+          "tp": 44
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 78,
+          "tp": 42
+        }
+      }
+    },
+    {
+      "scene": "github",
+      "split": "test",
+      "category": "modern_web",
+      "threshold": 0.25,
+      "tp": 72,
+      "predictions": 83,
+      "targets": 158,
+      "protocol_ms": 26.439484994625673,
+      "inference_ms": 14.132678031921387,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 5
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 74,
+          "tp": 41
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 78,
+          "tp": 25
+        }
+      }
+    },
+    {
+      "scene": "login",
+      "split": "tune",
+      "category": "forms",
+      "threshold": 0.05,
+      "tp": 9,
+      "predictions": 14,
+      "targets": 15,
+      "protocol_ms": 25.829805003013462,
+      "inference_ms": 14.454486846923828,
+      "kinds": {
+        "field": {
+          "targets": 3,
+          "tp": 3
+        },
+        "icon_button": {
+          "targets": 2,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 3,
+          "tp": 3
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 7,
+          "tp": 3
+        }
+      }
+    },
+    {
+      "scene": "login",
+      "split": "tune",
+      "category": "forms",
+      "threshold": 0.25,
+      "tp": 7,
+      "predictions": 7,
+      "targets": 15,
+      "protocol_ms": 26.679625996621326,
+      "inference_ms": 15.368647575378418,
+      "kinds": {
+        "field": {
+          "targets": 3,
+          "tp": 3
+        },
+        "icon_button": {
+          "targets": 2,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 3,
+          "tp": 3
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 7,
+          "tp": 1
+        }
+      }
+    },
+    {
+      "scene": "go",
+      "split": "test",
+      "category": "docs_sidebar",
+      "threshold": 0.05,
+      "tp": 18,
+      "predictions": 26,
+      "targets": 20,
+      "protocol_ms": 26.744916001916863,
+      "inference_ms": 16.386926651000977,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 4,
+          "tp": 4
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 1,
+          "tp": 1
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 15,
+          "tp": 13
+        }
+      }
+    },
+    {
+      "scene": "go",
+      "split": "test",
+      "category": "docs_sidebar",
+      "threshold": 0.25,
+      "tp": 9,
+      "predictions": 9,
+      "targets": 20,
+      "protocol_ms": 23.07063600164838,
+      "inference_ms": 13.853547096252441,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 4,
+          "tp": 4
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 1,
+          "tp": 1
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 15,
+          "tp": 4
+        }
+      }
+    },
+    {
+      "scene": "hn-dark",
+      "split": "tune",
+      "category": "theme_variant",
+      "threshold": 0.05,
+      "tp": 62,
+      "predictions": 101,
+      "targets": 218,
+      "protocol_ms": 29.79394501016941,
+      "inference_ms": 16.812288284301758,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 60,
+          "tp": 28
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 158,
+          "tp": 34
+        }
+      }
+    },
+    {
+      "scene": "hn-dark",
+      "split": "tune",
+      "category": "theme_variant",
+      "threshold": 0.25,
+      "tp": 11,
+      "predictions": 24,
+      "targets": 218,
+      "protocol_ms": 26.620085001923144,
+      "inference_ms": 14.522276878356934,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 60,
+          "tp": 2
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 158,
+          "tp": 9
+        }
+      }
+    },
+    {
+      "scene": "arch-dark",
+      "split": "test",
+      "category": "theme_variant",
+      "threshold": 0.05,
+      "tp": 71,
+      "predictions": 125,
+      "targets": 72,
+      "protocol_ms": 27.545514996745624,
+      "inference_ms": 16.028087615966797,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 4,
+          "tp": 4
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 67,
+          "tp": 66
+        }
+      }
+    },
+    {
+      "scene": "arch-dark",
+      "split": "test",
+      "category": "theme_variant",
+      "threshold": 0.25,
+      "tp": 57,
+      "predictions": 70,
+      "targets": 72,
+      "protocol_ms": 27.3837649874622,
+      "inference_ms": 14.404857635498047,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 4,
+          "tp": 3
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 67,
+          "tp": 54
+        }
+      }
+    },
+    {
+      "scene": "mdn-forms",
+      "split": "tune",
+      "category": "forms",
+      "threshold": 0.05,
+      "tp": 44,
+      "predictions": 69,
+      "targets": 54,
+      "protocol_ms": 25.818156005698256,
+      "inference_ms": 15.080798149108887,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 4
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 17,
+          "tp": 13
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 30,
+          "tp": 25
+        }
+      }
+    },
+    {
+      "scene": "mdn-forms",
+      "split": "tune",
+      "category": "forms",
+      "threshold": 0.25,
+      "tp": 40,
+      "predictions": 47,
+      "targets": 54,
+      "protocol_ms": 26.96319599635899,
+      "inference_ms": 14.71901798248291,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 4
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 17,
+          "tp": 12
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 30,
+          "tp": 22
+        }
+      }
+    },
+    {
+      "scene": "httpbin-form",
+      "split": "test",
+      "category": "forms",
+      "threshold": 0.05,
+      "tp": 11,
+      "predictions": 15,
+      "targets": 13,
+      "protocol_ms": 24.920976007706486,
+      "inference_ms": 14.721576690673828,
+      "kinds": {
+        "field": {
+          "targets": 12,
+          "tp": 10
+        },
+        "icon_button": {
+          "targets": 1,
+          "tp": 1
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "httpbin-form",
+      "split": "test",
+      "category": "forms",
+      "threshold": 0.25,
+      "tp": 6,
+      "predictions": 6,
+      "targets": 13,
+      "protocol_ms": 27.439946003141813,
+      "inference_ms": 16.493608474731445,
+      "kinds": {
+        "field": {
+          "targets": 12,
+          "tp": 5
+        },
+        "icon_button": {
+          "targets": 1,
+          "tp": 1
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "python-docs",
+      "split": "tune",
+      "category": "docs_sidebar",
+      "threshold": 0.05,
+      "tp": 23,
+      "predictions": 34,
+      "targets": 34,
+      "protocol_ms": 28.78478600177914,
+      "inference_ms": 17.055156707763672,
+      "kinds": {
+        "field": {
+          "targets": 5,
+          "tp": 5
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 11,
+          "tp": 8
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 18,
+          "tp": 10
+        }
+      }
+    },
+    {
+      "scene": "python-docs",
+      "split": "tune",
+      "category": "docs_sidebar",
+      "threshold": 0.25,
+      "tp": 22,
+      "predictions": 24,
+      "targets": 34,
+      "protocol_ms": 29.866065000533126,
+      "inference_ms": 17.91358757019043,
+      "kinds": {
+        "field": {
+          "targets": 5,
+          "tp": 5
+        },
+        "icon_button": {
+          "targets": 0,
+          "tp": 0
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 11,
+          "tp": 8
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 18,
+          "tp": 9
+        }
+      }
+    },
+    {
+      "scene": "nautilus",
+      "split": "tune",
+      "category": "native_gtk",
+      "threshold": 0.05,
+      "tp": 20,
+      "predictions": 45,
+      "targets": 20,
+      "protocol_ms": 26.093735999893397,
+      "inference_ms": 15.004217147827148,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 9,
+          "tp": 9
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 11
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus",
+      "split": "tune",
+      "category": "native_gtk",
+      "threshold": 0.25,
+      "tp": 17,
+      "predictions": 21,
+      "targets": 20,
+      "protocol_ms": 26.823985986993648,
+      "inference_ms": 14.546998023986816,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 9,
+          "tp": 6
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 11
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-list",
+      "split": "test",
+      "category": "native_gtk",
+      "threshold": 0.05,
+      "tp": 26,
+      "predictions": 48,
+      "targets": 29,
+      "protocol_ms": 25.16177500365302,
+      "inference_ms": 14.016657829284668,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 18,
+          "tp": 15
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 11
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-list",
+      "split": "test",
+      "category": "native_gtk",
+      "threshold": 0.25,
+      "tp": 19,
+      "predictions": 24,
+      "targets": 29,
+      "protocol_ms": 31.23625500302296,
+      "inference_ms": 17.263347625732422,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 18,
+          "tp": 9
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 10
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-context",
+      "split": "tune",
+      "category": "menus",
+      "threshold": 0.05,
+      "tp": 30,
+      "predictions": 64,
+      "targets": 32,
+      "protocol_ms": 28.684235003311187,
+      "inference_ms": 16.71420669555664,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 17,
+          "tp": 15
+        },
+        "menu_item": {
+          "targets": 10,
+          "tp": 10
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 5,
+          "tp": 5
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-context",
+      "split": "tune",
+      "category": "menus",
+      "threshold": 0.25,
+      "tp": 23,
+      "predictions": 29,
+      "targets": 32,
+      "protocol_ms": 28.710036000120454,
+      "inference_ms": 15.806358337402344,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 17,
+          "tp": 8
+        },
+        "menu_item": {
+          "targets": 10,
+          "tp": 10
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 5,
+          "tp": 5
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.05,
+      "tp": 30,
+      "predictions": 56,
+      "targets": 36,
+      "protocol_ms": 27.70401599991601,
+      "inference_ms": 14.480578422546387,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 18,
+          "tp": 15
+        },
+        "menu_item": {
+          "targets": 7,
+          "tp": 7
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 8
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "nautilus-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.25,
+      "tp": 22,
+      "predictions": 29,
+      "targets": 36,
+      "protocol_ms": 26.70053599285893,
+      "inference_ms": 13.779667854309082,
+      "kinds": {
+        "field": {
+          "targets": 0,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 18,
+          "tp": 11
+        },
+        "menu_item": {
+          "targets": 7,
+          "tp": 6
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 11,
+          "tp": 5
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "thunar",
+      "split": "tune",
+      "category": "native_gtk",
+      "threshold": 0.05,
+      "tp": 15,
+      "predictions": 20,
+      "targets": 22,
+      "protocol_ms": 28.286944987485185,
+      "inference_ms": 16.573577880859375,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 3,
+          "tp": 3
+        },
+        "menu_item": {
+          "targets": 6,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 12,
+          "tp": 11
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "thunar",
+      "split": "tune",
+      "category": "native_gtk",
+      "threshold": 0.25,
+      "tp": 13,
+      "predictions": 15,
+      "targets": 22,
+      "protocol_ms": 24.813285999698564,
+      "inference_ms": 13.689587593078613,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 3,
+          "tp": 3
+        },
+        "menu_item": {
+          "targets": 6,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 12,
+          "tp": 10
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "thunar-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.05,
+      "tp": 14,
+      "predictions": 19,
+      "targets": 17,
+      "protocol_ms": 28.880215002573095,
+      "inference_ms": 15.563697814941406,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 1,
+          "tp": 1
+        },
+        "menu_item": {
+          "targets": 9,
+          "tp": 8
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 6,
+          "tp": 5
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "thunar-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.25,
+      "tp": 8,
+      "predictions": 10,
+      "targets": 17,
+      "protocol_ms": 24.958686000900343,
+      "inference_ms": 13.889857292175293,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 1,
+          "tp": 1
+        },
+        "menu_item": {
+          "targets": 9,
+          "tp": 3
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 6,
+          "tp": 4
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "editor",
+      "split": "test",
+      "category": "native_gtk",
+      "threshold": 0.05,
+      "tp": 6,
+      "predictions": 11,
+      "targets": 6,
+      "protocol_ms": 23.82659600698389,
+      "inference_ms": 14.333747863769531,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 5
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "editor",
+      "split": "test",
+      "category": "native_gtk",
+      "threshold": 0.25,
+      "tp": 5,
+      "predictions": 5,
+      "targets": 6,
+      "protocol_ms": 28.071566004655324,
+      "inference_ms": 17.214536666870117,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 5,
+          "tp": 5
+        },
+        "menu_item": {
+          "targets": 0,
+          "tp": 0
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "editor-menu",
+      "split": "tune",
+      "category": "menus",
+      "threshold": 0.05,
+      "tp": 20,
+      "predictions": 36,
+      "targets": 20,
+      "protocol_ms": 28.54518499225378,
+      "inference_ms": 16.496726989746094,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 1
+        },
+        "icon_button": {
+          "targets": 10,
+          "tp": 10
+        },
+        "menu_item": {
+          "targets": 9,
+          "tp": 9
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "editor-menu",
+      "split": "tune",
+      "category": "menus",
+      "threshold": 0.25,
+      "tp": 19,
+      "predictions": 26,
+      "targets": 20,
+      "protocol_ms": 30.261335006798618,
+      "inference_ms": 18.806808471679688,
+      "kinds": {
+        "field": {
+          "targets": 1,
+          "tp": 0
+        },
+        "icon_button": {
+          "targets": 10,
+          "tp": 10
+        },
+        "menu_item": {
+          "targets": 9,
+          "tp": 9
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 0,
+          "tp": 0
+        },
+        "tab": {
+          "targets": 0,
+          "tp": 0
+        },
+        "text_link": {
+          "targets": 0,
+          "tp": 0
+        }
+      }
+    },
+    {
+      "scene": "firefox-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.05,
+      "tp": 52,
+      "predictions": 102,
+      "targets": 57,
+      "protocol_ms": 28.089514991734177,
+      "inference_ms": 16.670196533203125,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 25,
+          "tp": 21
+        },
+        "menu_item": {
+          "targets": 15,
+          "tp": 14
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 6,
+          "tp": 6
+        },
+        "tab": {
+          "targets": 3,
+          "tp": 3
+        },
+        "text_link": {
+          "targets": 6,
+          "tp": 6
+        }
+      }
+    },
+    {
+      "scene": "firefox-menu",
+      "split": "test",
+      "category": "menus",
+      "threshold": 0.25,
+      "tp": 50,
+      "predictions": 69,
+      "targets": 57,
+      "protocol_ms": 31.377555002109148,
+      "inference_ms": 18.542236328125,
+      "kinds": {
+        "field": {
+          "targets": 2,
+          "tp": 2
+        },
+        "icon_button": {
+          "targets": 25,
+          "tp": 20
+        },
+        "menu_item": {
+          "targets": 15,
+          "tp": 13
+        },
+        "other": {
+          "targets": 0,
+          "tp": 0
+        },
+        "row_file": {
+          "targets": 6,
+          "tp": 6
+        },
+        "tab": {
+          "targets": 3,
+          "tp": 3
+        },
+        "text_link": {
+          "targets": 6,
+          "tp": 6
+        }
+      }
+    }
+  ],
+  "aggregates": {
+    "0.05/split/test": {
+      "tp": 424,
+      "predictions": 675,
+      "targets": 639,
+      "precision": 0.6281481481481481,
+      "recall": 0.6635367762128326,
+      "protocol_median_ms": 26.744916001916863
+    },
+    "0.05/split/tune": {
+      "tp": 462,
+      "predictions": 736,
+      "targets": 801,
+      "precision": 0.6277173913043478,
+      "recall": 0.5767790262172284,
+      "protocol_median_ms": 28.54518499225378
+    },
+    "0.05/category/content": {
+      "tp": 202,
+      "predictions": 306,
+      "targets": 243,
+      "precision": 0.6601307189542484,
+      "recall": 0.831275720164609,
+      "protocol_median_ms": 26.655316003598273
+    },
+    "0.05/category/dense_text": {
+      "tp": 141,
+      "predictions": 210,
+      "targets": 374,
+      "precision": 0.6714285714285714,
+      "recall": 0.3770053475935829,
+      "protocol_median_ms": 29.34013999765739
+    },
+    "0.05/category/docs_sidebar": {
+      "tp": 41,
+      "predictions": 60,
+      "targets": 54,
+      "precision": 0.6833333333333333,
+      "recall": 0.7592592592592593,
+      "protocol_median_ms": 27.764851001848
+    },
+    "0.05/category/forms": {
+      "tp": 64,
+      "predictions": 98,
+      "targets": 82,
+      "precision": 0.6530612244897959,
+      "recall": 0.7804878048780488,
+      "protocol_median_ms": 25.818156005698256
+    },
+    "0.05/category/menus": {
+      "tp": 146,
+      "predictions": 277,
+      "targets": 162,
+      "precision": 0.5270758122743683,
+      "recall": 0.9012345679012346,
+      "protocol_median_ms": 28.54518499225378
+    },
+    "0.05/category/modern_web": {
+      "tp": 92,
+      "predictions": 110,
+      "targets": 158,
+      "precision": 0.8363636363636363,
+      "recall": 0.5822784810126582,
+      "protocol_median_ms": 30.51012499781791
+    },
+    "0.05/category/native_gtk": {
+      "tp": 67,
+      "predictions": 124,
+      "targets": 77,
+      "precision": 0.5403225806451613,
+      "recall": 0.8701298701298701,
+      "protocol_median_ms": 25.62775550177321
+    },
+    "0.05/category/theme_variant": {
+      "tp": 133,
+      "predictions": 226,
+      "targets": 290,
+      "precision": 0.588495575221239,
+      "recall": 0.4586206896551724,
+      "protocol_median_ms": 28.669730003457516
+    },
+    "0.05/scene/arch": {
+      "tp": 71,
+      "predictions": 93,
+      "targets": 72,
+      "precision": 0.7634408602150538,
+      "recall": 0.9861111111111112,
+      "protocol_median_ms": 23.979536010301672
+    },
+    "0.05/scene/arch-dark": {
+      "tp": 71,
+      "predictions": 125,
+      "targets": 72,
+      "precision": 0.568,
+      "recall": 0.9861111111111112,
+      "protocol_median_ms": 27.545514996745624
+    },
+    "0.05/scene/editor": {
+      "tp": 6,
+      "predictions": 11,
+      "targets": 6,
+      "precision": 0.5454545454545454,
+      "recall": 1.0,
+      "protocol_median_ms": 23.82659600698389
+    },
+    "0.05/scene/editor-menu": {
+      "tp": 20,
+      "predictions": 36,
+      "targets": 20,
+      "precision": 0.5555555555555556,
+      "recall": 1.0,
+      "protocol_median_ms": 28.54518499225378
+    },
+    "0.05/scene/firefox-menu": {
+      "tp": 52,
+      "predictions": 102,
+      "targets": 57,
+      "precision": 0.5098039215686274,
+      "recall": 0.9122807017543859,
+      "protocol_median_ms": 28.089514991734177
+    },
+    "0.05/scene/github": {
+      "tp": 92,
+      "predictions": 110,
+      "targets": 158,
+      "precision": 0.8363636363636363,
+      "recall": 0.5822784810126582,
+      "protocol_median_ms": 30.51012499781791
+    },
+    "0.05/scene/go": {
+      "tp": 18,
+      "predictions": 26,
+      "targets": 20,
+      "precision": 0.6923076923076923,
+      "recall": 0.9,
+      "protocol_median_ms": 26.744916001916863
+    },
+    "0.05/scene/hn": {
+      "tp": 88,
+      "predictions": 146,
+      "targets": 218,
+      "precision": 0.6027397260273972,
+      "recall": 0.4036697247706422,
+      "protocol_median_ms": 34.27964399452321
+    },
+    "0.05/scene/hn-dark": {
+      "tp": 62,
+      "predictions": 101,
+      "targets": 218,
+      "precision": 0.6138613861386139,
+      "recall": 0.28440366972477066,
+      "protocol_median_ms": 29.79394501016941
+    },
+    "0.05/scene/httpbin-form": {
+      "tp": 11,
+      "predictions": 15,
+      "targets": 13,
+      "precision": 0.7333333333333333,
+      "recall": 0.8461538461538461,
+      "protocol_median_ms": 24.920976007706486
+    },
+    "0.05/scene/lobsters": {
+      "tp": 53,
+      "predictions": 64,
+      "targets": 156,
+      "precision": 0.828125,
+      "recall": 0.33974358974358976,
+      "protocol_median_ms": 24.400636000791565
+    },
+    "0.05/scene/login": {
+      "tp": 9,
+      "predictions": 14,
+      "targets": 15,
+      "precision": 0.6428571428571429,
+      "recall": 0.6,
+      "protocol_median_ms": 25.829805003013462
+    },
+    "0.05/scene/mdn": {
+      "tp": 51,
+      "predictions": 99,
+      "targets": 75,
+      "precision": 0.5151515151515151,
+      "recall": 0.68,
+      "protocol_median_ms": 26.655316003598273
+    },
+    "0.05/scene/mdn-forms": {
+      "tp": 44,
+      "predictions": 69,
+      "targets": 54,
+      "precision": 0.6376811594202898,
+      "recall": 0.8148148148148148,
+      "protocol_median_ms": 25.818156005698256
+    },
+    "0.05/scene/nautilus": {
+      "tp": 20,
+      "predictions": 45,
+      "targets": 20,
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "protocol_median_ms": 26.093735999893397
+    },
+    "0.05/scene/nautilus-context": {
+      "tp": 30,
+      "predictions": 64,
+      "targets": 32,
+      "precision": 0.46875,
+      "recall": 0.9375,
+      "protocol_median_ms": 28.684235003311187
+    },
+    "0.05/scene/nautilus-list": {
+      "tp": 26,
+      "predictions": 48,
+      "targets": 29,
+      "precision": 0.5416666666666666,
+      "recall": 0.896551724137931,
+      "protocol_median_ms": 25.16177500365302
+    },
+    "0.05/scene/nautilus-menu": {
+      "tp": 30,
+      "predictions": 56,
+      "targets": 36,
+      "precision": 0.5357142857142857,
+      "recall": 0.8333333333333334,
+      "protocol_median_ms": 27.70401599991601
+    },
+    "0.05/scene/python-docs": {
+      "tp": 23,
+      "predictions": 34,
+      "targets": 34,
+      "precision": 0.6764705882352942,
+      "recall": 0.6764705882352942,
+      "protocol_median_ms": 28.78478600177914
+    },
+    "0.05/scene/thunar": {
+      "tp": 15,
+      "predictions": 20,
+      "targets": 22,
+      "precision": 0.75,
+      "recall": 0.6818181818181818,
+      "protocol_median_ms": 28.286944987485185
+    },
+    "0.05/scene/thunar-menu": {
+      "tp": 14,
+      "predictions": 19,
+      "targets": 17,
+      "precision": 0.7368421052631579,
+      "recall": 0.8235294117647058,
+      "protocol_median_ms": 28.880215002573095
+    },
+    "0.05/scene/wiki": {
+      "tp": 80,
+      "predictions": 114,
+      "targets": 96,
+      "precision": 0.7017543859649122,
+      "recall": 0.8333333333333334,
+      "protocol_median_ms": 29.498285002773628
+    },
+    "0.25/split/test": {
+      "tp": 315,
+      "predictions": 403,
+      "targets": 639,
+      "precision": 0.7816377171215881,
+      "recall": 0.49295774647887325,
+      "protocol_median_ms": 26.70053599285893
+    },
+    "0.25/split/tune": {
+      "tp": 297,
+      "predictions": 382,
+      "targets": 801,
+      "precision": 0.7774869109947644,
+      "recall": 0.3707865168539326,
+      "protocol_median_ms": 26.823985986993648
+    },
+    "0.25/category/content": {
+      "tp": 159,
+      "predictions": 214,
+      "targets": 243,
+      "precision": 0.7429906542056075,
+      "recall": 0.654320987654321,
+      "protocol_median_ms": 25.683635991299525
+    },
+    "0.25/category/dense_text": {
+      "tp": 53,
+      "predictions": 73,
+      "targets": 374,
+      "precision": 0.726027397260274,
+      "recall": 0.14171122994652408,
+      "protocol_median_ms": 26.816630495886784
+    },
+    "0.25/category/docs_sidebar": {
+      "tp": 31,
+      "predictions": 33,
+      "targets": 54,
+      "precision": 0.9393939393939394,
+      "recall": 0.5740740740740741,
+      "protocol_median_ms": 26.468350501090754
+    },
+    "0.25/category/forms": {
+      "tp": 53,
+      "predictions": 60,
+      "targets": 82,
+      "precision": 0.8833333333333333,
+      "recall": 0.6463414634146342,
+      "protocol_median_ms": 26.96319599635899
+    },
+    "0.25/category/menus": {
+      "tp": 122,
+      "predictions": 163,
+      "targets": 162,
+      "precision": 0.7484662576687117,
+      "recall": 0.7530864197530864,
+      "protocol_median_ms": 28.710036000120454
+    },
+    "0.25/category/modern_web": {
+      "tp": 72,
+      "predictions": 83,
+      "targets": 158,
+      "precision": 0.8674698795180723,
+      "recall": 0.45569620253164556,
+      "protocol_median_ms": 26.439484994625673
+    },
+    "0.25/category/native_gtk": {
+      "tp": 54,
+      "predictions": 65,
+      "targets": 77,
+      "precision": 0.8307692307692308,
+      "recall": 0.7012987012987013,
+      "protocol_median_ms": 27.447775995824486
+    },
+    "0.25/category/theme_variant": {
+      "tp": 68,
+      "predictions": 94,
+      "targets": 290,
+      "precision": 0.723404255319149,
+      "recall": 0.23448275862068965,
+      "protocol_median_ms": 27.001924994692672
+    },
+    "0.25/scene/arch": {
+      "tp": 55,
+      "predictions": 60,
+      "targets": 72,
+      "precision": 0.9166666666666666,
+      "recall": 0.7638888888888888,
+      "protocol_median_ms": 25.683635991299525
+    },
+    "0.25/scene/arch-dark": {
+      "tp": 57,
+      "predictions": 70,
+      "targets": 72,
+      "precision": 0.8142857142857143,
+      "recall": 0.7916666666666666,
+      "protocol_median_ms": 27.3837649874622
+    },
+    "0.25/scene/editor": {
+      "tp": 5,
+      "predictions": 5,
+      "targets": 6,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "protocol_median_ms": 28.071566004655324
+    },
+    "0.25/scene/editor-menu": {
+      "tp": 19,
+      "predictions": 26,
+      "targets": 20,
+      "precision": 0.7307692307692307,
+      "recall": 0.95,
+      "protocol_median_ms": 30.261335006798618
+    },
+    "0.25/scene/firefox-menu": {
+      "tp": 50,
+      "predictions": 69,
+      "targets": 57,
+      "precision": 0.7246376811594203,
+      "recall": 0.8771929824561403,
+      "protocol_median_ms": 31.377555002109148
+    },
+    "0.25/scene/github": {
+      "tp": 72,
+      "predictions": 83,
+      "targets": 158,
+      "precision": 0.8674698795180723,
+      "recall": 0.45569620253164556,
+      "protocol_median_ms": 26.439484994625673
+    },
+    "0.25/scene/go": {
+      "tp": 9,
+      "predictions": 9,
+      "targets": 20,
+      "precision": 1.0,
+      "recall": 0.45,
+      "protocol_median_ms": 23.07063600164838
+    },
+    "0.25/scene/hn": {
+      "tp": 20,
+      "predictions": 39,
+      "targets": 218,
+      "precision": 0.5128205128205128,
+      "recall": 0.09174311926605505,
+      "protocol_median_ms": 29.320804998860694
+    },
+    "0.25/scene/hn-dark": {
+      "tp": 11,
+      "predictions": 24,
+      "targets": 218,
+      "precision": 0.4583333333333333,
+      "recall": 0.05045871559633028,
+      "protocol_median_ms": 26.620085001923144
+    },
+    "0.25/scene/httpbin-form": {
+      "tp": 6,
+      "predictions": 6,
+      "targets": 13,
+      "precision": 1.0,
+      "recall": 0.46153846153846156,
+      "protocol_median_ms": 27.439946003141813
+    },
+    "0.25/scene/lobsters": {
+      "tp": 33,
+      "predictions": 34,
+      "targets": 156,
+      "precision": 0.9705882352941176,
+      "recall": 0.21153846153846154,
+      "protocol_median_ms": 24.312455992912874
+    },
+    "0.25/scene/login": {
+      "tp": 7,
+      "predictions": 7,
+      "targets": 15,
+      "precision": 1.0,
+      "recall": 0.4666666666666667,
+      "protocol_median_ms": 26.679625996621326
+    },
+    "0.25/scene/mdn": {
+      "tp": 34,
+      "predictions": 64,
+      "targets": 75,
+      "precision": 0.53125,
+      "recall": 0.4533333333333333,
+      "protocol_median_ms": 25.063636014238
+    },
+    "0.25/scene/mdn-forms": {
+      "tp": 40,
+      "predictions": 47,
+      "targets": 54,
+      "precision": 0.851063829787234,
+      "recall": 0.7407407407407407,
+      "protocol_median_ms": 26.96319599635899
+    },
+    "0.25/scene/nautilus": {
+      "tp": 17,
+      "predictions": 21,
+      "targets": 20,
+      "precision": 0.8095238095238095,
+      "recall": 0.85,
+      "protocol_median_ms": 26.823985986993648
+    },
+    "0.25/scene/nautilus-context": {
+      "tp": 23,
+      "predictions": 29,
+      "targets": 32,
+      "precision": 0.7931034482758621,
+      "recall": 0.71875,
+      "protocol_median_ms": 28.710036000120454
+    },
+    "0.25/scene/nautilus-list": {
+      "tp": 19,
+      "predictions": 24,
+      "targets": 29,
+      "precision": 0.7916666666666666,
+      "recall": 0.6551724137931034,
+      "protocol_median_ms": 31.23625500302296
+    },
+    "0.25/scene/nautilus-menu": {
+      "tp": 22,
+      "predictions": 29,
+      "targets": 36,
+      "precision": 0.7586206896551724,
+      "recall": 0.6111111111111112,
+      "protocol_median_ms": 26.70053599285893
+    },
+    "0.25/scene/python-docs": {
+      "tp": 22,
+      "predictions": 24,
+      "targets": 34,
+      "precision": 0.9166666666666666,
+      "recall": 0.6470588235294118,
+      "protocol_median_ms": 29.866065000533126
+    },
+    "0.25/scene/thunar": {
+      "tp": 13,
+      "predictions": 15,
+      "targets": 22,
+      "precision": 0.8666666666666667,
+      "recall": 0.5909090909090909,
+      "protocol_median_ms": 24.813285999698564
+    },
+    "0.25/scene/thunar-menu": {
+      "tp": 8,
+      "predictions": 10,
+      "targets": 17,
+      "precision": 0.8,
+      "recall": 0.47058823529411764,
+      "protocol_median_ms": 24.958686000900343
+    },
+    "0.25/scene/wiki": {
+      "tp": 70,
+      "predictions": 90,
+      "targets": 96,
+      "precision": 0.7777777777777778,
+      "recall": 0.7291666666666666,
+      "protocol_median_ms": 26.63268501055427
+    }
+  },
+  "kinds": {
+    "0.05/tune/field": {
+      "targets": 22,
+      "tp": 18,
+      "misses": 4,
+      "recall": 0.8181818181818182,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/icon_button": {
+      "targets": 57,
+      "tp": 51,
+      "misses": 6,
+      "recall": 0.8947368421052632,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/menu_item": {
+      "targets": 25,
+      "tp": 19,
+      "misses": 6,
+      "recall": 0.76,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/other": {
+      "targets": 182,
+      "tp": 106,
+      "misses": 76,
+      "recall": 0.5824175824175825,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/row_file": {
+      "targets": 28,
+      "tp": 27,
+      "misses": 1,
+      "recall": 0.9642857142857143,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/tab": {
+      "targets": 0,
+      "tp": 0,
+      "misses": 0,
+      "recall": null,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/tune/text_link": {
+      "targets": 487,
+      "tp": 241,
+      "misses": 246,
+      "recall": 0.4948665297741273,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/field": {
+      "targets": 20,
+      "tp": 17,
+      "misses": 3,
+      "recall": 0.85,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/icon_button": {
+      "targets": 84,
+      "tp": 73,
+      "misses": 11,
+      "recall": 0.8690476190476191,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/menu_item": {
+      "targets": 31,
+      "tp": 29,
+      "misses": 2,
+      "recall": 0.9354838709677419,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/other": {
+      "targets": 158,
+      "tp": 84,
+      "misses": 74,
+      "recall": 0.5316455696202531,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/row_file": {
+      "targets": 34,
+      "tp": 30,
+      "misses": 4,
+      "recall": 0.8823529411764706,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/tab": {
+      "targets": 6,
+      "tp": 5,
+      "misses": 1,
+      "recall": 0.8333333333333334,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.05/test/text_link": {
+      "targets": 306,
+      "tp": 186,
+      "misses": 120,
+      "recall": 0.6078431372549019,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/field": {
+      "targets": 22,
+      "tp": 12,
+      "misses": 10,
+      "recall": 0.5454545454545454,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/icon_button": {
+      "targets": 57,
+      "tp": 41,
+      "misses": 16,
+      "recall": 0.7192982456140351,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/menu_item": {
+      "targets": 25,
+      "tp": 19,
+      "misses": 6,
+      "recall": 0.76,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/other": {
+      "targets": 182,
+      "tp": 49,
+      "misses": 133,
+      "recall": 0.2692307692307692,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/row_file": {
+      "targets": 28,
+      "tp": 26,
+      "misses": 2,
+      "recall": 0.9285714285714286,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/tab": {
+      "targets": 0,
+      "tp": 0,
+      "misses": 0,
+      "recall": null,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/tune/text_link": {
+      "targets": 487,
+      "tp": 150,
+      "misses": 337,
+      "recall": 0.3080082135523614,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/field": {
+      "targets": 20,
+      "tp": 10,
+      "misses": 10,
+      "recall": 0.5,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/icon_button": {
+      "targets": 84,
+      "tp": 62,
+      "misses": 22,
+      "recall": 0.7380952380952381,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/menu_item": {
+      "targets": 31,
+      "tp": 22,
+      "misses": 9,
+      "recall": 0.7096774193548387,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/other": {
+      "targets": 158,
+      "tp": 62,
+      "misses": 96,
+      "recall": 0.3924050632911392,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/row_file": {
+      "targets": 34,
+      "tp": 25,
+      "misses": 9,
+      "recall": 0.7352941176470589,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/tab": {
+      "targets": 6,
+      "tp": 4,
+      "misses": 2,
+      "recall": 0.6666666666666666,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    },
+    "0.25/test/text_link": {
+      "targets": 306,
+      "tp": 130,
+      "misses": 176,
+      "recall": 0.42483660130718953,
+      "precision": null,
+      "note": "Detector has no kind labels; unmatched predictions cannot be assigned a GT kind. Latency is frame-level."
+    }
+  },
+  "latency_note": "One request per scene/threshold; protocol includes transport, preprocessing and NMS; inference excludes them. No latency benchmark claim.",
+  "miss_note": "Kind counts are descriptive, not causal diagnoses; manually review tune overlays for merged links and small text."
+}

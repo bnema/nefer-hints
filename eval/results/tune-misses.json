@@ -1,0 +1,20 @@
+{
+  "0.05": {
+    "small text links": 240,
+    "other": 76,
+    "icons / buttons": 6,
+    "fields": 4,
+    "other text links": 6,
+    "menu items": 6,
+    "rows / files": 1
+  },
+  "0.25": {
+    "other": 133,
+    "small text links": 325,
+    "icons / buttons": 16,
+    "fields": 10,
+    "other text links": 12,
+    "menu items": 6,
+    "rows / files": 2
+  }
+}

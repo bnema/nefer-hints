@@ -45,6 +45,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runner-root', type=Path, required=True, help='Build/models checkout (tests/protocol.py client is reused)')
     parser.add_argument('--dataset', type=Path, default=ROOT)
+    parser.add_argument('--gpu', default='auto', help='runner --gpu value (auto|N|cpu)')
     args = parser.parse_args()
     base = args.dataset.resolve()
     split = json.loads((base/'split.json').read_text())
@@ -78,7 +79,7 @@ def main():
     (protocol.ROOT/'weights').mkdir(exist_ok=True)
     (base/'results').mkdir(exist_ok=True)
     (base/'out').mkdir(exist_ok=True)
-    client = protocol.Client(size=1280, extra=('--conf','0.05','--iou','0.7'))
+    client = protocol.Client(size=1280, extra=('--conf','0.05','--iou','0.7','--gpu',args.gpu))
     rows, predictions = [], {}
     try:
         for name, (gt,image) in inputs.items():

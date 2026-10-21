@@ -1,0 +1,121 @@
+{
+  "boxes": [
+    [
+      784,
+      187,
+      1136,
+      227
+    ],
+    [
+      784,
+      268,
+      1136,
+      308
+    ],
+    [
+      1019.296875,
+      243,
+      1136,
+      264
+    ],
+    [
+      784,
+      324,
+      1136,
+      364
+    ],
+    [
+      899.375,
+      434.5,
+      1044.625,
+      455.5
+    ],
+    [
+      904.09375,
+      482.5,
+      1039.90625,
+      503.5
+    ],
+    [
+      953.65625,
+      534,
+      1072.625,
+      553
+    ],
+    [
+      886.71875,
+      570,
+      1033.28125,
+      591
+    ],
+    [
+      592.046875,
+      1046,
+      626.578125,
+      1063
+    ],
+    [
+      658.578125,
+      1046,
+      698.609375,
+      1063
+    ],
+    [
+      730.609375,
+      1046,
+      758.140625,
+      1063
+    ],
+    [
+      790.140625,
+      1046,
+      924.96875,
+      1063
+    ],
+    [
+      964.96875,
+      1046,
+      1056.3125,
+      1064
+    ],
+    [
+      1104.3125,
+      1046,
+      1319.9375,
+      1064
+    ],
+    [
+      937,
+      48,
+      982,
+      93
+    ]
+  ],
+  "kinds": [
+    "field",
+    "field",
+    "text_link",
+    "field",
+    "other",
+    "other",
+    "text_link",
+    "other",
+    "text_link",
+    "text_link",
+    "text_link",
+    "text_link",
+    "icon_button",
+    "icon_button",
+    "text_link"
+  ],
+  "source": "dom",
+  "notes": "Viewport CSS pixels; fullscreen mapping checked against screenshot; innermost candidates, clipping and centre hit testing. Cursor:pointer inherited descendants retained by requested innermost rule. All scene overlays opened and visually checked at capture resolution. Fullscreen viewport origin (0,0), DPR 1. Manual corrections for shadow/iframe controls and icon wrappers recorded in review_web.py; source denotes primary DOM method. Tiny targets below 4x4 excluded by protocol.",
+  "verified": true,
+  "viewport": {
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1
+  },
+  "title": "Sign in to GitHub \u00b7 GitHub",
+  "url": "https://github.com/login"
+}

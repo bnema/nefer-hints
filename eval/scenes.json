@@ -1,1 +1,54 @@
-{}
+{
+  "hn": {
+    "category": "dense_text",
+    "url": "https://news.ycombinator.com"
+  },
+  "lobsters": {
+    "category": "dense_text",
+    "url": "https://lobste.rs"
+  },
+  "wiki": {
+    "category": "content",
+    "url": "https://en.wikipedia.org/wiki/Wayland_(protocol)"
+  },
+  "mdn": {
+    "category": "content",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"
+  },
+  "arch": {
+    "category": "content",
+    "url": "https://archlinux.org"
+  },
+  "github": {
+    "category": "modern_web",
+    "url": "https://github.com/torvalds/linux"
+  },
+  "login": {
+    "category": "forms",
+    "url": "https://github.com/login"
+  },
+  "go": {
+    "category": "docs_sidebar",
+    "url": "https://go.dev/doc/"
+  },
+  "hn-dark": {
+    "category": "theme_variant",
+    "url": "https://news.ycombinator.com"
+  },
+  "arch-dark": {
+    "category": "theme_variant",
+    "url": "https://archlinux.org"
+  },
+  "mdn-forms": {
+    "category": "forms",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form"
+  },
+  "httpbin-form": {
+    "category": "forms",
+    "url": "https://httpbin.org/forms/post"
+  },
+  "python-docs": {
+    "category": "docs_sidebar",
+    "url": "https://docs.python.org/3/tutorial/index.html"
+  }
+}

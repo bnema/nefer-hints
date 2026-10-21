@@ -1,0 +1,107 @@
+{
+  "boxes": [
+    [
+      117.3125,
+      16,
+      302.3125,
+      37
+    ],
+    [
+      82.859375,
+      53,
+      267.859375,
+      74
+    ],
+    [
+      111.96875,
+      90,
+      296.96875,
+      111
+    ],
+    [
+      29,
+      169.59375,
+      42,
+      182.59375
+    ],
+    [
+      29,
+      205.59375,
+      42,
+      218.59375
+    ],
+    [
+      29,
+      241.59375,
+      42,
+      254.59375
+    ],
+    [
+      28,
+      329.1875,
+      41,
+      342.1875
+    ],
+    [
+      28,
+      365.1875,
+      41,
+      378.1875
+    ],
+    [
+      28,
+      401.1875,
+      41,
+      414.1875
+    ],
+    [
+      28,
+      437.1875,
+      41,
+      450.1875
+    ],
+    [
+      164.828125,
+      498.1875,
+      267.828125,
+      522.1875
+    ],
+    [
+      151.09375,
+      538.1875,
+      352.09375,
+      580.1875
+    ],
+    [
+      8,
+      600.1875,
+      100.3125,
+      621.1875
+    ]
+  ],
+  "kinds": [
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "field",
+    "icon_button"
+  ],
+  "source": "dom",
+  "notes": "Viewport CSS pixels; fullscreen mapping checked against screenshot; innermost candidates, clipping and centre hit testing. Cursor:pointer inherited descendants retained by requested innermost rule. All scene overlays opened and visually checked at capture resolution. Fullscreen viewport origin (0,0), DPR 1. Manual corrections for shadow/iframe controls and icon wrappers recorded in review_web.py; source denotes primary DOM method. Tiny targets below 4x4 excluded by protocol.",
+  "verified": true,
+  "viewport": {
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1
+  },
+  "title": "",
+  "url": "https://httpbin.org/forms/post"
+}

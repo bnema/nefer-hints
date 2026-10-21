@@ -1,0 +1,50 @@
+[
+  {
+    "format": "onnx",
+    "imgsz": 640,
+    "simplify": false,
+    "status": "ok"
+  },
+  {
+    "format": "onnx",
+    "imgsz": 640,
+    "simplify": true,
+    "status": "ok"
+  },
+  {
+    "format": "ncnn",
+    "imgsz": 640,
+    "error": "ModuleNotFoundError(\"No module named 'ncnn'\")",
+    "workaround": "ultralytics torchscript export + installed pnnx CLI, no Python ncnn binding needed"
+  },
+  {
+    "format": "pnnx",
+    "imgsz": 640,
+    "returncode": 0,
+    "log": "pnnxparam = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.param\npnnxbin = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.bin\npnnxpy = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model_pnnx.py\npnnxonnx = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.onnx\nncnnparam = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.ncnn.param\nncnnbin = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.ncnn.bin\nncnnpy = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model_ncnn.py\nfp16 = 0\noptlevel = 2\ndevice = cpu\ninputshape = [1,3,640,640]f32\ninputshape2 = \ninput = \ninput2 = \ncustomop = \nmoduleop = \nget inputshape from traced inputs\ninputshape = [1,3,640,640]f32\n############# pass_level0\ninline module = torch.nn.modules.linear.Identity\ninline module = ultralytics.nn.modules.block.Attention\ninline module = ultralytics.nn.modules.block.Bottleneck\ninline module = ultralytics.nn.modules.block.C2PSA\ninline module = ultralytics.nn.modules.block.C3k\ninline module = ultralytics.nn.modules.block.C3k2\ninline module = ultralytics.nn.modules.block.DFL\ninline module = ultralytics.nn.modules.block.PSABlock\ninline module = ultralytics.nn.modules.block.SPPF\ninline module = ultralytics.nn.modules.conv.Concat\ninline module = ultralytics.nn.modules.conv.Conv\ninline module = ultralytics.nn.modules.conv.DWConv\ninline module = ultralytics.nn.modules.head.Detect\ninline module = torch.nn.modules.linear.Identity\ninline module = ultralytics.nn.modules.block.Attention\ninline module = ultralytics.nn.modules.block.Bottleneck\ninline module = ultralytics.nn.modules.block.C2PSA\ninline module = ultralytics.nn.modules.block.C3k\ninline module = ultralytics.nn.modules.block.C3k2\ninline module = ultralytics.nn.modules.block.DFL\ninline module = ultralytics.nn.modules.block.PSABlock\ninline module = ultralytics.nn.modules.block.SPPF\ninline module = ultralytics.nn.modules.conv.Concat\ninline module = ultralytics.nn.modules.conv.Conv\ninline module = ultralytics.nn.modules.conv.DWConv\ninline module = ultralytics.nn.modules.head.Detect\n\n----------------\n\n############# pass_level1\n############# pass_level2\n############# pass_level3\n############# pass_level4\n############# pass_level5\n############# pass_ncnn\nmodel inputshape = [1,3,640,640]f32\nFLOPS = 68.252G\nmemory OPS = 398.544M\n"
+  },
+  {
+    "format": "onnx",
+    "imgsz": 1280,
+    "simplify": false,
+    "status": "ok"
+  },
+  {
+    "format": "onnx",
+    "imgsz": 1280,
+    "simplify": true,
+    "status": "ok"
+  },
+  {
+    "format": "ncnn",
+    "imgsz": 1280,
+    "error": "ModuleNotFoundError(\"No module named 'ncnn'\")",
+    "workaround": "ultralytics torchscript export + installed pnnx CLI, no Python ncnn binding needed"
+  },
+  {
+    "format": "pnnx",
+    "imgsz": 1280,
+    "returncode": 0,
+    "log": "pnnxparam = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.param\npnnxbin = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.bin\npnnxpy = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model_pnnx.py\npnnxonnx = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.pnnx.onnx\nncnnparam = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.ncnn.param\nncnnbin = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.ncnn.bin\nncnnpy = $HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model_ncnn.py\nfp16 = 0\noptlevel = 2\ndevice = cpu\ninputshape = [1,3,1280,1280]f32\ninputshape2 = \ninput = \ninput2 = \ncustomop = \nmoduleop = \nget inputshape from traced inputs\ninputshape = [1,3,1280,1280]f32\n############# pass_level0\ninline module = torch.nn.modules.linear.Identity\ninline module = ultralytics.nn.modules.block.Attention\ninline module = ultralytics.nn.modules.block.Bottleneck\ninline module = ultralytics.nn.modules.block.C2PSA\ninline module = ultralytics.nn.modules.block.C3k\ninline module = ultralytics.nn.modules.block.C3k2\ninline module = ultralytics.nn.modules.block.DFL\ninline module = ultralytics.nn.modules.block.PSABlock\ninline module = ultralytics.nn.modules.block.SPPF\ninline module = ultralytics.nn.modules.conv.Concat\ninline module = ultralytics.nn.modules.conv.Conv\ninline module = ultralytics.nn.modules.conv.DWConv\ninline module = ultralytics.nn.modules.head.Detect\ninline module = torch.nn.modules.linear.Identity\ninline module = ultralytics.nn.modules.block.Attention\ninline module = ultralytics.nn.modules.block.Bottleneck\ninline module = ultralytics.nn.modules.block.C2PSA\ninline module = ultralytics.nn.modules.block.C3k\ninline module = ultralytics.nn.modules.block.C3k2\ninline module = ultralytics.nn.modules.block.DFL\ninline module = ultralytics.nn.modules.block.PSABlock\ninline module = ultralytics.nn.modules.block.SPPF\ninline module = ultralytics.nn.modules.conv.Concat\ninline module = ultralytics.nn.modules.conv.Conv\ninline module = ultralytics.nn.modules.conv.DWConv\ninline module = ultralytics.nn.modules.head.Detect\n\n----------------\n\n############# pass_level1\n############# pass_level2\n############# pass_level3\n############# pass_level4\n############# pass_level5\n############# pass_ncnn\nmodel inputshape = [1,3,1280,1280]f32\nFLOPS = 274.521G\nmemory OPS = 1.565G\n"
+  }
+]

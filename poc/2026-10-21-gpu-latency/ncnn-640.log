@@ -1,0 +1,10 @@
+WARNING: radv is not a conformant Vulkan implementation, testing use only.
+[0 AMD Radeon RX 9070 XT (RADV GFX1201)]  queueC=1[4]  queueT=0[1]  prefer-slm=1  rebar=1  r-score=85
+[0 AMD Radeon RX 9070 XT (RADV GFX1201)]  fp16-p/s/u/a=1/1/1/1  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/1
+[0 AMD Radeon RX 9070 XT (RADV GFX1201)]  subgroup=64(32~64)  ops=1/1/1/1/1/1/1/1/1/1
+[0 AMD Radeon RX 9070 XT (RADV GFX1201)]  fp16-cm=16x16x16  int8-cm=16x16x16  bf16-cm=16x16x16  fp8-cm=16x16x16  fp6-cm=0  fp4-cm=0
+[1 AMD Ryzen 9 7900X3D 12-Core Processor (RADV RAPHAEL_MENDOCINO)]  queueC=1[4]  queueT=0[1]  prefer-slm=0  rebar=1  r-score=11
+[1 AMD Ryzen 9 7900X3D 12-Core Processor (RADV RAPHAEL_MENDOCINO)]  fp16-p/s/u/a=1/1/1/1  int8-p/s/u/a=1/1/1/1  bf16-p/s=1/0
+[1 AMD Ryzen 9 7900X3D 12-Core Processor (RADV RAPHAEL_MENDOCINO)]  subgroup=64(32~64)  ops=1/1/1/1/1/1/1/1/1/1
+[1 AMD Ryzen 9 7900X3D 12-Core Processor (RADV RAPHAEL_MENDOCINO)]  fp16-cm=0  int8-cm=0  bf16-cm=0  fp8-cm=0  fp6-cm=0  fp4-cm=0
+ncnn GPU 0: AMD Radeon RX 9070 XT (RADV GFX1201)

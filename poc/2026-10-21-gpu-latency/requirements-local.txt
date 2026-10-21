@@ -1,0 +1,7 @@
+onnxslim==0.1.98
+opencv-python==5.0.0.93
+pnnx==20261020
+polars==2.0.0
+polars-runtime-32==2.0.0
+ultralytics==8.4.183
+ultralytics-thop==2.2.3

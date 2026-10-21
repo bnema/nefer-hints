@@ -1,0 +1,3 @@
+[0;93m2026-10-21 14:25:34.594165484 [W:onnxruntime:Default, migraphx_execution_provider.cc:167 MIGraphXExecutionProvider] [MIGraphX EP] MIGraphX ENV Override Variables Set:[m
+[0;93m2026-10-21 14:25:34.936798687 [W:onnxruntime:Default, migraphx_execution_provider.cc:1270 compile_program] Model Compile: Begin[m
+[0;93m2026-10-21 14:27:04.907465151 [W:onnxruntime:Default, migraphx_execution_provider.cc:1275 compile_program] Model Compile: Complete[m

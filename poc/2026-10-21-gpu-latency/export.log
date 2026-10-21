@@ -1,0 +1,100 @@
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 5, 8400) (38.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.22.0 opset 17...
+[34m[1mONNX:[0m export success ✅ 0.4s, saved as 'weights/model.onnx' (76.7 MB)
+
+Export complete (0.7s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640 
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=640  
+Visualize:       https://netron.app
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 5, 8400) (38.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.22.0 opset 17...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.98...
+[34m[1mONNX:[0m export success ✅ 1.1s, saved as 'weights/model.onnx' (76.7 MB)
+
+Export complete (1.3s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=640 
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=640  
+Visualize:       https://netron.app
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 5, 8400) (38.7 MB)
+WARNING ⚠️ [31m[1mrequirements:[0m Ultralytics requirement ['ncnn'] not found, AutoUpdate disabled by YOLO_AUTOINSTALL=False
+WARNING ⚠️ [31m[1mrequirements:[0m Ultralytics requirement ['pnnx==20260526'] not found, AutoUpdate disabled by YOLO_AUTOINSTALL=False
+ERROR ❌ [34m[1mNCNN:[0m export failure 0.0s: No module named 'ncnn'
+Export to NCNN in the cloud with Ultralytics Platform: https://platform.ultralytics.com
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 67.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 5, 8400) (38.7 MB)
+
+[34m[1mTorchScript:[0m starting export with torch 2.14.1...
+/usr/lib/python3.14/site-packages/torch/jit/_trace.py:1000: FutureWarning: `torch.jit.trace` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/usr/lib/python3.14/site-packages/torch/jit/_trace.py:1139: FutureWarning: `torch.jit.trace_method` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[34m[1mTorchScript:[0m export success ✅ 0.4s, saved as 'weights/model.torchscript' (77.0 MB)
+
+Export complete (0.6s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.torchscript[0m
+Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=640 
+Validate:        yolo val task=detect model=weights/model.torchscript imgsz=640  
+Visualize:       https://netron.app
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 1280, 1280) BCHW and output shape(s) (1, 5, 33600) (38.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.22.0 opset 17...
+[34m[1mONNX:[0m export success ✅ 0.8s, saved as 'weights/model.onnx' (77.1 MB)
+
+Export complete (1.3s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280 
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280  
+Visualize:       https://netron.app
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 1280, 1280) BCHW and output shape(s) (1, 5, 33600) (38.7 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.22.0 opset 17...
+[34m[1mONNX:[0m slimming with onnxslim 0.1.98...
+[34m[1mONNX:[0m export success ✅ 1.4s, saved as 'weights/model.onnx' (77.2 MB)
+
+Export complete (1.9s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.onnx[0m
+Predict:         yolo predict task=detect model=weights/model.onnx imgsz=1280 
+Validate:        yolo val task=detect model=weights/model.onnx imgsz=1280  
+Visualize:       https://netron.app
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 1280, 1280) BCHW and output shape(s) (1, 5, 33600) (38.7 MB)
+WARNING ⚠️ [31m[1mrequirements:[0m Ultralytics requirement ['ncnn'] not found, AutoUpdate disabled by YOLO_AUTOINSTALL=False
+WARNING ⚠️ [31m[1mrequirements:[0m Ultralytics requirement ['pnnx==20260526'] not found, AutoUpdate disabled by YOLO_AUTOINSTALL=False
+ERROR ❌ [34m[1mNCNN:[0m export failure 0.0s: No module named 'ncnn'
+Export to NCNN in the cloud with Ultralytics Platform: https://platform.ultralytics.com
+Ultralytics 8.4.183 🚀 Python-3.14.8 torch-2.14.1 CPU (AMD Ryzen 9 7900X3D 12-Core Processor)
+YOLO11m summary (fused): 125 layers, 20,030,803 parameters, 0 gradients, 272.5 GFLOPs
+
+[34m[1mPyTorch:[0m starting from 'weights/model.pt' with input shape (1, 3, 1280, 1280) BCHW and output shape(s) (1, 5, 33600) (38.7 MB)
+
+[34m[1mTorchScript:[0m starting export with torch 2.14.1...
+[34m[1mTorchScript:[0m export success ✅ 0.8s, saved as 'weights/model.torchscript' (77.3 MB)
+
+Export complete (1.3s)
+Results saved to [1m$HOME/dev/projects/nefer-hints/.worktrees/gpu-latency/weights/model.torchscript[0m
+Predict:         yolo predict task=detect model=weights/model.torchscript imgsz=1280 
+Validate:        yolo val task=detect model=weights/model.torchscript imgsz=1280  
+Visualize:       https://netron.app

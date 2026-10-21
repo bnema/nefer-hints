@@ -10,3 +10,6 @@ weights/
 *.bin
 yolo-config/
 .worktrees/
+data/
+runs/
+models-ft/

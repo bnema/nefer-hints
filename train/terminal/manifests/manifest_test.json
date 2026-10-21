@@ -1,0 +1,1312 @@
+[
+ {
+  "id": "test_0000",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 2,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 46
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "solar-light",
+    "links": 2,
+    "status": true,
+    "cols": 94,
+    "rows": 46
+   }
+  ]
+ },
+ {
+  "id": "test_0001",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 41
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 3,
+    "status": true,
+    "cols": 79,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "test_0002",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 16,
+  "expected_links": 12,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 5,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 86,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "paper",
+    "links": 1,
+    "status": true,
+    "cols": 51,
+    "rows": 26
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 1,
+    "status": true,
+    "cols": 39,
+    "rows": 19
+   }
+  ]
+ },
+ {
+  "id": "test_0003",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": true,
+    "cols": 190,
+    "rows": 46
+   }
+  ]
+ },
+ {
+  "id": "test_0004",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 126,
+    "rows": 67
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 126,
+    "rows": 61
+   }
+  ]
+ },
+ {
+  "id": "test_0005",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 2,
+    "status": true,
+    "cols": 72,
+    "rows": 38
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 1,
+    "status": true,
+    "cols": 105,
+    "rows": 50
+   }
+  ]
+ },
+ {
+  "id": "test_0006",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 7,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 1,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 72,
+    "rows": 38
+   }
+  ]
+ },
+ {
+  "id": "test_0007",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 4,
+    "status": true,
+    "cols": 173,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "test_0008",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 10,
+  "expected_links": 9,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 4,
+    "status": true,
+    "cols": 105,
+    "rows": 54
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 126,
+    "rows": 64
+   }
+  ]
+ },
+ {
+  "id": "test_0009",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 173,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "test_0010",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 1,
+  "expected_links": 1,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "warm-dark",
+    "links": 1,
+    "status": true,
+    "cols": 146,
+    "rows": 38
+   }
+  ]
+ },
+ {
+  "id": "test_0011",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 11,
+  "expected_links": 10,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "warm-dark",
+    "links": 5,
+    "status": true,
+    "cols": 94,
+    "rows": 46
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "test_0012",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 10,
+  "expected_links": 10,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": true,
+    "cols": 72,
+    "rows": 38
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "paper",
+    "links": 3,
+    "status": true,
+    "cols": 104,
+    "rows": 26
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "night",
+    "links": 3,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 1,
+    "status": true,
+    "cols": 36,
+    "rows": 18
+   }
+  ]
+ },
+ {
+  "id": "test_0013",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 94,
+    "rows": 24
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 52,
+    "rows": 25
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "test_0014",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 105,
+    "rows": 50
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 0,
+    "status": false,
+    "cols": 79,
+    "rows": 19
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 35,
+    "rows": 18
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 39,
+    "rows": 19
+   }
+  ]
+ },
+ {
+  "id": "test_0015",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 72,
+    "rows": 38
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 78,
+    "rows": 40
+   }
+  ]
+ },
+ {
+  "id": "test_0016",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 212,
+    "rows": 54
+   }
+  ]
+ },
+ {
+  "id": "test_0017",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 40
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 79,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "test_0018",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "paper",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 72,
+    "rows": 38
+   }
+  ]
+ },
+ {
+  "id": "test_0019",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 231,
+    "rows": 56
+   }
+  ]
+ },
+ {
+  "id": "test_0020",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 173,
+    "rows": 42
+   }
+  ]
+ },
+ {
+  "id": "test_0021",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 0,
+    "status": false,
+    "cols": 159,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "test_0022",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 78,
+    "rows": 40
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 48
+   }
+  ]
+ },
+ {
+  "id": "test_0023",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 72,
+    "rows": 38
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 20
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 79,
+    "rows": 19
+   }
+  ]
+ },
+ {
+  "id": "test_0024",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 40
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 0,
+    "status": false,
+    "cols": 118,
+    "rows": 29
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": true,
+    "cols": 72,
+    "rows": 18
+   }
+  ]
+ },
+ {
+  "id": "test_0025",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 146,
+    "rows": 38
+   }
+  ]
+ },
+ {
+  "id": "test_0026",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "night",
+    "links": 4,
+    "status": true,
+    "cols": 86,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "test_0027",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 22
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "paper",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 24
+   }
+  ]
+ },
+ {
+  "id": "test_0028",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 5,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "night",
+    "links": 4,
+    "status": true,
+    "cols": 126,
+    "rows": 64
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": false,
+    "cols": 126,
+    "rows": 32
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "solar-light",
+    "links": 0,
+    "status": false,
+    "cols": 97,
+    "rows": 25
+   }
+  ]
+ },
+ {
+  "id": "test_0029",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 15,
+  "expected_links": 12,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "warm-dark",
+    "links": 3,
+    "status": false,
+    "cols": 140,
+    "rows": 68
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 140,
+    "rows": 33
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "night",
+    "links": 3,
+    "status": true,
+    "cols": 69,
+    "rows": 35
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 6,
+    "status": true,
+    "cols": 78,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "test_0030",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 7,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 0,
+    "status": false,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 6,
+    "status": false,
+    "cols": 86,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "test_0031",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 1,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 1,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 22
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 22
+   }
+  ]
+ },
+ {
+  "id": "test_0032",
+  "split": "test",
+  "size": "2560x1440",
+  "boxes": 6,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 6,
+    "status": true,
+    "cols": 318,
+    "rows": 79
+   }
+  ]
+ },
+ {
+  "id": "test_0033",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 3,
+  "expected_links": 2,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": false,
+    "cols": 190,
+    "rows": 48
+   }
+  ]
+ },
+ {
+  "id": "test_0034",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 7,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 6,
+    "status": true,
+    "cols": 238,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "test_0035",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 9,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 3,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 3,
+    "status": true,
+    "cols": 105,
+    "rows": 25
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 2,
+    "status": true,
+    "cols": 105,
+    "rows": 25
+   }
+  ]
+ },
+ {
+  "id": "test_0036",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 17,
+  "expected_links": 10,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 4,
+    "status": false,
+    "cols": 79,
+    "rows": 39
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 20
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 1,
+    "status": false,
+    "cols": 36,
+    "rows": 18
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 36,
+    "rows": 18
+   }
+  ]
+ },
+ {
+  "id": "test_0037",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 8,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 4,
+    "status": false,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 4,
+    "status": true,
+    "cols": 78,
+    "rows": 40
+   }
+  ]
+ },
+ {
+  "id": "test_0038",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 12,
+  "expected_links": 10,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 5,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 16,
+    "theme": "solar-dark",
+    "links": 4,
+    "status": true,
+    "cols": 72,
+    "rows": 18
+   },
+   {
+    "term": "kitty",
+    "font": "IBM Plex Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 1,
+    "status": true,
+    "cols": 104,
+    "rows": 26
+   }
+  ]
+ },
+ {
+  "id": "test_0039",
+  "split": "test",
+  "size": "1920x1080",
+  "boxes": 9,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "IBM Plex Mono",
+    "pt": 13,
+    "theme": "solar-light",
+    "links": 5,
+    "status": false,
+    "cols": 94,
+    "rows": 46
+   },
+   {
+    "term": "foot",
+    "font": "IBM Plex Mono",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": true,
+    "cols": 86,
+    "rows": 41
+   }
+  ]
+ }
+]

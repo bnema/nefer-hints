@@ -1,0 +1,2122 @@
+[
+ {
+  "id": "val_0000",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 4,
+    "status": true,
+    "cols": 86,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "val_0001",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 20,
+  "expected_links": 15,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 5,
+    "status": true,
+    "cols": 86,
+    "rows": 48
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 14,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 86,
+    "rows": 22
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 36,
+    "rows": 19
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": false,
+    "cols": 36,
+    "rows": 20
+   }
+  ]
+ },
+ {
+  "id": "val_0002",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "mono-dark",
+    "links": 4,
+    "status": false,
+    "cols": 190,
+    "rows": 56
+   }
+  ]
+ },
+ {
+  "id": "val_0003",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 8,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 86,
+    "rows": 44
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 11,
+    "theme": "solar-light",
+    "links": 2,
+    "status": false,
+    "cols": 105,
+    "rows": 27
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "solar-dark",
+    "links": 1,
+    "status": false,
+    "cols": 46,
+    "rows": 27
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": true,
+    "cols": 52,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0004",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 8,
+  "expected_links": 7,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 5,
+    "status": true,
+    "cols": 105,
+    "rows": 53
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 2,
+    "status": true,
+    "cols": 86,
+    "rows": 46
+   }
+  ]
+ },
+ {
+  "id": "val_0005",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 4,
+    "status": true,
+    "cols": 158,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "val_0006",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 85,
+    "rows": 48
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 24
+   },
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": true,
+    "cols": 52,
+    "rows": 26
+   },
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 42,
+    "rows": 22
+   }
+  ]
+ },
+ {
+  "id": "val_0007",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "solar-dark",
+    "links": 6,
+    "status": true,
+    "cols": 79,
+    "rows": 44
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 11,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 104,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "val_0008",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 15,
+  "expected_links": 12,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 3,
+    "status": true,
+    "cols": 79,
+    "rows": 41
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 6,
+    "status": false,
+    "cols": 94,
+    "rows": 27
+   },
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 3,
+    "status": true,
+    "cols": 94,
+    "rows": 24
+   }
+  ]
+ },
+ {
+  "id": "val_0009",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 18,
+  "expected_links": 16,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 4,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 2,
+    "status": false,
+    "cols": 118,
+    "rows": 29
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 5,
+    "status": true,
+    "cols": 58,
+    "rows": 31
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 46,
+    "rows": 27
+   }
+  ]
+ },
+ {
+  "id": "val_0010",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 2,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "paper",
+    "links": 2,
+    "status": false,
+    "cols": 190,
+    "rows": 48
+   }
+  ]
+ },
+ {
+  "id": "val_0011",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 16,
+  "expected_links": 14,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "solar-dark",
+    "links": 4,
+    "status": true,
+    "cols": 94,
+    "rows": 56
+   },
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 78,
+    "rows": 19
+   },
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 1,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 4,
+    "status": false,
+    "cols": 39,
+    "rows": 20
+   }
+  ]
+ },
+ {
+  "id": "val_0012",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 14,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 85,
+    "rows": 46
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": true,
+    "cols": 94,
+    "rows": 27
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 46,
+    "rows": 24
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 2,
+    "status": true,
+    "cols": 46,
+    "rows": 24
+   }
+  ]
+ },
+ {
+  "id": "val_0013",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 10,
+  "expected_links": 9,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 14,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 44
+   },
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 12,
+    "theme": "night",
+    "links": 4,
+    "status": true,
+    "cols": 94,
+    "rows": 23
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 16,
+    "theme": "paper",
+    "links": 5,
+    "status": false,
+    "cols": 72,
+    "rows": 18
+   }
+  ]
+ },
+ {
+  "id": "val_0014",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 3,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "paper",
+    "links": 3,
+    "status": false,
+    "cols": 238,
+    "rows": 62
+   }
+  ]
+ },
+ {
+  "id": "val_0015",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 1,
+  "expected_links": 1,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 46
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 11,
+    "theme": "solar-dark",
+    "links": 1,
+    "status": false,
+    "cols": 105,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "val_0016",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 17,
+  "expected_links": 15,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 14,
+    "theme": "mono-dark",
+    "links": 6,
+    "status": true,
+    "cols": 86,
+    "rows": 41
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": true,
+    "cols": 79,
+    "rows": 22
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 6,
+    "status": true,
+    "cols": 94,
+    "rows": 27
+   }
+  ]
+ },
+ {
+  "id": "val_0017",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 3,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 3,
+    "status": false,
+    "cols": 158,
+    "rows": 42
+   }
+  ]
+ },
+ {
+  "id": "val_0018",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 13,
+  "expected_links": 11,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "paper",
+    "links": 5,
+    "status": true,
+    "cols": 94,
+    "rows": 50
+   },
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": false,
+    "cols": 85,
+    "rows": 23
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "night",
+    "links": 2,
+    "status": true,
+    "cols": 58,
+    "rows": 32
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 1,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0019",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 10,
+  "expected_links": 9,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 10,
+    "theme": "night",
+    "links": 4,
+    "status": false,
+    "cols": 118,
+    "rows": 62
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 86,
+    "rows": 20
+   },
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 11,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 105,
+    "rows": 27
+   }
+  ]
+ },
+ {
+  "id": "val_0020",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 9,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "night",
+    "links": 6,
+    "status": true,
+    "cols": 126,
+    "rows": 74
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": false,
+    "cols": 126,
+    "rows": 32
+   },
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 0,
+    "status": false,
+    "cols": 105,
+    "rows": 26
+   }
+  ]
+ },
+ {
+  "id": "val_0021",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 10,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": true,
+    "cols": 105,
+    "rows": 56
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 24
+   },
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 3,
+    "status": true,
+    "cols": 38,
+    "rows": 20
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0022",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 17,
+  "expected_links": 14,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 11,
+    "theme": "solar-light",
+    "links": 6,
+    "status": true,
+    "cols": 104,
+    "rows": 53
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "paper",
+    "links": 3,
+    "status": false,
+    "cols": 94,
+    "rows": 24
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "solar-dark",
+    "links": 5,
+    "status": true,
+    "cols": 35,
+    "rows": 20
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 11,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 52,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0023",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 14,
+    "theme": "solar-light",
+    "links": 0,
+    "status": false,
+    "cols": 115,
+    "rows": 59
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 158,
+    "rows": 89
+   }
+  ]
+ },
+ {
+  "id": "val_0024",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 6,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 13,
+    "theme": "warm-dark",
+    "links": 1,
+    "status": false,
+    "cols": 126,
+    "rows": 67
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "paper",
+    "links": 4,
+    "status": true,
+    "cols": 97,
+    "rows": 56
+   }
+  ]
+ },
+ {
+  "id": "val_0025",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 1,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "paper",
+    "links": 1,
+    "status": false,
+    "cols": 146,
+    "rows": 42
+   }
+  ]
+ },
+ {
+  "id": "val_0026",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 15,
+  "expected_links": 12,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "night",
+    "links": 3,
+    "status": false,
+    "cols": 72,
+    "rows": 41
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 6,
+    "status": true,
+    "cols": 72,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 3,
+    "status": false,
+    "cols": 118,
+    "rows": 32
+   }
+  ]
+ },
+ {
+  "id": "val_0027",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 7,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 5,
+    "status": true,
+    "cols": 118,
+    "rows": 62
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 1,
+    "status": false,
+    "cols": 79,
+    "rows": 39
+   }
+  ]
+ },
+ {
+  "id": "val_0028",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 13,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": false,
+    "cols": 94,
+    "rows": 44
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": true,
+    "cols": 79,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0029",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "paper",
+    "links": 4,
+    "status": false,
+    "cols": 86,
+    "rows": 46
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 118,
+    "rows": 62
+   }
+  ]
+ },
+ {
+  "id": "val_0030",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 42
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 3,
+    "status": true,
+    "cols": 94,
+    "rows": 24
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 13,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 22
+   }
+  ]
+ },
+ {
+  "id": "val_0031",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 3,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "paper",
+    "links": 3,
+    "status": true,
+    "cols": 318,
+    "rows": 84
+   }
+  ]
+ },
+ {
+  "id": "val_0032",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 78,
+    "rows": 39
+   },
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": true,
+    "cols": 94,
+    "rows": 46
+   }
+  ]
+ },
+ {
+  "id": "val_0033",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 18,
+  "expected_links": 14,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 11,
+    "theme": "paper",
+    "links": 5,
+    "status": false,
+    "cols": 105,
+    "rows": 53
+   },
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 13,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 85,
+    "rows": 23
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 4,
+    "status": true,
+    "cols": 42,
+    "rows": 22
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 5,
+    "status": true,
+    "cols": 36,
+    "rows": 19
+   }
+  ]
+ },
+ {
+  "id": "val_0034",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 14,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 231,
+    "rows": 61
+   }
+  ]
+ },
+ {
+  "id": "val_0035",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 6,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": true,
+    "cols": 94,
+    "rows": 56
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 11,
+    "theme": "paper",
+    "links": 4,
+    "status": true,
+    "cols": 105,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "val_0036",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 7,
+  "expected_links": 6,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 6,
+    "status": false,
+    "cols": 159,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0037",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "warm-dark",
+    "links": 5,
+    "status": false,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": false,
+    "cols": 72,
+    "rows": 36
+   }
+  ]
+ },
+ {
+  "id": "val_0038",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 16,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": true,
+    "cols": 72,
+    "rows": 41
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 1,
+    "status": true,
+    "cols": 94,
+    "rows": 50
+   }
+  ]
+ },
+ {
+  "id": "val_0039",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": true,
+    "cols": 190,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0040",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 3,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 44
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 3,
+    "status": true,
+    "cols": 94,
+    "rows": 50
+   }
+  ]
+ },
+ {
+  "id": "val_0041",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 3,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 13,
+    "theme": "solar-light",
+    "links": 3,
+    "status": true,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 10,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": true,
+    "cols": 118,
+    "rows": 62
+   }
+  ]
+ },
+ {
+  "id": "val_0042",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 4,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 2,
+    "status": false,
+    "cols": 94,
+    "rows": 56
+   },
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 2,
+    "status": false,
+    "cols": 78,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 16,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 35,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": false,
+    "cols": 46,
+    "rows": 27
+   }
+  ]
+ },
+ {
+  "id": "val_0043",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 48
+   },
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": false,
+    "cols": 72,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "val_0044",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 46
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 16,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 72,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 10,
+    "theme": "night",
+    "links": 3,
+    "status": false,
+    "cols": 58,
+    "rows": 30
+   },
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 0,
+    "status": true,
+    "cols": 58,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0045",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 11,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 212,
+    "rows": 59
+   }
+  ]
+ },
+ {
+  "id": "val_0046",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 159,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0047",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 12,
+  "expected_links": 10,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 13,
+    "theme": "solar-dark",
+    "links": 6,
+    "status": true,
+    "cols": 85,
+    "rows": 48
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 94,
+    "rows": 27
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "solar-dark",
+    "links": 4,
+    "status": true,
+    "cols": 94,
+    "rows": 27
+   }
+  ]
+ },
+ {
+  "id": "val_0048",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 8,
+  "expected_links": 7,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "paper",
+    "links": 5,
+    "status": false,
+    "cols": 94,
+    "rows": 56
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": true,
+    "cols": 86,
+    "rows": 22
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": true,
+    "cols": 79,
+    "rows": 22
+   }
+  ]
+ },
+ {
+  "id": "val_0049",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 2,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": true,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0050",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 5,
+  "expected_links": 5,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": true,
+    "cols": 159,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0051",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 158,
+    "rows": 44
+   }
+  ]
+ },
+ {
+  "id": "val_0052",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 11,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 11,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": false,
+    "cols": 140,
+    "rows": 71
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 11,
+    "theme": "paper",
+    "links": 3,
+    "status": true,
+    "cols": 140,
+    "rows": 79
+   }
+  ]
+ },
+ {
+  "id": "val_0053",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 9,
+  "expected_links": 9,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": false,
+    "cols": 118,
+    "rows": 59
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 16,
+    "theme": "night",
+    "links": 3,
+    "status": false,
+    "cols": 72,
+    "rows": 20
+   },
+   {
+    "term": "kitty",
+    "font": "JetBrains Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 6,
+    "status": true,
+    "cols": 118,
+    "rows": 29
+   }
+  ]
+ },
+ {
+  "id": "val_0054",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 2,
+  "expected_links": 2,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 13,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": true,
+    "cols": 94,
+    "rows": 44
+   },
+   {
+    "term": "alacritty",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 12,
+    "theme": "mono-dark",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 53
+   }
+  ]
+ },
+ {
+  "id": "val_0055",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 0,
+  "expected_links": 0,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": false,
+    "cols": 190,
+    "rows": 48
+   }
+  ]
+ },
+ {
+  "id": "val_0056",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 9,
+  "expected_links": 8,
+  "outside_px": 0,
+  "status": false,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 16,
+    "theme": "mono-dark",
+    "links": 5,
+    "status": false,
+    "cols": 97,
+    "rows": 56
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "solar-dark",
+    "links": 0,
+    "status": false,
+    "cols": 115,
+    "rows": 30
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 12,
+    "theme": "solar-dark",
+    "links": 3,
+    "status": false,
+    "cols": 126,
+    "rows": 37
+   }
+  ]
+ },
+ {
+  "id": "val_0057",
+  "split": "val",
+  "size": "2560x1440",
+  "boxes": 17,
+  "expected_links": 13,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 12,
+    "theme": "solar-light",
+    "links": 6,
+    "status": true,
+    "cols": 126,
+    "rows": 71
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "paper",
+    "links": 1,
+    "status": true,
+    "cols": 158,
+    "rows": 39
+   },
+   {
+    "term": "alacritty",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "warm-dark",
+    "links": 6,
+    "status": true,
+    "cols": 52,
+    "rows": 29
+   },
+   {
+    "term": "foot",
+    "font": "DejaVu Sans Mono",
+    "pt": 10,
+    "theme": "night",
+    "links": 0,
+    "status": false,
+    "cols": 78,
+    "rows": 41
+   }
+  ]
+ },
+ {
+  "id": "val_0058",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 12,
+  "expected_links": 9,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 15,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 78,
+    "rows": 44
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 10,
+    "theme": "solar-light",
+    "links": 4,
+    "status": true,
+    "cols": 118,
+    "rows": 29
+   },
+   {
+    "term": "foot",
+    "font": "JetBrains Mono",
+    "pt": 15,
+    "theme": "paper",
+    "links": 5,
+    "status": true,
+    "cols": 39,
+    "rows": 19
+   },
+   {
+    "term": "alacritty",
+    "font": "JetBrains Mono",
+    "pt": 12,
+    "theme": "night",
+    "links": 0,
+    "status": true,
+    "cols": 46,
+    "rows": 24
+   }
+  ]
+ },
+ {
+  "id": "val_0059",
+  "split": "val",
+  "size": "1920x1080",
+  "boxes": 4,
+  "expected_links": 3,
+  "outside_px": 0,
+  "status": true,
+  "wins": [
+   {
+    "term": "foot",
+    "font": "Hack",
+    "pt": 12,
+    "theme": "warm-dark",
+    "links": 0,
+    "status": true,
+    "cols": 94,
+    "rows": 56
+   },
+   {
+    "term": "kitty",
+    "font": "Hack",
+    "pt": 14,
+    "theme": "warm-dark",
+    "links": 1,
+    "status": true,
+    "cols": 85,
+    "rows": 23
+   },
+   {
+    "term": "foot",
+    "font": "FiraCode Nerd Font Mono",
+    "pt": 13,
+    "theme": "solar-light",
+    "links": 0,
+    "status": true,
+    "cols": 42,
+    "rows": 24
+   },
+   {
+    "term": "alacritty",
+    "font": "DejaVu Sans Mono",
+    "pt": 15,
+    "theme": "mono-dark",
+    "links": 2,
+    "status": false,
+    "cols": 39,
+    "rows": 22
+   }
+  ]
+ }
+]

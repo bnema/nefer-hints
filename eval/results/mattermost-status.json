@@ -1,0 +1,8 @@
+{
+  "status": "capture failed; no verified scenes",
+  "image": "mattermost/mattermost-preview@sha256:851453906169c1aa7ef8ad7a3892c8ffc88bd506de181ad9f29d6f135d39e477",
+  "seed": "5 fictional users, team, 4 channels, 32 posts plus 16 replies and 8 reactions; API succeeded",
+  "initial_error": "403 api.user.create_user.no_open_server; fixed using MM_TEAMSETTINGS_ENABLEOPENSERVER=true",
+  "capture_error": "CDP Runtime.evaluate login navigation returned no value; KeyError value for all 3 scenes",
+  "cleanup": "docker rm -f nh-eval-mattermost completed"
+}

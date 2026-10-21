@@ -53,6 +53,17 @@ def main():
     call('Emulation.setEmulatedMedia',{'features':[{'name':'prefers-color-scheme','value':'dark' if name.endswith('-dark') else 'light'}]})
     call('Emulation.setAutoDarkModeOverride',{'enabled':name.endswith('-dark')})
     call('Page.navigate',{'url':url});time.sleep(10)
+    if category=='mattermost':
+     evaluate("fetch('/api/v4/users/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({login_id:'blair',password:'Fictional-Eval-Only-2026!'})}).then(()=>location.href='/fictional-demo/channels/planning')")
+     time.sleep(12)
+     # Dismiss introductory overlays where present, without accessing any real account.
+     evaluate("[...document.querySelectorAll('button')].filter(e=>/^(Skip|Later|No thanks|Got it|Close)$/.test(e.innerText.trim())).forEach(e=>e.click())")
+     time.sleep(2)
+     if name=='mattermost-thread':
+      evaluate("[...document.querySelectorAll('button')].find(e=>/repl|thread/i.test(e.innerText+' '+e.getAttribute('aria-label')))?.click()")
+     if name=='mattermost-switcher':
+      os.write(fd,b'key Ctrl+k\\nsleep 1s\\n')
+     time.sleep(2)
     # Freeze layout between DOM extraction and compositor capture.
     evaluate("document.querySelectorAll('video,audio').forEach(e=>e.pause()); document.documentElement.style.scrollBehavior='auto';")
     gt=evaluate((ROOT/'dom.js').read_text())

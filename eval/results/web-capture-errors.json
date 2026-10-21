@@ -1,7 +1,5 @@
 {
-  "reddit": "Blocked: Your request has been blocked due to a network policy. Excluded; Lobsters used.",
-  "news": "Guardian: no visible clickable targets after 10s",
-  "bbc": "BBC: no visible clickable targets after 10s",
-  "forms": "W3Schools: no visible clickable targets after 10s; httpbin and MDN forms substituted",
-  "youtube": "YouTube: no visible clickable targets after 10s; skipped"
+  "mattermost-channel": "'value'",
+  "mattermost-thread": "'value'",
+  "mattermost-switcher": "'value'"
 }

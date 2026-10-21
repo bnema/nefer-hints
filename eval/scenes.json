@@ -50,5 +50,29 @@
   "python-docs": {
     "category": "docs_sidebar",
     "url": "https://docs.python.org/3/tutorial/index.html"
+  },
+  "nautilus": {
+    "category": "native_gtk"
+  },
+  "nautilus-list": {
+    "category": "native_gtk"
+  },
+  "nautilus-context": {
+    "category": "menus"
+  },
+  "nautilus-menu": {
+    "category": "menus"
+  },
+  "thunar": {
+    "category": "native_gtk"
+  },
+  "thunar-menu": {
+    "category": "menus"
+  },
+  "editor": {
+    "category": "native_gtk"
+  },
+  "editor-menu": {
+    "category": "menus"
   }
 }

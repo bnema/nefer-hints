@@ -1,0 +1,51 @@
+{
+  "boxes": [
+    [
+      3,
+      3,
+      81,
+      42
+    ],
+    [
+      88,
+      4,
+      126,
+      42
+    ],
+    [
+      1798,
+      4,
+      1835,
+      42
+    ],
+    [
+      1838,
+      4,
+      1875,
+      42
+    ],
+    [
+      1880,
+      4,
+      1916,
+      42
+    ],
+    [
+      2,
+      48,
+      1917,
+      1078
+    ]
+  ],
+  "kinds": [
+    "icon_button",
+    "icon_button",
+    "icon_button",
+    "icon_button",
+    "icon_button",
+    "field"
+  ],
+  "source": "manual",
+  "notes": "Single annotator; visually inspected original capture. Fictional files only; GIO_USE_VOLUME_MONITOR=unix prevents host volume labels. Disabled controls excluded. Partly occluded underlying targets excluded when centre is covered.",
+  "verified": true
+}

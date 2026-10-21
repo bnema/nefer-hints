@@ -1,0 +1,865 @@
+{
+  "boxes": [
+    [
+      19,
+      14,
+      290,
+      72
+    ],
+    [
+      1040,
+      34,
+      1099,
+      62
+    ],
+    [
+      1135,
+      34,
+      1229,
+      62
+    ],
+    [
+      1268,
+      34,
+      1343,
+      62
+    ],
+    [
+      1383,
+      34,
+      1425,
+      62
+    ],
+    [
+      1466,
+      34,
+      1529,
+      62
+    ],
+    [
+      1570,
+      34,
+      1648,
+      62
+    ],
+    [
+      1689,
+      34,
+      1733,
+      62
+    ],
+    [
+      1773,
+      34,
+      1868,
+      62
+    ],
+    [
+      1013,
+      226,
+      1342,
+      251
+    ],
+    [
+      1274,
+      297,
+      1336,
+      320
+    ],
+    [
+      60,
+      322,
+      154,
+      345
+    ],
+    [
+      519,
+      322,
+      550,
+      345
+    ],
+    [
+      1274,
+      358,
+      1374,
+      380
+    ],
+    [
+      48,
+      486,
+      821,
+      508
+    ],
+    [
+      1067,
+      520,
+      1281,
+      542
+    ],
+    [
+      249,
+      579,
+      300,
+      602
+    ],
+    [
+      284,
+      614,
+      465,
+      638
+    ],
+    [
+      526,
+      614,
+      840,
+      638
+    ],
+    [
+      1146,
+      614,
+      1293,
+      638
+    ],
+    [
+      48,
+      694,
+      558,
+      717
+    ],
+    [
+      48,
+      936,
+      430,
+      960
+    ],
+    [
+      1634,
+      230,
+      1700,
+      254
+    ],
+    [
+      1835,
+      232,
+      1853,
+      252
+    ],
+    [
+      1371,
+      440,
+      1388,
+      459
+    ],
+    [
+      1660,
+      136,
+      1848,
+      168
+    ],
+    [
+      1788,
+      266,
+      1851,
+      290
+    ],
+    [
+      1788,
+      292,
+      1851,
+      316
+    ],
+    [
+      1788,
+      317,
+      1851,
+      341
+    ],
+    [
+      1788,
+      369,
+      1851,
+      393
+    ],
+    [
+      1788,
+      394,
+      1851,
+      418
+    ],
+    [
+      1788,
+      420,
+      1851,
+      444
+    ],
+    [
+      1788,
+      445,
+      1851,
+      469
+    ],
+    [
+      1788,
+      470,
+      1851,
+      494
+    ],
+    [
+      1788,
+      495,
+      1851,
+      519
+    ],
+    [
+      1788,
+      521,
+      1851,
+      545
+    ],
+    [
+      1788,
+      547,
+      1851,
+      571
+    ],
+    [
+      1788,
+      572,
+      1851,
+      596
+    ],
+    [
+      1788,
+      598,
+      1851,
+      622
+    ],
+    [
+      1788,
+      624,
+      1851,
+      648
+    ],
+    [
+      1788,
+      650,
+      1851,
+      674
+    ],
+    [
+      1458,
+      750,
+      1497,
+      774
+    ],
+    [
+      1458,
+      777,
+      1577,
+      801
+    ],
+    [
+      1458,
+      801,
+      1603,
+      825
+    ],
+    [
+      1458,
+      887,
+      1562,
+      911
+    ],
+    [
+      1458,
+      913,
+      1575,
+      937
+    ],
+    [
+      1458,
+      939,
+      1557,
+      963
+    ],
+    [
+      1458,
+      965,
+      1674,
+      989
+    ],
+    [
+      1458,
+      1048,
+      1521,
+      1072
+    ],
+    [
+      1910,
+      0,
+      1920,
+      1080
+    ]
+  ],
+  "elements": [
+    {
+      "box": [
+        19,
+        14,
+        290,
+        72
+      ],
+      "label": "logo",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1040,
+        34,
+        1099,
+        62
+      ],
+      "label": "Home",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1135,
+        34,
+        1229,
+        62
+      ],
+      "label": "Packages",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1268,
+        34,
+        1343,
+        62
+      ],
+      "label": "Forums",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1383,
+        34,
+        1425,
+        62
+      ],
+      "label": "Wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1466,
+        34,
+        1529,
+        62
+      ],
+      "label": "GitLab",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1570,
+        34,
+        1648,
+        62
+      ],
+      "label": "Security",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1689,
+        34,
+        1733,
+        62
+      ],
+      "label": "AUR",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1773,
+        34,
+        1868,
+        62
+      ],
+      "label": "Download",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1013,
+        226,
+        1342,
+        251
+      ],
+      "label": "community repo",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1274,
+        297,
+        1336,
+        320
+      ],
+      "label": "forums",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        60,
+        322,
+        154,
+        345
+      ],
+      "label": "mail lists",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        519,
+        322,
+        550,
+        345
+      ],
+      "label": "wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1274,
+        358,
+        1374,
+        380
+      ],
+      "label": "learn",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        486,
+        821,
+        508
+      ],
+      "label": "news1",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1067,
+        520,
+        1281,
+        542
+      ],
+      "label": "systemd",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        249,
+        579,
+        300,
+        602
+      ],
+      "label": "TPM",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        284,
+        614,
+        465,
+        638
+      ],
+      "label": "cryptenroll",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        526,
+        614,
+        840,
+        638
+      ],
+      "label": "ArchWiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1146,
+        614,
+        1293,
+        638
+      ],
+      "label": "pcrlock",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        694,
+        558,
+        717
+      ],
+      "label": "news2",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        936,
+        430,
+        960
+      ],
+      "label": "news3",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1634,
+        230,
+        1700,
+        254
+      ],
+      "label": "more",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1835,
+        232,
+        1853,
+        252
+      ],
+      "label": "RSS",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1371,
+        440,
+        1388,
+        459
+      ],
+      "label": "RSS",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1660,
+        136,
+        1848,
+        168
+      ],
+      "label": "search",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        266,
+        1851,
+        290
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        292,
+        1851,
+        316
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        317,
+        1851,
+        341
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        369,
+        1851,
+        393
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        394,
+        1851,
+        418
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        420,
+        1851,
+        444
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        445,
+        1851,
+        469
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        470,
+        1851,
+        494
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        495,
+        1851,
+        519
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        521,
+        1851,
+        545
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        547,
+        1851,
+        571
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        572,
+        1851,
+        596
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        598,
+        1851,
+        622
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        624,
+        1851,
+        648
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1788,
+        650,
+        1851,
+        674
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        750,
+        1497,
+        774
+      ],
+      "label": "Wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        777,
+        1577,
+        801
+      ],
+      "label": "Manual",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        801,
+        1603,
+        825
+      ],
+      "label": "Install",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        887,
+        1562,
+        911
+      ],
+      "label": "Mail",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        913,
+        1575,
+        937
+      ],
+      "label": "IRC",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        939,
+        1557,
+        963
+      ],
+      "label": "Planet",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        965,
+        1674,
+        989
+      ],
+      "label": "International",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1458,
+        1048,
+        1521,
+        1072
+      ],
+      "label": "Donate",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1910,
+        0,
+        1920,
+        1080
+      ],
+      "label": "scrollbar",
+      "category": "icons_buttons",
+      "region": "page_content"
+    }
+  ],
+  "notes": [
+    "Single visual annotator; exploratory. Boxes in original 1920x1080 pixels.",
+    "Wrapped Wikipedia X Window link represented by two visible fragments (two actionable regions); partial bottom controls included.",
+    "Disabled-looking back/forward and selected tabs included as ambiguous controls; GTK Paste disabled excluded.",
+    "Menu scenes retain visible background controls: clicking outside dismisses popup; background semantics are ambiguous.",
+    "File icon+label one target; partially visible bottom-row icons included; whitespace excluded.",
+    "HN logged-out upvote arrows included; points and story rank excluded."
+  ],
+  "verified": true
+}

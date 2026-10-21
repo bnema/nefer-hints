@@ -1,0 +1,202 @@
+[
+  {
+    "scene": "dumber-wiki",
+    "prediction": 53,
+    "point": [
+      1521.5514526367188,
+      899.4605712890625
+    ],
+    "match": "fp",
+    "visual_category": "release_date_number"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 58,
+    "point": [
+      597.3492126464844,
+      506.4298095703125
+    ],
+    "match": "fp",
+    "visual_category": "merged_reference_gap"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 79,
+    "point": [
+      1531.4344482421875,
+      844.1511840820312
+    ],
+    "match": "fp",
+    "visual_category": "release_date_number"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 40,
+    "point": [
+      1367.9755249023438,
+      497.6457824707031
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 56,
+    "point": [
+      368.6361083984375,
+      472.74127197265625
+    ],
+    "match": "fp",
+    "visual_category": "code_number"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 67,
+    "point": [
+      340.5202331542969,
+      472.64263916015625
+    ],
+    "match": "fp",
+    "visual_category": "code_number"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 69,
+    "point": [
+      951.54638671875,
+      1074.8990478515625
+    ],
+    "match": "fp",
+    "visual_category": "clipped_link_boundary"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 75,
+    "point": [
+      104.49976539611816,
+      389.61346435546875
+    ],
+    "match": "fp",
+    "visual_category": "heading"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 18,
+    "point": [
+      160.46337890625,
+      950.630126953125
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 19,
+    "point": [
+      166.98805236816406,
+      249.85118103027344
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 21,
+    "point": [
+      160.40319061279297,
+      913.7381286621094
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 23,
+    "point": [
+      163.08236694335938,
+      728.5968933105469
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 25,
+    "point": [
+      165.47422790527344,
+      321.6515808105469
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 26,
+    "point": [
+      159.72975158691406,
+      1062.434814453125
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 30,
+    "point": [
+      162.5345687866211,
+      581.396240234375
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 32,
+    "point": [
+      161.61714935302734,
+      765.7002563476562
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 33,
+    "point": [
+      160.88568115234375,
+      987.5689086914062
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 34,
+    "point": [
+      161.30828857421875,
+      654.6747436523438
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 35,
+    "point": [
+      165.38030242919922,
+      248.2070083618164
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 38,
+    "point": [
+      169.17858123779297,
+      137.33885192871094
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  }
+]

@@ -1,0 +1,1375 @@
+{
+  "boxes": [
+    [
+      0,
+      0,
+      198,
+      42
+    ],
+    [
+      198,
+      10,
+      220,
+      33
+    ],
+    [
+      229,
+      0,
+      421,
+      42
+    ],
+    [
+      423,
+      10,
+      445,
+      33
+    ],
+    [
+      455,
+      10,
+      480,
+      34
+    ],
+    [
+      10,
+      52,
+      34,
+      77
+    ],
+    [
+      46,
+      52,
+      70,
+      77
+    ],
+    [
+      83,
+      52,
+      106,
+      77
+    ],
+    [
+      117,
+      52,
+      142,
+      77
+    ],
+    [
+      268,
+      49,
+      294,
+      80
+    ],
+    [
+      296,
+      49,
+      1590,
+      80
+    ],
+    [
+      1594,
+      51,
+      1619,
+      78
+    ],
+    [
+      1746,
+      50,
+      1805,
+      79
+    ],
+    [
+      1814,
+      50,
+      1839,
+      79
+    ],
+    [
+      1850,
+      50,
+      1875,
+      79
+    ],
+    [
+      1884,
+      49,
+      1915,
+      80
+    ],
+    [
+      1850,
+      9,
+      1877,
+      34
+    ],
+    [
+      1886,
+      9,
+      1911,
+      34
+    ],
+    [
+      16,
+      95,
+      208,
+      135
+    ],
+    [
+      1287,
+      109,
+      1330,
+      129
+    ],
+    [
+      1359,
+      109,
+      1426,
+      129
+    ],
+    [
+      1454,
+      109,
+      1509,
+      129
+    ],
+    [
+      1537,
+      109,
+      1569,
+      129
+    ],
+    [
+      1598,
+      109,
+      1645,
+      129
+    ],
+    [
+      1673,
+      109,
+      1731,
+      129
+    ],
+    [
+      1760,
+      109,
+      1791,
+      129
+    ],
+    [
+      1819,
+      109,
+      1891,
+      129
+    ],
+    [
+      1727,
+      183,
+      1862,
+      207
+    ],
+    [
+      803,
+      249,
+      1054,
+      267
+    ],
+    [
+      981,
+      281,
+      1021,
+      299
+    ],
+    [
+      1053,
+      281,
+      1127,
+      299
+    ],
+    [
+      1406,
+      281,
+      1432,
+      299
+    ],
+    [
+      1448,
+      323,
+      1525,
+      340
+    ],
+    [
+      48,
+      416,
+      620,
+      433
+    ],
+    [
+      784,
+      440,
+      963,
+      458
+    ],
+    [
+      1184,
+      464,
+      1219,
+      482
+    ],
+    [
+      226,
+      488,
+      362,
+      507
+    ],
+    [
+      410,
+      488,
+      648,
+      507
+    ],
+    [
+      873,
+      488,
+      988,
+      507
+    ],
+    [
+      48,
+      545,
+      431,
+      563
+    ],
+    [
+      48,
+      700,
+      305,
+      717
+    ],
+    [
+      48,
+      895,
+      303,
+      912
+    ],
+    [
+      905,
+      919,
+      1078,
+      937
+    ],
+    [
+      89,
+      943,
+      198,
+      961
+    ],
+    [
+      436,
+      967,
+      597,
+      985
+    ],
+    [
+      48,
+      1049,
+      545,
+      1067
+    ],
+    [
+      1713,
+      251,
+      1765,
+      271
+    ],
+    [
+      1852,
+      252,
+      1868,
+      269
+    ],
+    [
+      1521,
+      383,
+      1534,
+      398
+    ],
+    [
+      1818,
+      279,
+      1863,
+      295
+    ],
+    [
+      1818,
+      298,
+      1863,
+      314
+    ],
+    [
+      1818,
+      316,
+      1863,
+      332
+    ],
+    [
+      1818,
+      353,
+      1863,
+      369
+    ],
+    [
+      1818,
+      372,
+      1863,
+      388
+    ],
+    [
+      1818,
+      390,
+      1863,
+      406
+    ],
+    [
+      1818,
+      409,
+      1863,
+      425
+    ],
+    [
+      1818,
+      427,
+      1863,
+      443
+    ],
+    [
+      1818,
+      446,
+      1863,
+      462
+    ],
+    [
+      1818,
+      464,
+      1863,
+      480
+    ],
+    [
+      1818,
+      483,
+      1863,
+      499
+    ],
+    [
+      1818,
+      501,
+      1863,
+      517
+    ],
+    [
+      1818,
+      520,
+      1863,
+      536
+    ],
+    [
+      1818,
+      538,
+      1863,
+      554
+    ],
+    [
+      1818,
+      556,
+      1863,
+      572
+    ],
+    [
+      1585,
+      626,
+      1612,
+      643
+    ],
+    [
+      1585,
+      645,
+      1673,
+      662
+    ],
+    [
+      1585,
+      663,
+      1693,
+      680
+    ],
+    [
+      1585,
+      723,
+      1660,
+      740
+    ],
+    [
+      1585,
+      741,
+      1665,
+      758
+    ],
+    [
+      1585,
+      759,
+      1656,
+      776
+    ],
+    [
+      1585,
+      778,
+      1750,
+      795
+    ],
+    [
+      1585,
+      838,
+      1631,
+      855
+    ],
+    [
+      1585,
+      856,
+      1712,
+      873
+    ],
+    [
+      1585,
+      874,
+      1719,
+      891
+    ],
+    [
+      1585,
+      935,
+      1695,
+      952
+    ],
+    [
+      1585,
+      953,
+      1648,
+      970
+    ],
+    [
+      1585,
+      972,
+      1666,
+      989
+    ],
+    [
+      1585,
+      1032,
+      1686,
+      1049
+    ],
+    [
+      1585,
+      1051,
+      1635,
+      1068
+    ],
+    [
+      1585,
+      1070,
+      1670,
+      1080
+    ]
+  ],
+  "elements": [
+    {
+      "box": [
+        0,
+        0,
+        198,
+        42
+      ],
+      "label": "restore tab",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        198,
+        10,
+        220,
+        33
+      ],
+      "label": "close restore",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        229,
+        0,
+        421,
+        42
+      ],
+      "label": "active tab",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        423,
+        10,
+        445,
+        33
+      ],
+      "label": "close active",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        455,
+        10,
+        480,
+        34
+      ],
+      "label": "new tab",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        10,
+        52,
+        34,
+        77
+      ],
+      "label": "sidebar",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        46,
+        52,
+        70,
+        77
+      ],
+      "label": "back",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        83,
+        52,
+        106,
+        77
+      ],
+      "label": "forward",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        117,
+        52,
+        142,
+        77
+      ],
+      "label": "reload",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        268,
+        49,
+        294,
+        80
+      ],
+      "label": "site security",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        296,
+        49,
+        1590,
+        80
+      ],
+      "label": "address",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1594,
+        51,
+        1619,
+        78
+      ],
+      "label": "bookmark",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1746,
+        50,
+        1805,
+        79
+      ],
+      "label": "VPN",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1814,
+        50,
+        1839,
+        79
+      ],
+      "label": "account",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1850,
+        50,
+        1875,
+        79
+      ],
+      "label": "extensions",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1884,
+        49,
+        1915,
+        80
+      ],
+      "label": "menu",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1850,
+        9,
+        1877,
+        34
+      ],
+      "label": "window utility",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        1886,
+        9,
+        1911,
+        34
+      ],
+      "label": "close window",
+      "category": "icons_buttons",
+      "region": "web_chrome"
+    },
+    {
+      "box": [
+        16,
+        95,
+        208,
+        135
+      ],
+      "label": "logo",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1287,
+        109,
+        1330,
+        129
+      ],
+      "label": "Home",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1359,
+        109,
+        1426,
+        129
+      ],
+      "label": "Packages",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1454,
+        109,
+        1509,
+        129
+      ],
+      "label": "Forums",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1537,
+        109,
+        1569,
+        129
+      ],
+      "label": "Wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1598,
+        109,
+        1645,
+        129
+      ],
+      "label": "GitLab",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1673,
+        109,
+        1731,
+        129
+      ],
+      "label": "Security",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1760,
+        109,
+        1791,
+        129
+      ],
+      "label": "AUR",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1819,
+        109,
+        1891,
+        129
+      ],
+      "label": "Download",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1727,
+        183,
+        1862,
+        207
+      ],
+      "label": "package search",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        803,
+        249,
+        1054,
+        267
+      ],
+      "label": "community repos",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        981,
+        281,
+        1021,
+        299
+      ],
+      "label": "forums",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1053,
+        281,
+        1127,
+        299
+      ],
+      "label": "mail lists",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1406,
+        281,
+        1432,
+        299
+      ],
+      "label": "wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1448,
+        323,
+        1525,
+        340
+      ],
+      "label": "learn more",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        416,
+        620,
+        433
+      ],
+      "label": "news1",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        784,
+        440,
+        963,
+        458
+      ],
+      "label": "systemd v261",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1184,
+        464,
+        1219,
+        482
+      ],
+      "label": "TPM2",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        226,
+        488,
+        362,
+        507
+      ],
+      "label": "systemd cryptenroll",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        410,
+        488,
+        648,
+        507
+      ],
+      "label": "ArchWiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        873,
+        488,
+        988,
+        507
+      ],
+      "label": "pcrlock",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        545,
+        431,
+        563
+      ],
+      "label": "news2",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        700,
+        305,
+        717
+      ],
+      "label": "news3",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        895,
+        303,
+        912
+      ],
+      "label": "news4",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        905,
+        919,
+        1078,
+        937
+      ],
+      "label": "leader",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        89,
+        943,
+        198,
+        961
+      ],
+      "label": "election rules",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        436,
+        967,
+        597,
+        985
+      ],
+      "label": "responsibilities",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        48,
+        1049,
+        545,
+        1067
+      ],
+      "label": "news5",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1713,
+        251,
+        1765,
+        271
+      ],
+      "label": "updates more",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1852,
+        252,
+        1868,
+        269
+      ],
+      "label": "updates RSS",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1521,
+        383,
+        1534,
+        398
+      ],
+      "label": "news RSS",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        279,
+        1863,
+        295
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        298,
+        1863,
+        314
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        316,
+        1863,
+        332
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        353,
+        1863,
+        369
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        372,
+        1863,
+        388
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        390,
+        1863,
+        406
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        409,
+        1863,
+        425
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        427,
+        1863,
+        443
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        446,
+        1863,
+        462
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        464,
+        1863,
+        480
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        483,
+        1863,
+        499
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        501,
+        1863,
+        517
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        520,
+        1863,
+        536
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        538,
+        1863,
+        554
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1818,
+        556,
+        1863,
+        572
+      ],
+      "label": "architecture",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        626,
+        1612,
+        643
+      ],
+      "label": "Wiki",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        645,
+        1673,
+        662
+      ],
+      "label": "Manual",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        663,
+        1693,
+        680
+      ],
+      "label": "Install",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        723,
+        1660,
+        740
+      ],
+      "label": "mail",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        741,
+        1665,
+        758
+      ],
+      "label": "IRC",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        759,
+        1656,
+        776
+      ],
+      "label": "Planet",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        778,
+        1750,
+        795
+      ],
+      "label": "International",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        838,
+        1631,
+        855
+      ],
+      "label": "Donate",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        856,
+        1712,
+        873
+      ],
+      "label": "Freewear",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        874,
+        1719,
+        891
+      ],
+      "label": "HELLOTUX",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        935,
+        1695,
+        952
+      ],
+      "label": "Mirror tool",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        953,
+        1648,
+        970
+      ],
+      "label": "Mirror list",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        972,
+        1666,
+        989
+      ],
+      "label": "Mirror status",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        1032,
+        1686,
+        1049
+      ],
+      "label": "Get involved",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        1051,
+        1635,
+        1068
+      ],
+      "label": "Dev blog",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1585,
+        1070,
+        1670,
+        1080
+      ],
+      "label": "Projects",
+      "category": "text_links",
+      "region": "page_content"
+    }
+  ],
+  "notes": [
+    "Single visual annotator; exploratory. Boxes in original 1920x1080 pixels.",
+    "Wrapped Wikipedia X Window link represented by two visible fragments (two actionable regions); partial bottom controls included.",
+    "Disabled-looking back/forward and selected tabs included as ambiguous controls; GTK Paste disabled excluded.",
+    "Menu scenes retain visible background controls: clicking outside dismisses popup; background semantics are ambiguous.",
+    "File icon+label one target; partially visible bottom-row icons included; whitespace excluded.",
+    "HN logged-out upvote arrows included; points and story rank excluded."
+  ],
+  "verified": true
+}

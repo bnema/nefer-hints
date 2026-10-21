@@ -1,0 +1,10 @@
+venv/
+.venv/
+__pycache__/
+weights/
+*.pt
+*.onnx
+*.param
+*.bin
+yolo-config/
+.worktrees/

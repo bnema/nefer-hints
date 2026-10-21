@@ -1,0 +1,492 @@
+[
+  {
+    "scene": "dumber-arch",
+    "prediction": 0,
+    "point": [
+      865.0,
+      531.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "dumber-arch",
+    "prediction": 1,
+    "point": [
+      585.0,
+      652.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "dumber-arch",
+    "prediction": 2,
+    "point": [
+      517.0,
+      825.0
+    ],
+    "match": "fp",
+    "visual_category": "code_literal"
+  },
+  {
+    "scene": "dumber-arch",
+    "prediction": 3,
+    "point": [
+      970.0,
+      239.0
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 0,
+    "point": [
+      1400.0,
+      752.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 1,
+    "point": [
+      626.0,
+      323.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 2,
+    "point": [
+      695.0,
+      323.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 3,
+    "point": [
+      787.5,
+      1056.5
+    ],
+    "match": "fp",
+    "visual_category": "link_boundary_miss"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 4,
+    "point": [
+      877.0,
+      865.0
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "dumber-wiki",
+    "prediction": 5,
+    "point": [
+      1093.0,
+      445.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 0,
+    "point": [
+      347.5,
+      65.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 1,
+    "point": [
+      660.0,
+      449.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 2,
+    "point": [
+      106.0,
+      517.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 3,
+    "point": [
+      135.0,
+      903.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-arch",
+    "prediction": 4,
+    "point": [
+      1179.0,
+      928.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 0,
+    "point": [
+      405.5,
+      65.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 1,
+    "point": [
+      426.0,
+      180.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 2,
+    "point": [
+      568.5,
+      176.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 3,
+    "point": [
+      424.5,
+      180.5
+    ],
+    "match": "dup",
+    "visual_category": "duplicate"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 4,
+    "point": [
+      614.5,
+      212.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 5,
+    "point": [
+      632.5,
+      288.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 6,
+    "point": [
+      748.5,
+      323.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 7,
+    "point": [
+      365.5,
+      361.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 8,
+    "point": [
+      640.0,
+      472.0
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 9,
+    "point": [
+      592.5,
+      510.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 10,
+    "point": [
+      394.5,
+      619.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 11,
+    "point": [
+      536.5,
+      656.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 12,
+    "point": [
+      377.0,
+      694.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 13,
+    "point": [
+      503.5,
+      767.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 14,
+    "point": [
+      447.5,
+      804.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 15,
+    "point": [
+      681.5,
+      842.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 16,
+    "point": [
+      495.0,
+      916.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 17,
+    "point": [
+      398.0,
+      952.0
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 18,
+    "point": [
+      354.5,
+      1027.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 19,
+    "point": [
+      158.0,
+      913.5
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 20,
+    "point": [
+      158.0,
+      950.5
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 21,
+    "point": [
+      158.0,
+      1024.5
+    ],
+    "match": "fp",
+    "visual_category": "story_rank"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 22,
+    "point": [
+      189.0,
+      1040.5
+    ],
+    "match": "fp",
+    "visual_category": "points_count"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 23,
+    "point": [
+      252.0,
+      1025.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 24,
+    "point": [
+      262.5,
+      227.0
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 25,
+    "point": [
+      380.0,
+      1040.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-hn",
+    "prediction": 26,
+    "point": [
+      393.5,
+      931.0
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 0,
+    "point": [
+      347.5,
+      65.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 1,
+    "point": [
+      660.5,
+      449.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 2,
+    "point": [
+      106.0,
+      517.5
+    ],
+    "match": "fp",
+    "visual_category": "code_or_filename"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 3,
+    "point": [
+      135.0,
+      903.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 4,
+    "point": [
+      1179.0,
+      928.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "firefox-menu",
+    "prediction": 5,
+    "point": [
+      1697.0,
+      107.5
+    ],
+    "match": "fp",
+    "visual_category": "ordinary_word"
+  },
+  {
+    "scene": "nautilus-menu",
+    "prediction": 0,
+    "point": [
+      1536.0,
+      23.5
+    ],
+    "match": "tp",
+    "visual_category": "interactive_link_or_control"
+  }
+]

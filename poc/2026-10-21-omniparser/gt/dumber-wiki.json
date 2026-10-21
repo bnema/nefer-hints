@@ -1,0 +1,1613 @@
+{
+  "boxes": [
+    [
+      55,
+      27,
+      86,
+      58
+    ],
+    [
+      108,
+      17,
+      293,
+      67
+    ],
+    [
+      345,
+      23,
+      872,
+      63
+    ],
+    [
+      873,
+      23,
+      963,
+      63
+    ],
+    [
+      1597,
+      30,
+      1657,
+      55
+    ],
+    [
+      1667,
+      30,
+      1792,
+      55
+    ],
+    [
+      1800,
+      30,
+      1852,
+      55
+    ],
+    [
+      1396,
+      128,
+      1570,
+      159
+    ],
+    [
+      344,
+      177,
+      395,
+      204
+    ],
+    [
+      413,
+      177,
+      449,
+      204
+    ],
+    [
+      1312,
+      177,
+      1359,
+      204
+    ],
+    [
+      1378,
+      177,
+      1411,
+      204
+    ],
+    [
+      1429,
+      177,
+      1529,
+      204
+    ],
+    [
+      1547,
+      174,
+      1570,
+      205
+    ],
+    [
+      172,
+      176,
+      222,
+      207
+    ],
+    [
+      1740,
+      176,
+      1791,
+      207
+    ],
+    [
+      77,
+      228,
+      284,
+      255
+    ],
+    [
+      77,
+      265,
+      284,
+      292
+    ],
+    [
+      77,
+      301,
+      284,
+      328
+    ],
+    [
+      77,
+      337,
+      284,
+      381
+    ],
+    [
+      77,
+      393,
+      284,
+      420
+    ],
+    [
+      77,
+      430,
+      284,
+      457
+    ],
+    [
+      77,
+      466,
+      284,
+      493
+    ],
+    [
+      77,
+      502,
+      284,
+      529
+    ],
+    [
+      77,
+      538,
+      284,
+      565
+    ],
+    [
+      77,
+      574,
+      284,
+      601
+    ],
+    [
+      55,
+      300,
+      72,
+      323
+    ],
+    [
+      55,
+      337,
+      72,
+      360
+    ],
+    [
+      55,
+      394,
+      72,
+      417
+    ],
+    [
+      55,
+      430,
+      72,
+      453
+    ],
+    [
+      55,
+      466,
+      72,
+      489
+    ],
+    [
+      1620,
+      274,
+      1737,
+      303
+    ],
+    [
+      1620,
+      316,
+      1737,
+      345
+    ],
+    [
+      1620,
+      358,
+      1737,
+      387
+    ],
+    [
+      1620,
+      459,
+      1737,
+      488
+    ],
+    [
+      1620,
+      501,
+      1737,
+      530
+    ],
+    [
+      1620,
+      603,
+      1737,
+      632
+    ],
+    [
+      1620,
+      645,
+      1737,
+      674
+    ],
+    [
+      1620,
+      686,
+      1737,
+      715
+    ],
+    [
+      472,
+      277,
+      692,
+      301
+    ],
+    [
+      343,
+      310,
+      470,
+      334
+    ],
+    [
+      728,
+      310,
+      745,
+      334
+    ],
+    [
+      1102,
+      304,
+      1130,
+      325
+    ],
+    [
+      831,
+      345,
+      1019,
+      369
+    ],
+    [
+      660,
+      379,
+      935,
+      402
+    ],
+    [
+      343,
+      467,
+      379,
+      490
+    ],
+    [
+      425,
+      467,
+      542,
+      490
+    ],
+    [
+      1048,
+      467,
+      1145,
+      490
+    ],
+    [
+      343,
+      500,
+      413,
+      524
+    ],
+    [
+      541,
+      496,
+      568,
+      516
+    ],
+    [
+      570,
+      496,
+      596,
+      516
+    ],
+    [
+      598,
+      496,
+      624,
+      516
+    ],
+    [
+      625,
+      496,
+      651,
+      516
+    ],
+    [
+      768,
+      500,
+      939,
+      524
+    ],
+    [
+      973,
+      500,
+      1025,
+      524
+    ],
+    [
+      343,
+      535,
+      422,
+      558
+    ],
+    [
+      604,
+      530,
+      632,
+      549
+    ],
+    [
+      633,
+      530,
+      660,
+      549
+    ],
+    [
+      458,
+      568,
+      574,
+      592
+    ],
+    [
+      598,
+      568,
+      899,
+      592
+    ],
+    [
+      902,
+      564,
+      930,
+      584
+    ],
+    [
+      930,
+      564,
+      950,
+      584
+    ],
+    [
+      504,
+      602,
+      646,
+      626
+    ],
+    [
+      945,
+      602,
+      1018,
+      626
+    ],
+    [
+      1021,
+      596,
+      1050,
+      618
+    ],
+    [
+      490,
+      683,
+      521,
+      705
+    ],
+    [
+      824,
+      731,
+      904,
+      755
+    ],
+    [
+      514,
+      761,
+      542,
+      782
+    ],
+    [
+      343,
+      853,
+      431,
+      877
+    ],
+    [
+      699,
+      853,
+      781,
+      877
+    ],
+    [
+      868,
+      888,
+      1027,
+      911
+    ],
+    [
+      343,
+      922,
+      468,
+      945
+    ],
+    [
+      532,
+      922,
+      775,
+      945
+    ],
+    [
+      941,
+      983,
+      970,
+      1005
+    ],
+    [
+      636,
+      1045,
+      771,
+      1069
+    ],
+    [
+      1176,
+      706,
+      1307,
+      731
+    ],
+    [
+      1176,
+      740,
+      1265,
+      764
+    ],
+    [
+      1337,
+      740,
+      1465,
+      764
+    ],
+    [
+      1176,
+      832,
+      1300,
+      857
+    ],
+    [
+      1418,
+      798,
+      1435,
+      817
+    ],
+    [
+      1473,
+      829,
+      1491,
+      849
+    ],
+    [
+      1492,
+      833,
+      1509,
+      852
+    ],
+    [
+      1466,
+      888,
+      1484,
+      907
+    ],
+    [
+      1485,
+      890,
+      1504,
+      910
+    ],
+    [
+      1372,
+      969,
+      1391,
+      988
+    ],
+    [
+      1392,
+      971,
+      1410,
+      991
+    ],
+    [
+      1337,
+      1033,
+      1353,
+      1058
+    ],
+    [
+      1402,
+      1069,
+      1446,
+      1080
+    ],
+    [
+      1175,
+      1069,
+      1333,
+      1080
+    ],
+    [
+      1320,
+      326,
+      1418,
+      447
+    ],
+    [
+      1205,
+      460,
+      1532,
+      644
+    ],
+    [
+      1195,
+      646,
+      1255,
+      670
+    ],
+    [
+      1297,
+      646,
+      1507,
+      670
+    ],
+    [
+      1910,
+      0,
+      1920,
+      1080
+    ]
+  ],
+  "elements": [
+    {
+      "box": [
+        55,
+        27,
+        86,
+        58
+      ],
+      "label": "main menu",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        108,
+        17,
+        293,
+        67
+      ],
+      "label": "logo",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        345,
+        23,
+        872,
+        63
+      ],
+      "label": "search field",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        873,
+        23,
+        963,
+        63
+      ],
+      "label": "Search",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1597,
+        30,
+        1657,
+        55
+      ],
+      "label": "Donate",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1667,
+        30,
+        1792,
+        55
+      ],
+      "label": "Create account",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1800,
+        30,
+        1852,
+        55
+      ],
+      "label": "Log in",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1396,
+        128,
+        1570,
+        159
+      ],
+      "label": "languages",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        344,
+        177,
+        395,
+        204
+      ],
+      "label": "Article",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        413,
+        177,
+        449,
+        204
+      ],
+      "label": "Talk",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1312,
+        177,
+        1359,
+        204
+      ],
+      "label": "Read",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1378,
+        177,
+        1411,
+        204
+      ],
+      "label": "Edit",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1429,
+        177,
+        1529,
+        204
+      ],
+      "label": "history",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1547,
+        174,
+        1570,
+        205
+      ],
+      "label": "tools",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        172,
+        176,
+        222,
+        207
+      ],
+      "label": "hide contents",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1740,
+        176,
+        1791,
+        207
+      ],
+      "label": "hide appearance",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        228,
+        284,
+        255
+      ],
+      "label": "Top",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        265,
+        284,
+        292
+      ],
+      "label": "Overview",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        301,
+        284,
+        328
+      ],
+      "label": "Software",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        337,
+        284,
+        381
+      ],
+      "label": "Comparison",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        393,
+        284,
+        420
+      ],
+      "label": "Compositors",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        430,
+        284,
+        457
+      ],
+      "label": "Adoption",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        466,
+        284,
+        493
+      ],
+      "label": "History",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        502,
+        284,
+        529
+      ],
+      "label": "See also",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        538,
+        284,
+        565
+      ],
+      "label": "References",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        77,
+        574,
+        284,
+        601
+      ],
+      "label": "External links",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        55,
+        300,
+        72,
+        323
+      ],
+      "label": "expand",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        55,
+        337,
+        72,
+        360
+      ],
+      "label": "expand",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        55,
+        394,
+        72,
+        417
+      ],
+      "label": "expand",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        55,
+        430,
+        72,
+        453
+      ],
+      "label": "expand",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        55,
+        466,
+        72,
+        489
+      ],
+      "label": "expand",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        274,
+        1737,
+        303
+      ],
+      "label": "Small",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        316,
+        1737,
+        345
+      ],
+      "label": "Standard text",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        358,
+        1737,
+        387
+      ],
+      "label": "Large",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        459,
+        1737,
+        488
+      ],
+      "label": "Standard width",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        501,
+        1737,
+        530
+      ],
+      "label": "Wide",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        603,
+        1737,
+        632
+      ],
+      "label": "Automatic",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        645,
+        1737,
+        674
+      ],
+      "label": "Light",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1620,
+        686,
+        1737,
+        715
+      ],
+      "label": "Dark",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        472,
+        277,
+        692,
+        301
+      ],
+      "label": "communication",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        310,
+        470,
+        334
+      ],
+      "label": "display server",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        728,
+        310,
+        745,
+        334
+      ],
+      "label": "C",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1102,
+        304,
+        1130,
+        325
+      ],
+      "label": "ref10",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        831,
+        345,
+        1019,
+        369
+      ],
+      "label": "Wayland compositor",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        660,
+        379,
+        935,
+        402
+      ],
+      "label": "compositing manager",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        467,
+        379,
+        490
+      ],
+      "label": "free",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        425,
+        467,
+        542,
+        490
+      ],
+      "label": "open-source",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1048,
+        467,
+        1145,
+        490
+      ],
+      "label": "X Window 1",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        500,
+        413,
+        524
+      ],
+      "label": "X Window 2",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        541,
+        496,
+        568,
+        516
+      ],
+      "label": "ref11",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        570,
+        496,
+        596,
+        516
+      ],
+      "label": "ref12",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        598,
+        496,
+        624,
+        516
+      ],
+      "label": "ref13",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        625,
+        496,
+        651,
+        516
+      ],
+      "label": "ref14",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        768,
+        500,
+        939,
+        524
+      ],
+      "label": "windowing",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        973,
+        500,
+        1025,
+        524
+      ],
+      "label": "Linux",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        535,
+        422,
+        558
+      ],
+      "label": "Unix-like",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        604,
+        530,
+        632,
+        549
+      ],
+      "label": "ref10",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        633,
+        530,
+        660,
+        549
+      ],
+      "label": "ref15",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        458,
+        568,
+        574,
+        592
+      ],
+      "label": "MIT",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        598,
+        568,
+        899,
+        592
+      ],
+      "label": "permissive",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        902,
+        564,
+        930,
+        584
+      ],
+      "label": "ref15",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        930,
+        564,
+        950,
+        584
+      ],
+      "label": "ref7",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        504,
+        602,
+        646,
+        626
+      ],
+      "label": "implementation",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        945,
+        602,
+        1018,
+        626
+      ],
+      "label": "Weston",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1021,
+        596,
+        1050,
+        618
+      ],
+      "label": "ref10",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        490,
+        683,
+        521,
+        705
+      ],
+      "label": "edit overview",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        824,
+        731,
+        904,
+        755
+      ],
+      "label": "Red Hat",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        514,
+        761,
+        542,
+        782
+      ],
+      "label": "ref16",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        853,
+        431,
+        877
+      ],
+      "label": "rendering",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        699,
+        853,
+        781,
+        877
+      ],
+      "label": "X server",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        868,
+        888,
+        1027,
+        911
+      ],
+      "label": "Direct Rendering 1",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        343,
+        922,
+        468,
+        945
+      ],
+      "label": "Infrastructure",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        532,
+        922,
+        775,
+        945
+      ],
+      "label": "DRM",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        941,
+        983,
+        970,
+        1005
+      ],
+      "label": "ref17",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        636,
+        1045,
+        771,
+        1069
+      ],
+      "label": "extension to X",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1176,
+        706,
+        1307,
+        731
+      ],
+      "label": "Original author",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1176,
+        740,
+        1265,
+        764
+      ],
+      "label": "Developer",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1337,
+        740,
+        1465,
+        764
+      ],
+      "label": "freedesktop",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1176,
+        832,
+        1300,
+        857
+      ],
+      "label": "Stable release",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1418,
+        798,
+        1435,
+        817
+      ],
+      "label": "ref1",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1473,
+        829,
+        1491,
+        849
+      ],
+      "label": "ref2",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1492,
+        833,
+        1509,
+        852
+      ],
+      "label": "edit release",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1466,
+        888,
+        1484,
+        907
+      ],
+      "label": "ref3",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1485,
+        890,
+        1504,
+        910
+      ],
+      "label": "edit weston",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1372,
+        969,
+        1391,
+        988
+      ],
+      "label": "ref4",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1392,
+        971,
+        1410,
+        991
+      ],
+      "label": "edit protocols",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1337,
+        1033,
+        1353,
+        1058
+      ],
+      "label": "C",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1402,
+        1069,
+        1446,
+        1080
+      ],
+      "label": "Linux bottom",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1175,
+        1069,
+        1333,
+        1080
+      ],
+      "label": "Operating system",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1320,
+        326,
+        1418,
+        447
+      ],
+      "label": "Wayland logo",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1205,
+        460,
+        1532,
+        644
+      ],
+      "label": "screenshot",
+      "category": "icons_buttons",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1195,
+        646,
+        1255,
+        670
+      ],
+      "label": "Weston caption",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1297,
+        646,
+        1507,
+        670
+      ],
+      "label": "reference implementation",
+      "category": "text_links",
+      "region": "page_content"
+    },
+    {
+      "box": [
+        1910,
+        0,
+        1920,
+        1080
+      ],
+      "label": "scrollbar",
+      "category": "icons_buttons",
+      "region": "page_content"
+    }
+  ],
+  "notes": [
+    "Single visual annotator; exploratory. Boxes in original 1920x1080 pixels.",
+    "Wrapped Wikipedia X Window link represented by two visible fragments (two actionable regions); partial bottom controls included.",
+    "Disabled-looking back/forward and selected tabs included as ambiguous controls; GTK Paste disabled excluded.",
+    "Menu scenes retain visible background controls: clicking outside dismisses popup; background semantics are ambiguous.",
+    "File icon+label one target; partially visible bottom-row icons included; whitespace excluded.",
+    "HN logged-out upvote arrows included; points and story rank excluded."
+  ],
+  "verified": true
+}

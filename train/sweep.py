@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Confidence sweep over the eval TEST split and the terminal test set.
 
-  venv/bin/python train/sweep.py --model <models-dir> --name <name> [--gpu cpu]
+  venv/bin/python train/sweep.py --model <models-dir> --name <name> [--gpu cpu] [--iou 0.7]
 
-Runs the runner once per image at conf 0.05 and filters boxes by score offline
+Runs the runner once per image at conf 0.01 and filters boxes by score offline
 (NMS suppressors always score higher, so this equals a run at the higher conf).
 Writes train/results/sweep-<name>.json: per threshold, eval TEST precision/recall
 and terminal link recall / FP per screen.
@@ -15,7 +15,7 @@ from PIL import Image
 
 R = Path(__file__).resolve().parents[1]
 BIN = Path('$HOME/.local/share/nefer-hints-test/bin/nefer-hints')
-GRID = [round(0.05 + 0.025 * i, 3) for i in range(19)]  # 0.05 .. 0.5
+GRID = [0.01, 0.02, 0.03, 0.04] + [round(0.05 + 0.025 * i, 3) for i in range(19)]  # 0.01 .. 0.5
 
 
 def load(path, name):
@@ -33,6 +33,7 @@ def main():
     ap.add_argument('--model', type=Path, required=True)
     ap.add_argument('--name', required=True)
     ap.add_argument('--gpu', default='cpu')
+    ap.add_argument('--iou', default='0.7', help='runner NMS IoU')
     a = ap.parse_args()
     protocol = load(R / 'tests/protocol.py', 'protocol')
     score = load(R / 'eval/score.py', 'score')
@@ -42,13 +43,13 @@ def main():
     protocol.ROOT = tmp
     split = json.loads((R / 'eval/split.json').read_text())
     evals, terms = [], []  # (boxes, gt)
-    client = protocol.Client(size=1280, extra=('--conf', '0.05', '--iou', '0.7', '--gpu', a.gpu))
+    client = protocol.Client(size=1280, extra=('--conf', '0.01', '--iou', a.iou, '--gpu', a.gpu))
     try:
         seq = 0
         for name in sorted(n for n, s in split.items() if s == 'test'):
             gt = json.loads((R / 'eval/gt' / f'{name}.json').read_text())['boxes']
             seq += 1
-            r = client.request(bgra(Image.open(R / 'eval/frames' / f'{name}.png')), seq=seq, conf=0.05)
+            r = client.request(bgra(Image.open(R / 'eval/frames' / f'{name}.png')), seq=seq, conf=0.01)
             if r['status']:
                 raise RuntimeError(r)
             evals.append(([b[:5] for b in r['boxes']], gt))
@@ -61,7 +62,7 @@ def main():
                 _, cx, cy, w, h = map(float, lab[i:i + 5])
                 gt.append(((cx - w / 2) * W, (cy - h / 2) * H, (cx + w / 2) * W, (cy + h / 2) * H))
             seq += 1
-            r = client.request(bgra(im), seq=seq, conf=0.05)
+            r = client.request(bgra(im), seq=seq, conf=0.01)
             if r['status']:
                 raise RuntimeError(r)
             terms.append(([b[:5] for b in r['boxes']], gt))

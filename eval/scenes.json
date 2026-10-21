@@ -77,5 +77,17 @@
   },
   "firefox-menu": {
     "category": "menus"
+  },
+  "mattermost-channel": {
+    "category": "mattermost",
+    "url": "http://127.0.0.1:8065/fictional-demo/channels/planning"
+  },
+  "mattermost-thread": {
+    "category": "mattermost",
+    "url": "http://127.0.0.1:8065/fictional-demo/channels/planning"
+  },
+  "mattermost-switcher": {
+    "category": "mattermost",
+    "url": "http://127.0.0.1:8065/fictional-demo/channels/planning"
   }
 }

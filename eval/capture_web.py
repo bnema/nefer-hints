@@ -47,22 +47,43 @@ def main():
      if 'error' in msg:raise RuntimeError(msg)
      return msg.get('result',{})
    raise RuntimeError('too many CDP events')
-  def evaluate(js):return call('Runtime.evaluate',dict(expression=js,returnByValue=True))['result']['value']
+  def evaluate(js):
+   result=call('Runtime.evaluate',dict(expression=js,returnByValue=True,awaitPromise=True))
+   if 'exceptionDetails' in result:
+    detail=result['exceptionDetails'];raise RuntimeError(detail.get('exception',{}).get('description',detail.get('text','JavaScript exception')))
+   return result.get('result',{}).get('value')
+  def wait_for(selector):
+   deadline=time.monotonic()+30
+   while time.monotonic()<deadline:
+    if evaluate('!!document.querySelector('+json.dumps(selector)+')'):return
+    time.sleep(.25)
+   raise TimeoutError('waiting for '+selector+'; page: '+str(evaluate('document.body.innerText.slice(0,4000)')))
+  if any(category=='mattermost' for _,_,category in PAGES):
+   from seed_mattermost import request, PASSWORD
+   user,token=request('/users/login',dict(login_id='blair',password=PASSWORD))
+   cookie=call('Network.setCookie',dict(name='MMAUTHTOKEN',value=token,url='http://127.0.0.1:8065/',path='/',httpOnly=True,sameSite='Lax'))
+   if not cookie.get('success'):raise RuntimeError('cookie injection failed')
+   call('Network.setCookie',dict(name='MMUSERID',value=user['id'],url='http://127.0.0.1:8065/',path='/'))
+   call('Network.setCookie',dict(name='MMCSRF',value='fictional-eval-csrf',url='http://127.0.0.1:8065/',path='/'))
   for name,url,category in PAGES:
    try:
     call('Emulation.setEmulatedMedia',{'features':[{'name':'prefers-color-scheme','value':'dark' if name.endswith('-dark') else 'light'}]})
     call('Emulation.setAutoDarkModeOverride',{'enabled':name.endswith('-dark')})
     call('Page.navigate',{'url':url});time.sleep(10)
     if category=='mattermost':
-     evaluate("fetch('/api/v4/users/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({login_id:'blair',password:'Fictional-Eval-Only-2026!'})}).then(()=>location.href='/fictional-demo/channels/planning')")
-     time.sleep(12)
+     evaluate("[...document.querySelectorAll('button,a')].find(e=>e.innerText.trim()==='View in Browser')?.click()")
+     wait_for('#postListContent, #post-list, .post-list__table')
      # Dismiss introductory overlays where present, without accessing any real account.
-     evaluate("[...document.querySelectorAll('button')].filter(e=>/^(Skip|Later|No thanks|Got it|Close)$/.test(e.innerText.trim())).forEach(e=>e.click())")
-     time.sleep(2)
+     evaluate("[...document.querySelectorAll('button,a')].filter(e=>/^(Skip|Later|No thanks|Got it|Close)|No thanks, I.ll figure it out myself/.test(e.innerText.trim())).forEach(e=>e.click())")
+     for _ in range(2):
+      if evaluate("document.body.innerText.includes('Welcome to Mattermost')"):
+       os.write(fd,b'move 140 990\nclick left\nsleep 1s\n');time.sleep(2)
      if name=='mattermost-thread':
-      evaluate("[...document.querySelectorAll('button')].find(e=>/repl|thread/i.test(e.innerText+' '+e.getAttribute('aria-label')))?.click()")
+      evaluate("[...document.querySelectorAll('button,a')].find(e=>/repl/i.test(e.innerText+' '+e.getAttribute('aria-label')))?.click()")
+      wait_for('#rhsContainer, .sidebar--right')
      if name=='mattermost-switcher':
-      os.write(fd,b'key Ctrl+k\\nsleep 1s\\n')
+      os.write(fd,b'key Ctrl+k\nsleep 1s\n')
+      wait_for('[role=dialog], .modal-content')
      time.sleep(2)
     # Freeze layout between DOM extraction and compositor capture.
     evaluate("document.querySelectorAll('video,audio').forEach(e=>e.pause()); document.documentElement.style.scrollBehavior='auto';")
@@ -90,5 +111,6 @@ def main():
   except sp.TimeoutExpired:compositor.kill();compositor.wait(timeout=5)
   os.close(fd);log.close()
   (ROOT/'scenes.json').write_text(json.dumps(scenes,indent=2)+'\n')
-  (ROOT/'results'/'web-capture-errors.json').write_text(json.dumps(errors,indent=2)+'\n')
+  error_file=ROOT/'results'/('mattermost-capture-errors.json' if any(c=='mattermost' for _,_,c in PAGES) else 'web-capture-errors.json')
+  error_file.write_text(json.dumps(errors,indent=2)+'\n')
 if __name__=='__main__':main()

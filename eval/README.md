@@ -2,8 +2,9 @@
 
 ## Present state
 
-22 captured, annotated 1920×1080 scenes: 13 Chromium web (including two dark
-variants), 8 native GTK, one Firefox hamburger scene. 1,440 targets. Primary GT
+25 captured, annotated 1920×1080 scenes: 13 Chromium web (including two dark
+variants), 8 native GTK, one Firefox hamburger scene and 3 Mattermost scenes.
+1,704 targets. Primary GT
 is DOM for web (with recorded visual corrections), manual for native/Firefox.
 Every web `_gt.png` was opened for visual mapping review. Fullscreen viewport
 origin is (0,0), DPR 1; Chromium startup alone left an 87px toolbar, fixed by F11.
@@ -35,7 +36,7 @@ corrections are explicitly recorded in `review_web.py`. Computed pointer cursor
 is inherited; some innermost fragments are consequently classified `other`.
 No detector predictions were used to construct GT.
 
-`scenes.json` maps scene to category; `split.json` assigns 11 tune/11 test,
+`scenes.json` maps scene to category; `split.json` assigns 13 tune/12 test,
 covering dense text, content, modern web, forms, sidebar docs, themes, GTK and
 menus. HN light/dark stay in tune, but Arch light/dark cross splits: the test is
 scene-level, **not independent by site/application**. No tuning was performed.
@@ -64,22 +65,50 @@ unmatched predictions have no GT kind; latency is frame-level, not per kind.
 
 | Split | Threshold | Precision | Recall | Protocol median ms |
 |---|---:|---:|---:|---:|
-| tune | .05 | 62.77% | 57.68% | 28.55 |
-| test | .05 | 62.81% | 66.35% | 26.74 |
-| tune | .25 | 77.75% | 37.08% | 26.82 |
-| test | .25 | 78.16% | 49.30% | 26.70 |
+| tune | .05 | 64.45% | 57.61% | 90.35 |
+| test | .05 | 55.84% | 65.25% | 88.45 |
+| tune | .25 | 77.49% | 40.19% | 89.67 |
+| test | .25 | 66.81% | 48.25% | 90.58 |
 
 One timing sample per scene/threshold, excluding PNG decode; not a stable latency
 benchmark. Protocol includes transport/preprocessing/NMS, inference excludes them.
 `out/`: GT green, TP blue, FP red, missed yellow. Raw predictions and matching
 are preserved in `results/predictions.json`.
 
-Tune misses at .05: 240 small text links, 76 other fragments, 6 other text links,
-6 icons/buttons, 6 menu items, 4 fields, 1 row/file (339 total). At .25: 325 small
-text links, 133 other fragments, 16 icons/buttons, 12 other links, 10 fields,
-6 menu items, 2 rows (504 total). Small = height <18 or width <16. These are
-reproducible **morphology proxies**, not experimentally established causes;
-merged-adjacent-link attribution remains pending manual prediction review.
+Tune misses at .05: 240 small text links, 165 other fragments, 19 icons/buttons,
+6 fields, 6 other links, 6 menu items, 1 row/file (443 total). At .25: 325 small
+links, 230 other fragments, 38 icons/buttons, 12 fields, 12 other links,
+6 menu items, 2 rows (625 total). Small = height <18 or width <16. These are
+morphology proxies, not proven causes; merged-link attribution remains pending.
+The switcher has 20 innermost DOM fragments, and background detections count as
+FP when the modal covers them. The fresh timing run was slower than the previous
+run; one sample per scene is not a stable performance comparison.
+
+### Mattermost reproduction
+
+Start a new rootless preview container on `127.0.0.1:8065` with
+`MM_TEAMSETTINGS_ENABLEOPENSERVER=true` and `MM_SERVICESETTINGS_ENABLELOCALMODE=true`,
+then run `venv/bin/python eval/seed_mattermost.py`. Capture with:
+
+```sh
+dbus-run-session -- venv/bin/python - <<'PYTHON'
+import sys
+sys.path.insert(0, 'eval')
+import capture_web as c
+c.PAGES = [(n, 'http://127.0.0.1:8065/fictional-demo/channels/planning', 'mattermost')
+           for n in ('mattermost-channel', 'mattermost-thread', 'mattermost-switcher')]
+c.main()
+PYTHON
+docker rm -f nh-eval-mattermost
+```
+
+REST login supplies MMAUTHTOKEN; explicit cookie path `/` and MMUSERID are needed
+by this preview. CDP evaluation awaits promises, reports JS exceptions and maps
+undefined to None. Channel DOM waits are bounded to 30s. Browser-app chooser and
+onboarding are dismissed before capture. All three final overlays were opened:
+channel with three visible reply groups, RHS with root plus two replies, Ctrl+K
+switcher. Channel/RHS go to tune; switcher to test. Same app spans the splits.
+Only fictional users/posts were present; container removed after capture.
 
 ## Failed / pending work
 
@@ -87,22 +116,15 @@ merged-adjacent-link attribution remains pending manual prediction review.
   excluded, Lobsters used. Guardian/BBC/W3Schools/YouTube produced no visible
   targets after the bounded wait; skipped, httpbin form and Python docs added.
   `results/web-capture-errors.json` records failures.
-- Mattermost preview image digest and exact failure in
-  `results/mattermost-status.json`. Rootless localhost container started; seed
-  created five fictional users, one team, four channels, 32 posts, 16 replies,
-  eight reactions. Initial signup 403 fixed with environment configuration.
-  CDP login navigation returned no `value` (KeyError) for all three captures;
-  no Mattermost scene admitted. Container removed with `docker rm -f`.
-  Seed: run `seed_mattermost.py` against a **new disposable** preview container
-  published only at `127.0.0.1:8065`, with
-  `MM_TEAMSETTINGS_ENABLEOPENSERVER=true` and
-  `MM_SERVICESETTINGS_ENABLELOCALMODE=true`. Always remove it afterwards.
+- Mattermost initial CDP error resolved in this follow-up. Historical diagnostics,
+  image digest and completion status are in `results/mattermost-status.json`;
+  `mattermost-capture-errors.json` is empty for the successful final capture.
 - GTK light/dark paired variants not completed (captured Nautilus is dark).
 - Scale 1.5 documented as `output.<name>.scale` in NeferWL config, not yet
   exercised; three scale variants pending, not declared unsupported.
 - VSCodium, Dolphin, gnome-control-center not installed; pending, not installed.
-- Target ~26 scenes not reached; 22 admitted. Manual annotation quality and
+- Target ~26 scenes: 25 admitted. Manual annotation quality and
   full causal miss review would benefit from a second annotator.
 
 Six matching/aggregation unit tests pass, and the scorer ran successfully on all
-22 frames at both thresholds. No public contracts changed, no push or merge.
+25 frames at both thresholds. No public contracts changed, no push or merge.

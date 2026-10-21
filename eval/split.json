@@ -20,5 +20,8 @@
   "thunar-menu": "test",
   "editor": "test",
   "editor-menu": "tune",
-  "firefox-menu": "test"
+  "firefox-menu": "test",
+  "mattermost-channel": "tune",
+  "mattermost-thread": "tune",
+  "mattermost-switcher": "test"
 }

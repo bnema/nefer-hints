@@ -1,18 +1,18 @@
 {
   "0.05": {
     "small text links": 240,
-    "other": 76,
-    "icons / buttons": 6,
-    "fields": 4,
+    "other": 165,
+    "icons / buttons": 19,
+    "fields": 6,
     "other text links": 6,
     "menu items": 6,
     "rows / files": 1
   },
   "0.25": {
-    "other": 133,
+    "other": 230,
     "small text links": 325,
-    "icons / buttons": 16,
-    "fields": 10,
+    "icons / buttons": 38,
+    "fields": 12,
     "other text links": 12,
     "menu items": 6,
     "rows / files": 2

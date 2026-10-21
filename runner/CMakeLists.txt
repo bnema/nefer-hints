@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(nefer_hints LANGUAGES CXX)
+find_package(ncnn REQUIRED)
+add_executable(nefer-hints main.cpp)
+target_compile_features(nefer-hints PRIVATE cxx_std_17)
+target_compile_options(nefer-hints PRIVATE -Wall -Wextra -Wpedantic)
+target_link_libraries(nefer-hints PRIVATE ncnn)
+install(TARGETS nefer-hints RUNTIME DESTINATION bin)

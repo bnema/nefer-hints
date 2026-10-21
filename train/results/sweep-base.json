@@ -1,0 +1,120 @@
+{
+ "name": "base",
+ "model": "$HOME/.local/share/nefer-hints-test/models",
+ "thresholds": {
+  "0.050": {
+   "eval_test_precision": 0.5587467362924282,
+   "eval_test_recall": 0.6494688922610015,
+   "terminal_recall": 0.44086021505376344,
+   "terminal_fp_per_screen": 44.025
+  },
+  "0.075": {
+   "eval_test_precision": 0.5923190546528804,
+   "eval_test_recall": 0.6084977238239757,
+   "terminal_recall": 0.3870967741935484,
+   "terminal_fp_per_screen": 33.7
+  },
+  "0.100": {
+   "eval_test_precision": 0.6156351791530945,
+   "eval_test_recall": 0.5735963581183612,
+   "terminal_recall": 0.34946236559139787,
+   "terminal_fp_per_screen": 27.175
+  },
+  "0.125": {
+   "eval_test_precision": 0.6284722222222222,
+   "eval_test_recall": 0.5493171471927162,
+   "terminal_recall": 0.3279569892473118,
+   "terminal_fp_per_screen": 22.575
+  },
+  "0.150": {
+   "eval_test_precision": 0.6386861313868614,
+   "eval_test_recall": 0.5311077389984825,
+   "terminal_recall": 0.3118279569892473,
+   "terminal_fp_per_screen": 18.925
+  },
+  "0.175": {
+   "eval_test_precision": 0.6415094339622641,
+   "eval_test_recall": 0.5159332321699545,
+   "terminal_recall": 0.27419354838709675,
+   "terminal_fp_per_screen": 16.3
+  },
+  "0.200": {
+   "eval_test_precision": 0.6535433070866141,
+   "eval_test_recall": 0.503793626707132,
+   "terminal_recall": 0.24193548387096775,
+   "terminal_fp_per_screen": 14.1
+  },
+  "0.225": {
+   "eval_test_precision": 0.6578947368421053,
+   "eval_test_recall": 0.4931714719271624,
+   "terminal_recall": 0.20967741935483872,
+   "terminal_fp_per_screen": 12.425
+  },
+  "0.250": {
+   "eval_test_precision": 0.6638655462184874,
+   "eval_test_recall": 0.4795144157814871,
+   "terminal_recall": 0.20430107526881722,
+   "terminal_fp_per_screen": 10.975
+  },
+  "0.275": {
+   "eval_test_precision": 0.6652360515021459,
+   "eval_test_recall": 0.47040971168437024,
+   "terminal_recall": 0.1881720430107527,
+   "terminal_fp_per_screen": 9.775
+  },
+  "0.300": {
+   "eval_test_precision": 0.6696428571428571,
+   "eval_test_recall": 0.4552352048558422,
+   "terminal_recall": 0.1827956989247312,
+   "terminal_fp_per_screen": 8.525
+  },
+  "0.325": {
+   "eval_test_precision": 0.6643835616438356,
+   "eval_test_recall": 0.44157814871016693,
+   "terminal_recall": 0.1774193548387097,
+   "terminal_fp_per_screen": 7.625
+  },
+  "0.350": {
+   "eval_test_precision": 0.6746411483253588,
+   "eval_test_recall": 0.4279210925644917,
+   "terminal_recall": 0.16129032258064516,
+   "terminal_fp_per_screen": 6.775
+  },
+  "0.375": {
+   "eval_test_precision": 0.6780487804878049,
+   "eval_test_recall": 0.4218512898330804,
+   "terminal_recall": 0.15053763440860216,
+   "terminal_fp_per_screen": 5.85
+  },
+  "0.400": {
+   "eval_test_precision": 0.6782178217821783,
+   "eval_test_recall": 0.4157814871016692,
+   "terminal_recall": 0.13440860215053763,
+   "terminal_fp_per_screen": 4.975
+  },
+  "0.425": {
+   "eval_test_precision": 0.680306905370844,
+   "eval_test_recall": 0.40364188163884673,
+   "terminal_recall": 0.12903225806451613,
+   "terminal_fp_per_screen": 4.2
+  },
+  "0.450": {
+   "eval_test_precision": 0.6860158311345647,
+   "eval_test_recall": 0.3945371775417299,
+   "terminal_recall": 0.11290322580645161,
+   "terminal_fp_per_screen": 3.625
+  },
+  "0.475": {
+   "eval_test_precision": 0.6908077994428969,
+   "eval_test_recall": 0.37632776934749623,
+   "terminal_recall": 0.11290322580645161,
+   "terminal_fp_per_screen": 3.025
+  },
+  "0.500": {
+   "eval_test_precision": 0.6923076923076923,
+   "eval_test_recall": 0.36874051593323215,
+   "terminal_recall": 0.0967741935483871,
+   "terminal_fp_per_screen": 2.575
+  }
+ }
+}

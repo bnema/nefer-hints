@@ -13,3 +13,4 @@ yolo-config/
 data/
 runs/
 models-ft/
+train/out/

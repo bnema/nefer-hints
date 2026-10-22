@@ -52,7 +52,15 @@ venv/bin/python train/gate.py final train/results/sweep-base-test-iou0.7.json \
   train/results/sweep-ft-test-iou0.4.json --conf 0.01
 ```
 
-Selection uses web val and terminal val, never eval TUNE (used in training) or TEST.
+Training uses terminal train twice (oversampling) plus web train and native train.
+Ultralytics preserves repeated directory entries. Validation combines terminal, web
+and native val once each. Empty/missing native directories are omitted and included
+paths are printed; batch 4 and no VRAM cap remain the defaults.
+
+Selection pools web val and native val when present, alongside terminal val, never
+eval TUNE (used in training) or TEST. `web_precision`/`web_recall` remain the gate's
+pooled GUI metrics; `web_only_*` and `native_*` are informational, and `gui_sets`
+records the included sources. TEST selection behavior is unchanged.
 The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
 `score > conf`, matching the runner. For each IoU, selection takes the lowest confidence
 passing all five checks against base conf 0.05 / IoU 0.7:

@@ -68,6 +68,11 @@ def main():
     score = load(R / 'eval/score.py', 'score')
     if a.set == 'select':
         web = list(yolo_inputs(R / 'data/web/val'))
+        web_only_count = len(web)
+        gui_sets = ['web/val']
+        if any((R / 'data/native/val/images').glob('*.png')):
+            web.extend(yolo_inputs(R / 'data/native/val'))
+            gui_sets.append('native/val')
     else:
         split = json.loads((R / 'eval/split.json').read_text())
         groups = json.loads((R / 'eval/groups.json').read_text())
@@ -100,6 +105,8 @@ def main():
             client.close()
     model_label = str(model.relative_to(R)) if model.is_relative_to(R) else model.name
     out = dict(name=a.name, set=a.set, iou=a.iou, runner=runner.name, model=model_label, thresholds={})
+    if a.set == 'select':
+        out['gui_sets'] = gui_sets
     for t in GRID:
         precision, recall = web_metrics(rows[0], t, score.match)
         ttp = ttgt = fp = 0
@@ -111,6 +118,11 @@ def main():
         metrics = dict(web_precision=precision, web_recall=recall,
                        terminal_recall=ttp/ttgt if ttgt else 0.0,
                        terminal_fp_per_screen=fp/len(rows[1]))
+        if a.set == 'select':
+            p, r = web_metrics(rows[0][:web_only_count], t, score.match)
+            np_, nr = web_metrics(rows[0][web_only_count:], t, score.match)
+            metrics.update(web_only_precision=p, web_only_recall=r,
+                           native_precision=np_, native_recall=nr)
         if a.set == 'test':
             p, r = web_metrics([row for row in rows[0] if row[2]], t, score.match)
             metrics.update(web_precision_independent=p, web_recall_independent=r)

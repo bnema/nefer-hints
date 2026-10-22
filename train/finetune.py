@@ -14,6 +14,33 @@ from ultralytics import YOLO
 R = Path(__file__).resolve().parents[1]
 
 
+def dataset_dirs(data, split):
+    """Ultralytics preserves duplicate directory entries: terminal gets weight two."""
+    datasets = ['terminal', 'terminal', 'web', 'native'] if split == 'train' else ['terminal', 'web', 'native']
+    paths = []
+    for dataset in datasets:
+        relative = f'{dataset}/{split}/images'
+        directory = data / relative
+        if dataset == 'native' and not any(directory.rglob('*.png')):
+            print('Skipping empty/missing', relative)
+            continue
+        paths.append(relative)
+    print(split, 'includes:', ', '.join(paths))
+    return paths
+
+
+def write_dataset_yaml(data):
+    data.mkdir(parents=True, exist_ok=True)
+    lines = [f'path: {data}']
+    for split in ('train', 'val'):
+        lines.append(split + ':')
+        lines.extend('  - ' + p for p in dataset_dirs(data, split))
+    lines.extend(['nc: 1', 'names:', '  0: clickable'])
+    path = data / 'ft.yaml'
+    path.write_text('\n'.join(lines) + '\n')
+    return path
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--batch', type=int, default=4); ap.add_argument('--epochs', type=int, default=40)
@@ -25,9 +52,7 @@ def main():
         import torch
         total = torch.cuda.get_device_properties(int(a.device)).total_memory
         torch.cuda.set_per_process_memory_fraction(min(1.0, a.vram_gib * 2**30 / total), int(a.device))
-    yaml = R / 'data/ft.yaml'
-    D = R / 'data'
-    yaml.write_text('path: %s\ntrain:\n  - terminal/train/images\n  - web/train/images\nval:\n  - terminal/val/images\n  - web/val/images\nnc: 1\nnames:\n  0: clickable\n' % D)
+    yaml = write_dataset_yaml(R / 'data')
     t = time.time()
     m = YOLO(str(R / 'weights/base.pt'))
     m.train(data=str(yaml), imgsz=1280, rect=False, epochs=a.epochs, patience=10, batch=a.batch, lr0=0.002, lrf=0.1, optimizer='AdamW',

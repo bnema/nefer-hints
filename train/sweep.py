@@ -74,6 +74,7 @@ def main():
             web.extend(yolo_inputs(R / 'data/native/val'))
             gui_sets.append('native/val')
     else:
+        scenes = json.loads((R / 'eval/scenes.json').read_text())
         split = json.loads((R / 'eval/split.json').read_text())
         groups = json.loads((R / 'eval/groups.json').read_text())
         contaminated = {scene for group in groups.values() if any(split[s] == 'tune' for s in group) for scene in group}
@@ -81,6 +82,9 @@ def main():
                 json.loads((R / 'eval/gt' / f'{name}.json').read_text())['boxes'],
                 name not in contaminated)
                for name in sorted(split) if split[name] == 'test']
+    if a.set == 'test':
+        native_test = [scenes[image.stem]['category'] in ('native_gtk', 'menus')
+                       for image, _, _ in web]
     terminal = list(yolo_inputs(R / 'data/terminal' / ('val' if a.set == 'select' else 'test')))
     rows = [[], []]
     with tempfile.TemporaryDirectory(prefix='nh-sweep-') as directory:
@@ -126,6 +130,10 @@ def main():
         if a.set == 'test':
             p, r = web_metrics([row for row in rows[0] if row[2]], t, score.match)
             metrics.update(web_precision_independent=p, web_recall_independent=r)
+            for source, is_native in (('web', False), ('native', True)):
+                subset = [row for row, native in zip(rows[0], native_test) if native == is_native]
+                p, r = web_metrics(subset, t, score.match)
+                metrics.update({f'{source}_test_precision': p, f'{source}_test_recall': r})
         out['thresholds'][f'{t:.3f}'] = metrics
     destination = R / 'train/results' / f'sweep-{a.name}-{a.set}-iou{a.iou:g}.json'
     destination.parent.mkdir(exist_ok=True)

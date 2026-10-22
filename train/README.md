@@ -57,23 +57,50 @@ Ultralytics preserves repeated directory entries. Validation combines terminal, 
 and native val once each. Empty/missing native directories are omitted and included
 paths are printed; batch 4 and no VRAM cap remain the defaults.
 
-Selection pools web val and native val when present, alongside terminal val, never
-eval TUNE (used in training) or TEST. `web_precision`/`web_recall` remain the gate's
-pooled GUI metrics; `web_only_*` and `native_*` are informational, and `gui_sets`
-records the included sources. TEST selection behavior is unchanged.
-The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
-`score > conf`, matching the runner. For each IoU, selection takes the lowest confidence
-passing all five checks against base conf 0.05 / IoU 0.7:
+## Selection
 
-- web precision and recall each drop by at most 2 percentage points;
+Selection uses web val and native val when present, alongside terminal val, never
+eval TUNE (used in training) or TEST. All selection files require identical `gui_sets`.
+The base reference is conf 0.05 / IoU 0.7. For each IoU, selection takes the lowest
+confidence passing these per-source constraints:
+
+- web-only precision and recall each drop by at most 2 percentage points;
+- native precision and recall each drop by at most 2 points when `native/val` is included;
 - terminal FP/screen is at most 1.0 and at most 20% of base;
 - terminal link recall is at least 80%.
 
-Across these per-IoU candidates, highest web precision wins; higher web recall breaks ties.
-The frozen pair is evaluated once on eval TEST plus terminal test with the same checks.
-Independent-subset web metrics are informational: a TEST scene is independent when no group
-containing it also contains a TUNE scene (ungrouped scenes are independent).
-`eval_all.sh` remains a legacy fixed-threshold report producer; it is not a selection gate.
+Across these per-IoU candidates, web-only precision ranks first, web-only recall
+second, and native precision third (zero when absent), all descending.
+The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
+`score > conf`, matching the runner. The final JSON line records the frozen pair.
+
+The TEST gate is unchanged: pooled GUI `web_precision` and `web_recall` each drop
+by at most 2 points, with the same terminal checks. The frozen pair is evaluated
+once on eval TEST plus terminal test. Per-category TEST web/native metrics and
+independent-subset metrics are informational. A TEST scene is independent when no
+group containing it also contains a TUNE scene (ungrouped scenes are independent).
+`eval_all.sh` remains a legacy fixed-threshold report producer, not a selection gate.
+
+### Selection rule history
+
+- **v1:** web-only validation (ft1).
+- **v2:** pooled web+native, box-weighted validation (ft2 data stage).
+- **v3:** per-source constraints, web-only primary. This rule is decided on
+  **2026-10-22 before any ft3 evaluation**, motivated by ft1's TEST GUI precision
+  failure and the TEST GUI box mix: web 514 boxes (≈78%), native/menus 145 (≈22%),
+  versus pooled validation (~25% web). No further selection changes occur after
+  ft3's select sweep is seen.
+
+TEST runs per model: **base 1, ft1 1, ft2 0, ft3 0 (planned 1)**.
+
+### Limitations
+
+- Web val has 805 boxes: precision SE is ≈1.7 points, so the 2-point tolerance is ≈1 SE.
+- Synthetic native val is a regression guard, not a proxy for real apps; its boxes
+  are 3–15× larger than TEST native boxes.
+- TUNE/TEST page/session sharing (`eval/groups.json`) is kept; independent metrics
+  are informational.
+- About 6% of web boxes are tiny.
 
 ## Results
 

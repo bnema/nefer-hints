@@ -202,7 +202,7 @@ int main(int argc, char **argv) {
       if (!conf_set) d.conf = conf;
       if (!iou_set) d.threshold = threshold;
     }
-    if (model.empty() || d.size < 32 || d.size > 4096 || d.size % 32 ||
+    if (d.size < 32 || d.size > 4096 || d.size % 32 ||
         d.maxdet < 1 || d.maxdet > 10000 || !std::isfinite(d.conf) ||
         d.conf <= 0 || d.conf > 1 || !std::isfinite(d.threshold) ||
         d.threshold < 0 || d.threshold > 1)

@@ -22,8 +22,11 @@ Optional model defaults come from `DIR/model.json` for a directory, or
 `<prefix>.json` then the prefix directory's `model.json` for a prefix or
 `.ncnn.param` path (the first existing file wins). The file is a flat JSON object
 of strings and numbers, e.g. `{"name":"terminal-v1","conf":0.075,"iou":0.4}`.
-All keys are optional; unknown keys are ignored. `name` is a string, `conf` is
-finite in (0,1], and `iou` is finite in [0,1]. Invalid metadata fails hello.
+The file is at most 64 KiB (65536 bytes), strings contain valid UTF-8, and
+duplicate keys (after decoding escapes) are rejected. Violations fail hello with
+status 1 and an error string. All keys are optional; unknown keys are ignored.
+`name` is a string, `conf` is finite in (0,1], and `iou` is finite in [0,1].
+Invalid metadata fails hello.
 Precedence is built-in conf 0.05 / IoU 0.7 < metadata < explicit CLI flags,
 regardless of argument order. Per-request confidence still overrides the startup
 default. Startup stderr includes effective conf/IoU and the model name, if given.

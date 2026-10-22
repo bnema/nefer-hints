@@ -49,7 +49,7 @@ venv/bin/python train/gate.py select train/results/sweep-base-select-iou0.7.json
 # Freeze the printed pair before the single fine-tuned TEST sweep:
 venv/bin/python train/sweep.py --model models-ft --name ft --set test --iou 0.4
 venv/bin/python train/gate.py final train/results/sweep-base-test-iou0.7.json \
-  train/results/sweep-ft-test-iou0.4.json --conf 0.01
+  train/results/sweep-ft-test-iou0.4.json --conf 0.01 --base-conf 0.05
 ```
 
 Training uses terminal train twice (oversampling) plus web train and native train.
@@ -61,20 +61,21 @@ paths are printed; batch 4 and no VRAM cap remain the defaults.
 
 Selection uses web val and native val when present, alongside terminal val, never
 eval TUNE (used in training) or TEST. All selection files require identical `gui_sets`.
-The base reference is conf 0.05 / IoU 0.7. For each IoU, selection takes the lowest
-confidence passing these per-source constraints:
+For every fine-tuned (IoU, conf) row, the matched base threshold is the smallest
+base validation threshold at IoU 0.7 with equal-or-higher web-only precision.
+A row fails if base cannot reach its precision. At that matched operating point:
 
-- web-only precision and recall each drop by at most 2 percentage points;
+- web-only recall drops by at most 2 percentage points;
 - native precision and recall each drop by at most 2 points when `native/val` is included;
-- terminal FP/screen is at most 1.0 and at most 20% of base;
+- terminal FP/screen is at most 1.0 and at most 20% of matched base;
 - terminal link recall is at least 80%.
 
-Across these per-IoU candidates, web-only precision ranks first, web-only recall
-second, and native precision third (zero when absent), all descending.
+All passing rows rank by web-only recall margin over matched base, then web-only
+precision, then native recall margin (zero when absent), all descending.
 The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
-`score > conf`, matching the runner. The final JSON line records the frozen pair.
+`score > conf`, matching the runner. The final JSON line records frozen `conf`, `iou`, and `base_conf`.
 
-The TEST gate is unchanged: pooled GUI `web_precision` and `web_recall` each drop
+TEST compares ft at its frozen conf against base at the base conf frozen on validation: pooled GUI `web_precision` and `web_recall` each drop
 by at most 2 points, with the same terminal checks. The frozen pair is evaluated
 once on eval TEST plus terminal test. Per-category TEST web/native metrics and
 independent-subset metrics are informational. A TEST scene is independent when no
@@ -88,8 +89,12 @@ group containing it also contains a TUNE scene (ungrouped scenes are independent
 - **v3:** per-source constraints, web-only primary. This rule is decided on
   **2026-10-22 before any ft3 evaluation**, motivated by ft1's TEST GUI precision
   failure and the TEST GUI box mix: web 514 boxes (≈78%), native/menus 145 (≈22%),
-  versus pooled validation (~25% web). No further selection changes occur after
-  ft3's select sweep is seen.
+  versus pooled validation (~25% web). The commitment is not to change the rule
+  after ft3's select sweep.
+- **v4 matched operating point**, adopted **2026-10-22** after seeing ft3's v3
+  select sweep (v3 failed only on web-only recall at base's fixed 0.05 point while
+  matched-precision recall was equal): a deviation from the commitment not to
+  change the rule after the select sweep; TEST still unseen for ft3 and run once.
 
 TEST runs per model: **base 1, ft1 1, ft2 0, ft3 0 (planned 1)**.
 

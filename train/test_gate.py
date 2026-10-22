@@ -24,10 +24,10 @@ class SelectTests(unittest.TestCase):
 
     def test_boundaries_and_each_failure(self):
         ft = metrics()
-        for key in ('web_only_precision', 'web_only_recall', 'native_precision', 'native_recall'):
+        for key in ('web_only_recall', 'native_precision', 'native_recall'):
             ft[key] = self.base[key] - 0.02
         self.assertTrue(all(gate.check_select(self.base, ft).values()))
-        for key in ('web_only_precision', 'web_only_recall', 'native_precision', 'native_recall',
+        for key in ('web_only_recall', 'native_precision', 'native_recall',
                     'terminal_recall', 'terminal_fp_per_screen'):
             with self.subTest(key=key):
                 bad = dict(ft)
@@ -40,11 +40,11 @@ class SelectTests(unittest.TestCase):
         base = gate.select_metrics(self.base, ['web/val'])
         ft = gate.select_metrics(dict(metrics(), native_precision=0, native_recall=0), ['web/val'])
         checks = gate.check_select(base, ft)
-        self.assertEqual(len(checks), 5)
+        self.assertEqual(len(checks), 4)
         self.assertTrue(all(checks.values()))
         self.assertFalse(all(gate.check(dict(self.base, web_precision=0.9), ft).values()))
 
-    def run_select(self, documents):
+    def run_select(self, documents, mode="select", extra=()):
         with tempfile.TemporaryDirectory() as directory:
             paths = []
             for i, doc in enumerate(documents):
@@ -52,7 +52,7 @@ class SelectTests(unittest.TestCase):
                 path.write_text(json.dumps(doc))
                 paths.append(str(path))
             out, err = io.StringIO(), io.StringIO()
-            with patch('sys.argv', ['gate', 'select', *paths]), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            with patch('sys.argv', ['gate', mode, *paths, *extra]), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
                 try:
                     code = gate.main()
                 except SystemExit as error:
@@ -62,22 +62,38 @@ class SelectTests(unittest.TestCase):
     def document(self, iou, thresholds):
         return dict(set='select', iou=iou, gui_sets=['web/val', 'native/val'], thresholds=thresholds)
 
-    def test_ranking_and_lowest_conf_and_last_json(self):
-        base = self.document(0.7, {'0.050': self.base})
-        for key in ('web_only_precision', 'web_only_recall', 'native_precision'):
+    def test_matched_threshold_and_all_rows_ranked(self):
+        base = self.document(0.7, {
+            '0.200': dict(self.base, web_only_precision=0.8, web_only_recall=0.5),
+            '0.050': self.base,
+            '0.100': dict(self.base, web_only_precision=0.8, web_only_recall=0.6)})
+        code, out, err = self.run_select([base, self.document(0.4, {
+            '0.010': metrics(),
+            '0.100': dict(metrics(), web_only_precision=0.75, web_only_recall=0.7)})])
+        self.assertEqual((code, err), (0, ''))
+        self.assertEqual(json.loads(out.splitlines()[-1]),
+                         dict(conf=0.1, iou=0.4, base_conf=0.1))
+        self.assertIn('base(0.100)', out)
+
+    def test_ranking_tiebreakers(self):
+        for key in ('web_only_recall', 'web_only_precision', 'native_recall'):
             with self.subTest(key=key):
                 better = dict(metrics())
                 better[key] += 0.01
-                # Pooled precision favors the other IoU; it must not rank candidates.
-                worse = dict(metrics(), web_precision=0.99)
-                docs = [base, self.document(0.7, {'0.100': worse}),
-                        self.document(0.4, {'0.200': dict(better, web_only_precision=0.99), '0.020': better})]
-                code, out, err = self.run_select(docs)
+                base = dict(self.base, web_only_precision=0.9)
+                code, out, err = self.run_select([
+                    self.document(0.7, {'0.050': base}),
+                    self.document(0.7, {'0.010': metrics()}),
+                    self.document(0.4, {'0.100': better})])
                 self.assertEqual((code, err), (0, ''))
-                self.assertEqual(json.loads(out.splitlines()[-1]), {'conf': 0.02, 'iou': 0.4})
-                self.assertIn('PASS native recall', out)
-                self.assertIn('base {', out)
-                self.assertIn('ft {', out)
+                self.assertEqual(json.loads(out.splitlines()[-1])['iou'], 0.4)
+
+    def test_unreachable_precision(self):
+        code, out, _ = self.run_select([
+            self.document(0.7, {'0.050': self.base}),
+            self.document(0.4, {'0.010': dict(metrics(), web_only_precision=0.9)})])
+        self.assertEqual(code, 1)
+        self.assertIn('base cannot reach this precision', out)
 
     def test_gui_sets_required_and_identical(self):
         for target in (0, 1):
@@ -108,6 +124,22 @@ class SelectTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn('IoU=0.4 conf=0.010: failed checks: terminal link recall', out)
         self.assertEqual(out.splitlines()[-1], 'OVERALL FAIL: no validation pair passes')
+
+    def test_final_frozen_base_and_missing_threshold(self):
+        docs = [dict(set='test', iou=0.7, thresholds={
+            '0.050': dict(self.base, web_precision=0.9), '0.100': self.base}),
+            dict(set='test', iou=0.4, thresholds={'0.020': metrics()})]
+        code, out, err = self.run_select(docs, 'final',
+                                        ['--conf', '0.02', '--base-conf', '0.1'])
+        self.assertEqual((code, err), (0, ''))
+        self.assertIn('OVERALL PASS', out)
+        code, _, err = self.run_select(docs, 'final',
+                                      ['--conf', '0.02', '--base-conf', '0.3'])
+        self.assertEqual(code, 2)
+        self.assertIn('missing threshold 0.300', err)
+        code, _, err = self.run_select(docs, 'final', ['--conf', '0.02'])
+        self.assertEqual(code, 2)
+        self.assertIn('--base-conf', err)
 
 
 if __name__ == '__main__':

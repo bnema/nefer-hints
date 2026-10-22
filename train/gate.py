@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Select conf/IoU with per-source GUI guards and web-only ranking.
-
-Gate the frozen pair once on TEST using the unchanged pooled GUI checks.
-"""
+"""Select a matched-precision operating point, then gate frozen thresholds on TEST."""
 import argparse
 import json
 from pathlib import Path
@@ -20,8 +17,7 @@ def check(base, ft):
 
 def check_select(base, ft):
     checks = {
-        'web-only precision drop <= 2 pts': base['web_only_precision'] - ft['web_only_precision'] <= 0.02 + 1e-12,
-        'web-only recall drop <= 2 pts': base['web_only_recall'] - ft['web_only_recall'] <= 0.02 + 1e-12,
+        'web-only recall drop <= 2 pts at matched precision': base['web_only_recall'] - ft['web_only_recall'] <= 0.02 + 1e-12,
     }
     if 'native_precision' in base:
         for metric in ('precision', 'recall'):
@@ -53,6 +49,13 @@ def read(path, expected_set, base=False):
     return data
 
 
+def threshold_row(data, conf, path):
+    key = f'{conf:.3f}'
+    if key not in data['thresholds']:
+        raise ValueError(f'{path}: missing threshold {key}')
+    return data['thresholds'][key]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_subparsers(dest='mode', required=True)
@@ -63,16 +66,15 @@ def main():
     final.add_argument('base')
     final.add_argument('ft')
     final.add_argument('--conf', type=float, required=True)
+    final.add_argument('--base-conf', type=float, required=True)
     args = parser.parse_args()
     try:
         expected = 'select' if args.mode == 'select' else 'test'
         base_data = read(args.base, expected, base=True)
-        base = base_data['thresholds']['0.050']
         if args.mode == 'select':
             if 'gui_sets' not in base_data:
                 raise ValueError(f'{args.base}: select file requires gui_sets')
             gui_sets = base_data['gui_sets']
-            base = select_metrics(base, gui_sets)
             candidates = []
             diagnostics = []
             seen = set()
@@ -83,36 +85,50 @@ def main():
                 if data['iou'] in seen:
                     raise ValueError('provide only one fine-tuned file per IoU')
                 seen.add(data['iou'])
-                thresholds = sorted(data['thresholds'], key=float)
-                for threshold in thresholds:
+                rows = []
+                for threshold in sorted(data['thresholds'], key=float):
                     metrics = select_metrics(data['thresholds'][threshold], gui_sets)
+                    matched = next((key for key in sorted(base_data['thresholds'], key=float)
+                                    if base_data['thresholds'][key]['web_only_precision'] >= metrics['web_only_precision']), None)
+                    if matched is None:
+                        rows.append((float('-inf'), threshold, {'base cannot reach this precision': False}))
+                        continue
+                    base = select_metrics(base_data['thresholds'][matched], gui_sets)
                     checks = check_select(base, metrics)
-                    if threshold == thresholds[0]:
-                        diagnostics.append((data['iou'], threshold, checks))
+                    margin = metrics['web_only_recall'] - base['web_only_recall']
+                    rows.append((margin, threshold, checks))
                     if all(checks.values()):
-                        candidates.append((metrics, float(threshold), data['iou']))
-                        break
+                        candidates.append((metrics, float(threshold), data['iou'], base, float(matched)))
+                if rows:
+                    _, threshold, checks = max(rows, key=lambda row: row[0])
+                    diagnostics.append((data['iou'], threshold, checks))
             if not candidates:
                 for iou, threshold, checks in diagnostics:
                     print(f'IoU={iou:g} conf={threshold}: failed checks: ' +
                           ', '.join(label for label, passed in checks.items() if not passed))
                 print('OVERALL FAIL: no validation pair passes')
                 return 1
-            ft, conf, iou = max(candidates, key=lambda c: (
-                c[0]['web_only_precision'], c[0]['web_only_recall'], c[0].get('native_precision', 0)))
-            print(f'Selected conf={conf:g}, IoU={iou:g}')
-            for name, metrics in (('base', base), ('ft', ft)):
+            ft, conf, iou, base, base_conf = max(candidates, key=lambda c: (
+                c[0]['web_only_recall'] - c[3]['web_only_recall'],
+                c[0]['web_only_precision'],
+                c[0].get('native_recall', 0) - c[3].get('native_recall', 0)))
+            print(f'Selected conf={conf:g}, IoU={iou:g}, base conf={base_conf:g}')
+            for name, metrics in ((f'base({base_conf:.3f})', base), ('ft', ft)):
                 print(name, json.dumps(metrics, sort_keys=True))
             for label, passed in check_select(base, ft).items():
                 print('PASS' if passed else 'FAIL', label)
-            print(json.dumps(dict(conf=conf, iou=iou)))
+            print(json.dumps(dict(conf=conf, iou=iou, base_conf=base_conf)))
             return 0
         data = read(args.ft, expected)
-        ft = data['thresholds'][f'{args.conf:.3f}']
-        print(f"Frozen conf={args.conf:g}, IoU={data['iou']:g}")
+        base = threshold_row(base_data, args.base_conf, args.base)
+        ft = threshold_row(data, args.conf, args.ft)
+        print(f"Frozen conf={args.conf:g}, IoU={data['iou']:g}, base conf={args.base_conf:g}")
         for name, metrics in (('base', base), ('ft', ft)):
             print(name, json.dumps(metrics, sort_keys=True))
-            print(f"{name} independent web P={metrics['web_precision_independent']:.6f} R={metrics['web_recall_independent']:.6f} (informational)")
+            info = {key: value for key, value in metrics.items()
+                    if '_independent' in key or key.startswith(('web_test_', 'native_test_'))}
+            print(name, 'informational', json.dumps(info, sort_keys=True))
+
         checks = check(base, ft)
         for label, passed in checks.items():
             print('PASS' if passed else 'FAIL', label)

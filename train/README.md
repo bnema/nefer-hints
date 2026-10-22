@@ -119,9 +119,27 @@ R 59.7%, TEST native P 66.7% / R 70.3%.
 
 ## Results
 
+### terminal-v2 (ft3, shipped as experimental)
+
+Validation (rule v4) freezes **conf 0.04 / IoU 0.4** against base at conf 0.175. The
+TEST gate **fails** on pooled GUI precision (drop 7.2 points, allowance 2); every other
+check passes. It ships as the experimental default model because it is the only one
+usable on terminals, web and native apps alike: compared with base at the same
+precision on validation, it finds as many web targets, far more native targets, and
+nearly all terminal links with under one false box per screen.
+
+| Set | Model | conf | IoU | Web-only P / R | Native P / R | GUI P / R (pooled) | Terminal link R | Terminal FP/screen |
+|---|---|---:|---:|---|---|---|---:|---:|
+| Selection | base | 0.175 | 0.7 | 55.1% / 64.5% | 50.1% / 33.6% | — | 27.9% | 18.33 |
+| Selection | ft3 (frozen) | 0.04 | 0.4 | 54.8% / 64.6% | 49.2% / 80.5% | — | 98.5% | 0.50 |
+| TEST | base | 0.175 | 0.7 | — | — | 64.2% / 51.6% | 27.4% | 16.30 |
+| TEST | ft3 (frozen) | 0.04 | 0.4 | 54.4% / 59.7% | 66.7% / 70.3% | 57.0% / 62.1% | 98.4% | 0.47 |
+
+### terminal-v1 (ft1)
+
 Validation freezes **conf 0.01 / IoU 0.4**. The final TEST gate **fails**: full web
 precision drops 9.13 percentage points, beyond the 2-point allowance. All other checks pass.
-No TEST-driven retuning follows this result; installed model metadata remains unchanged.
+No TEST-driven retuning follows this result.
 
 | Set | Model | conf | IoU | Web P | Web R | Terminal link R | Terminal FP/screen |
 |---|---|---:|---:|---:|---:|---:|---:|
@@ -136,12 +154,15 @@ The independent scenes are lobsters, mdn, github, go, httpbin-form and firefox-m
 “Web” includes native GUI scenes in the eval TEST split. Terminal columns use the entire
 corresponding terminal split, not the independent web subset.
 
-The installed `terminal-v1` metadata remains conf 0.075 / IoU 0.4; this historical setting
-is not validated by the new frozen-pair gate. Export accepts optional `NAME`, `CONF` and
-`IOU` variables and writes `model.json` only when at least one is supplied. Explicit runner
-flags override metadata.
+Export accepts optional `NAME`, `CONF` and `IOU` variables and writes `model.json` only
+when at least one is supplied. Explicit runner flags override metadata.
 
 ## Model versions
+
+- **terminal-v2** (experimental, shipped) = `runs/ft3/weights/best.pt` (epoch 30 of 40),
+  metadata `{"name":"terminal-v2","conf":0.04,"iou":0.4}`.
+  SHA-256 of `models-ft3/icon_detect-1280-rect.ncnn.bin`:
+  `b345bf739f00ce8eec67333a33140ace2d1d4fe6e0ad3f6c1d96d4589e8b7ac3`.
 
 - **terminal-v1** = `runs/ft/weights/best.pt` (epoch 39 of 40).
   SHA-256 of `models-ft/icon_detect-1280.ncnn.bin`:
@@ -149,5 +170,7 @@ flags override metadata.
 
 ## Next steps
 
-- More and more varied web/GTK training data (the web collection stalled at 264 of 500 pages).
+- A larger web validation set (about 150 pages from 15 held-out sites): 39 pages did not
+  predict TEST web precision for terminal-v2.
+- Real native app captures outside the TEST sessions, beyond the synthetic GTK/Qt templates.
 - GUI terminal chrome (GNOME Console, Ptyxis, Ghostty) screens, not yet in the data.

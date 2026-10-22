@@ -1,0 +1,29 @@
+{
+  "hn": [
+    "hn",
+    "hn-dark"
+  ],
+  "arch": [
+    "arch",
+    "arch-dark"
+  ],
+  "nautilus": [
+    "nautilus",
+    "nautilus-list",
+    "nautilus-context",
+    "nautilus-menu"
+  ],
+  "thunar": [
+    "thunar",
+    "thunar-menu"
+  ],
+  "editor": [
+    "editor",
+    "editor-menu"
+  ],
+  "mattermost": [
+    "mattermost-channel",
+    "mattermost-thread",
+    "mattermost-switcher"
+  ]
+}

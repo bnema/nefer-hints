@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
-"""Confidence sweep over the eval TEST split and the terminal test set.
+"""Sweep confidence on validation (select) or held-out TEST data.
 
-  venv/bin/python train/sweep.py --model <models-dir> --name <name> [--gpu cpu] [--iou 0.7]
-
-Runs the runner once per image at conf 0.01 and filters boxes by score offline
-(NMS suppressors always score higher, so this equals a run at the higher conf).
-Writes train/results/sweep-<name>.json: per threshold, eval TEST precision/recall
-and terminal link recall / FP per screen.
+Inference runs at conf 0.01; strict offline score filtering mirrors the runner.
+No eval TUNE scene is used. NEFER_HINTS_RUNNER overrides build/nefer-hints.
 """
-import argparse, importlib.util, json, shutil, sys, tempfile
+import argparse
+import importlib.util
+import json
+import os
+import tempfile
 from pathlib import Path
+
 import numpy as np
 from PIL import Image
 
 R = Path(__file__).resolve().parents[1]
-BIN = Path('$HOME/.local/share/nefer-hints-test/bin/nefer-hints')
-GRID = [0.01, 0.02, 0.03, 0.04] + [round(0.05 + 0.025 * i, 3) for i in range(19)]  # 0.01 .. 0.5
+GRID = [0.01, 0.02, 0.03, 0.04] + [round(0.05 + 0.025 * i, 3) for i in range(19)]
 
 
 def load(path, name):
     spec = importlib.util.spec_from_file_location(name, path)
-    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def bgra(im):
@@ -28,66 +30,97 @@ def bgra(im):
     return np.concatenate((rgb[:, :, ::-1], np.full((*rgb.shape[:2], 1), 255, np.uint8)), axis=2)
 
 
+def yolo_inputs(directory):
+    images = sorted((directory / 'images').glob('*.png'))
+    if not images:
+        raise ValueError(f'No images in {directory}')
+    for image in images:
+        with Image.open(image) as im:
+            width, height = im.size
+        gt = []
+        for line in (directory / 'labels' / (image.stem + '.txt')).read_text().splitlines():
+            _, cx, cy, w, h = map(float, line.split())
+            gt.append(((cx-w/2)*width, (cy-h/2)*height, (cx+w/2)*width, (cy+h/2)*height))
+        yield image, gt, False
+
+
+def web_metrics(rows, threshold, match):
+    tp = pred = tgt = 0
+    for boxes, gt, _ in rows:
+        filtered = [b for b in boxes if b[4] > threshold]
+        tp += len(match(filtered, gt))
+        pred += len(filtered)
+        tgt += len(gt)
+    return tp / pred if pred else 0.0, tp / tgt if tgt else 0.0
+
+
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--model', type=Path, required=True)
     ap.add_argument('--name', required=True)
+    ap.add_argument('--set', choices=('select', 'test'), required=True)
     ap.add_argument('--gpu', default='cpu')
-    ap.add_argument('--iou', default='0.7', help='runner NMS IoU')
+    ap.add_argument('--iou', type=float, default=0.7)
     a = ap.parse_args()
+    runner = Path(os.environ.get('NEFER_HINTS_RUNNER', R / 'build/nefer-hints')).resolve()
+    model = a.model.resolve()
     protocol = load(R / 'tests/protocol.py', 'protocol')
     score = load(R / 'eval/score.py', 'score')
-    tmp = Path(tempfile.mkdtemp(prefix='nh-sweep-'))
-    (tmp / 'build').mkdir(); (tmp / 'weights').mkdir()
-    (tmp / 'build/nefer-hints').symlink_to(BIN); (tmp / 'models').symlink_to(a.model.resolve())
-    protocol.ROOT = tmp
-    split = json.loads((R / 'eval/split.json').read_text())
-    evals, terms = [], []  # (boxes, gt)
-    client = protocol.Client(size=1280, extra=('--conf', '0.01', '--iou', a.iou, '--gpu', a.gpu))
-    try:
-        seq = 0
-        for name in sorted(n for n, s in split.items() if s == 'test'):
-            gt = json.loads((R / 'eval/gt' / f'{name}.json').read_text())['boxes']
-            seq += 1
-            r = client.request(bgra(Image.open(R / 'eval/frames' / f'{name}.png')), seq=seq, conf=0.01)
-            if r['status']:
-                raise RuntimeError(r)
-            evals.append(([b[:5] for b in r['boxes']], gt))
-        d = R / 'data/terminal/test'
-        for img in sorted((d / 'images').glob('*.png')):
-            im = Image.open(img); W, H = im.size
-            lab = (d / 'labels' / (img.stem + '.txt')).read_text().split()
-            gt = []
-            for i in range(0, len(lab), 5):
-                _, cx, cy, w, h = map(float, lab[i:i + 5])
-                gt.append(((cx - w / 2) * W, (cy - h / 2) * H, (cx + w / 2) * W, (cy + h / 2) * H))
-            seq += 1
-            r = client.request(bgra(im), seq=seq, conf=0.01)
-            if r['status']:
-                raise RuntimeError(r)
-            terms.append(([b[:5] for b in r['boxes']], gt))
-    finally:
-        client.close(); shutil.rmtree(tmp, ignore_errors=True)
-    out = {'name': a.name, 'model': str(a.model), 'thresholds': {}}
+    if a.set == 'select':
+        web = list(yolo_inputs(R / 'data/web/val'))
+    else:
+        split = json.loads((R / 'eval/split.json').read_text())
+        groups = json.loads((R / 'eval/groups.json').read_text())
+        contaminated = {scene for group in groups.values() if any(split[s] == 'tune' for s in group) for scene in group}
+        web = [(R / 'eval/frames' / f'{name}.png',
+                json.loads((R / 'eval/gt' / f'{name}.json').read_text())['boxes'],
+                name not in contaminated)
+               for name in sorted(split) if split[name] == 'test']
+    terminal = list(yolo_inputs(R / 'data/terminal' / ('val' if a.set == 'select' else 'test')))
+    rows = [[], []]
+    with tempfile.TemporaryDirectory(prefix='nh-sweep-') as directory:
+        tmp = Path(directory)
+        (tmp / 'build').mkdir()
+        (tmp / 'weights').mkdir()
+        (tmp / 'build/nefer-hints').symlink_to(runner)
+        (tmp / 'models').symlink_to(model)
+        protocol.ROOT = tmp
+        client = protocol.Client(size=1280, extra=('--conf', '0.01', '--iou', str(a.iou), '--gpu', a.gpu))
+        try:
+            seq = 0
+            for inputs, output in zip((web, terminal), rows):
+                for image, gt, independent in inputs:
+                    seq += 1
+                    with Image.open(image) as im:
+                        response = client.request(bgra(im), seq=seq, conf=0.01)
+                    if response['status']:
+                        raise RuntimeError(response)
+                    output.append(([b[:5] for b in response['boxes']], gt, independent))
+        finally:
+            client.close()
+    model_label = str(model.relative_to(R)) if model.is_relative_to(R) else model.name
+    out = dict(name=a.name, set=a.set, iou=a.iou, runner=runner.name, model=model_label, thresholds={})
     for t in GRID:
-        tp = pred = tgt = 0
-        for boxes, gt in evals:
-            b = [x for x in boxes if x[4] >= t]
-            tp += len(score.match(b, gt)); pred += len(b); tgt += len(gt)
+        precision, recall = web_metrics(rows[0], t, score.match)
         ttp = ttgt = fp = 0
-        for boxes, gt in terms:
-            b = [x for x in boxes if x[4] >= t]
-            ttp += len(score.match(b, gt)); ttgt += len(gt)
-            fp += sum(not any(g[0] <= (x[0] + x[2]) / 2 <= g[2] and g[1] <= (x[1] + x[3]) / 2 <= g[3] for g in gt) for x in b)
-        out['thresholds'][f'{t:.3f}'] = dict(
-            eval_test_precision=tp / pred if pred else 0.0, eval_test_recall=tp / tgt,
-            terminal_recall=ttp / ttgt, terminal_fp_per_screen=fp / len(terms))
-    (R / 'train/results').mkdir(exist_ok=True)
-    (R / 'train/results' / f'sweep-{a.name}.json').write_text(json.dumps(out, indent=1) + '\n')
-    print('thr    evalP  evalR  termR  termFP')
-    for t, m in out['thresholds'].items():
-        print(f"{t}  {m['eval_test_precision']:.3f}  {m['eval_test_recall']:.3f}  {m['terminal_recall']:.3f}  {m['terminal_fp_per_screen']:.2f}")
+        for boxes, gt, _ in rows[1]:
+            filtered = [b for b in boxes if b[4] > t]
+            ttp += len(score.match(filtered, gt))
+            ttgt += len(gt)
+            fp += sum(not any(g[0] <= (b[0]+b[2])/2 <= g[2] and g[1] <= (b[1]+b[3])/2 <= g[3] for g in gt) for b in filtered)
+        metrics = dict(web_precision=precision, web_recall=recall,
+                       terminal_recall=ttp/ttgt if ttgt else 0.0,
+                       terminal_fp_per_screen=fp/len(rows[1]))
+        if a.set == 'test':
+            p, r = web_metrics([row for row in rows[0] if row[2]], t, score.match)
+            metrics.update(web_precision_independent=p, web_recall_independent=r)
+        out['thresholds'][f'{t:.3f}'] = metrics
+    destination = R / 'train/results' / f'sweep-{a.name}-{a.set}-iou{a.iou:g}.json'
+    destination.parent.mkdir(exist_ok=True)
+    destination.write_text(json.dumps(out, indent=1) + '\n')
+    print(destination.relative_to(R))
+    print(json.dumps(out['thresholds'], indent=1))
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()

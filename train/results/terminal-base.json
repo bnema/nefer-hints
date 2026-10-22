@@ -1,5 +1,5 @@
 {
- "model": "$HOME/.local/share/nefer-hints-test/models",
+ "model": "models-base",
  "name": "base",
  "gpu": "cpu",
  "screens": 40,

@@ -39,7 +39,9 @@ No detector predictions were used to construct GT.
 `scenes.json` maps scene to category; `split.json` assigns 13 tune/12 test,
 covering dense text, content, modern web, forms, sidebar docs, themes, GTK and
 menus. HN light/dark stay in tune, but Arch light/dark cross splits: the test is
-scene-level, **not independent by site/application**. No tuning was performed.
+scene-level, **not independent by site/application**. TUNE scenes are used for training data; confidence and NMS IoU are selected on
+separate web and terminal validation sets, then frozen before the final TEST gate.
+`groups.json` records shared pages/app sessions for informational independent-subset metrics.
 No old PoC scenes are included.
 
 ## Privacy

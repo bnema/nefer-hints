@@ -10,7 +10,10 @@ terminal text and keeps detecting GUI targets. Bare paths, prompts and status ba
 | Synthetic terminal screens (`terminal/`) | 500 | 60 | 40 | magenta-diff link boxes, see `terminal/README.md` |
 | Web pages (`web/`) | 264 | 39 | - | DOM clickables, see `web/README.md` (includes the 13 eval TUNE scenes) |
 
-The web pages stop the model from forgetting GUI targets. The eval TEST scenes are never trained on.
+The web pages stop the model from forgetting GUI targets. Exact eval TEST scenes are never
+trained on, but some TEST scenes share a page/app session with trained TUNE scenes; see
+`eval/groups.json`. Splits are regrouped by page/session at the next dataset iteration.
+The 39 web validation pages come from sites held out from training.
 
 ## Training
 
@@ -24,39 +27,64 @@ About 2 min/epoch on an RX 9070 XT; run it as a memory-capped systemd user unit.
 
 ## Export and evaluation
 
+Set `NEFER_HINTS_RUNNER` to the runner binary (default: repository `build/nefer-hints`).
+The runner uses CPU inference here; explicit conf 0.01 and IoU override model metadata.
+
 ```sh
-NAME=terminal-v1 CONF=0.075 IOU=0.4 train/export_ft.sh runs/ft/weights/best.pt                         # models-ft/ (ncnn), runner hello check
-venv/bin/python train/sweep.py --model models-ft --name ft --iou 0.4
-python3 train/gate.py --sweep train/results/sweep-base.json train/results/sweep-ft.json
+train/export_ft.sh runs/ft/weights/best.pt
+# BASE_MODELS points to the base ncnn model directory.
+venv/bin/python train/sweep.py --model "$BASE_MODELS" --name base --set select --iou 0.7
+venv/bin/python train/sweep.py --model "$BASE_MODELS" --name base --set test --iou 0.7
+for iou in 0.7 0.5 0.4; do
+  venv/bin/python train/sweep.py --model models-ft --name ft --set select --iou "$iou"
+done
+venv/bin/python train/gate.py select train/results/sweep-base-select-iou0.7.json \
+  train/results/sweep-ft-select-iou0.7.json train/results/sweep-ft-select-iou0.5.json \
+  train/results/sweep-ft-select-iou0.4.json
+# Freeze the printed pair before the single fine-tuned TEST sweep:
+venv/bin/python train/sweep.py --model models-ft --name ft --set test --iou 0.4
+venv/bin/python train/gate.py final train/results/sweep-base-test-iou0.7.json \
+  train/results/sweep-ft-test-iou0.4.json --conf 0.01
 ```
 
-`sweep.py` runs the runner once per image at conf 0.01 and filters scores offline (0.01 to 0.5), on
-the eval TEST split and the terminal test set. `gate.py --sweep` picks the lowest fine-tuned conf that
-passes every check against the base model at its shipped settings (conf 0.05, NMS IoU 0.7):
+Selection uses web val and terminal val, never eval TUNE (used in training) or TEST.
+The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
+`score > conf`, matching the runner. For each IoU, selection takes the lowest confidence
+passing all five checks against base conf 0.05 / IoU 0.7:
 
-- eval TEST precision and recall each drop by at most 2 points;
-- terminal false positives at most 1.0 per screen and at least 80 % below base;
-- terminal link recall at least 80 %.
+- web precision and recall each drop by at most 2 percentage points;
+- terminal FP/screen is at most 1.0 and at most 20% of base;
+- terminal link recall is at least 80%.
 
-`eval_all.sh` and `gate.py` without `--sweep` give the fixed 0.05/0.25 report.
+Across these per-IoU candidates, highest web precision wins; higher web recall breaks ties.
+The frozen pair is evaluated once on eval TEST plus terminal test with the same checks.
+Independent-subset web metrics are informational: a TEST scene is independent when no group
+containing it also contains a TUNE scene (ungrouped scenes are independent).
+`eval_all.sh` remains a legacy fixed-threshold report producer; it is not a selection gate.
 
 ## Results
 
-| Model | conf | IoU | Eval TEST P | Eval TEST R | Terminal link R | Terminal FP/screen |
-|---|---:|---:|---:|---:|---:|---:|
-| base | 0.05 | 0.7 | 55.9 % | 64.9 % | 44.1 % | 44.0 |
-| fine-tuned | 0.05 | 0.7 | 46.2 % | 68.0 % | 100 % | 0.28 |
-| **fine-tuned (shipped)** | **0.075** | **0.4** | **55.4 %** | **63.6 %** | **100 %** | **0.25** |
+Validation freezes **conf 0.01 / IoU 0.4**. The final TEST gate **fails**: full web
+precision drops 9.13 percentage points, beyond the 2-point allowance. All other checks pass.
+No TEST-driven retuning follows this result; installed model metadata remains unchanged.
 
-The fine-tuned model passes the gate only with NMS IoU 0.4: at 0.7 it emits overlapping duplicates that
-cost precision. Base at IoU 0.4 reaches P 62.5 % / R 63.7 % at conf 0.05, so the fine-tuned model still
-trails the best base setting on GUI precision. Per scene, it gains on dense text and Mattermost and
-loses on GitHub, MDN, forms and the GTK editor.
+| Set | Model | conf | IoU | Web P | Web R | Terminal link R | Terminal FP/screen |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Selection | base | 0.05 | 0.7 | 39.88% | 77.14% | 47.57% | 51.050 |
+| Selection | ft (frozen) | 0.01 | 0.4 | 41.74% | 77.89% | 99.76% | 0.583 |
+| TEST full | base | 0.05 | 0.7 | 55.87% | 64.95% | 44.09% | 44.025 |
+| TEST full | ft (frozen) | 0.01 | 0.4 | 46.74% | 77.24% | 100.00% | 0.625 |
+| TEST independent | base | 0.05 | 0.7 | 66.67% | 58.04% | — | — |
+| TEST independent | ft (frozen) | 0.01 | 0.4 | 54.26% | 69.10% | — | — |
 
-The shipped model directory carries `model.json` with name `terminal-v1`, conf 0.075
-and IoU 0.4; the runner uses these defaults without flags. Export accepts optional
-`NAME`, `CONF` and `IOU` environment variables (any subset) and writes `model.json`
-only when at least one is supplied. Explicit runner flags override the metadata.
+The independent scenes are lobsters, mdn, github, go, httpbin-form and firefox-menu.
+“Web” includes native GUI scenes in the eval TEST split. Terminal columns use the entire
+corresponding terminal split, not the independent web subset.
+
+The installed `terminal-v1` metadata remains conf 0.075 / IoU 0.4; this historical setting
+is not validated by the new frozen-pair gate. Export accepts optional `NAME`, `CONF` and
+`IOU` variables and writes `model.json` only when at least one is supplied. Explicit runner
+flags override metadata.
 
 ## Model versions
 

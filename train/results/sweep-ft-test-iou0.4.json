@@ -1,0 +1,193 @@
+{
+ "name": "ft",
+ "set": "test",
+ "iou": 0.4,
+ "runner": "nefer-hints",
+ "model": "models-ft",
+ "thresholds": {
+  "0.010": {
+   "web_precision": 0.4674012855831038,
+   "web_recall": 0.7723823975720789,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.625,
+   "web_precision_independent": 0.5426229508196722,
+   "web_recall_independent": 0.6910229645093946
+  },
+  "0.020": {
+   "web_precision": 0.49490835030549896,
+   "web_recall": 0.7374810318664643,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.45,
+   "web_precision_independent": 0.56672760511883,
+   "web_recall_independent": 0.6471816283924844
+  },
+  "0.030": {
+   "web_precision": 0.5092091007583965,
+   "web_recall": 0.7132018209408194,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.325,
+   "web_precision_independent": 0.5778210116731517,
+   "web_recall_independent": 0.6200417536534447
+  },
+  "0.040": {
+   "web_precision": 0.5206896551724138,
+   "web_recall": 0.6874051593323217,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.275,
+   "web_precision_independent": 0.5833333333333334,
+   "web_recall_independent": 0.5845511482254697
+  },
+  "0.050": {
+   "web_precision": 0.53836784409257,
+   "web_recall": 0.6707132018209409,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.275,
+   "web_precision_independent": 0.5982339955849889,
+   "web_recall_independent": 0.5657620041753654
+  },
+  "0.075": {
+   "web_precision": 0.5535006605019815,
+   "web_recall": 0.6358118361153262,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.25,
+   "web_precision_independent": 0.6092233009708737,
+   "web_recall_independent": 0.524008350730689
+  },
+  "0.100": {
+   "web_precision": 0.5738396624472574,
+   "web_recall": 0.6191198786039454,
+   "terminal_recall": 1.0,
+   "terminal_fp_per_screen": 0.225,
+   "web_precision_independent": 0.6272493573264781,
+   "web_recall_independent": 0.5093945720250522
+  },
+  "0.125": {
+   "web_precision": 0.5833333333333334,
+   "web_recall": 0.6054628224582701,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.2,
+   "web_precision_independent": 0.6378378378378379,
+   "web_recall_independent": 0.49269311064718163
+  },
+  "0.150": {
+   "web_precision": 0.593607305936073,
+   "web_recall": 0.5918057663125948,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.175,
+   "web_precision_independent": 0.6495726495726496,
+   "web_recall_independent": 0.4759916492693111
+  },
+  "0.175": {
+   "web_precision": 0.5964630225080386,
+   "web_recall": 0.5629742033383915,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.175,
+   "web_precision_independent": 0.6501547987616099,
+   "web_recall_independent": 0.4384133611691023
+  },
+  "0.200": {
+   "web_precision": 0.6100840336134454,
+   "web_recall": 0.5508345978755691,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.15,
+   "web_precision_independent": 0.6699346405228758,
+   "web_recall_independent": 0.4279749478079332
+  },
+  "0.225": {
+   "web_precision": 0.6151202749140894,
+   "web_recall": 0.543247344461305,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.1,
+   "web_precision_independent": 0.6767676767676768,
+   "web_recall_independent": 0.4196242171189979
+  },
+  "0.250": {
+   "web_precision": 0.6270270270270271,
+   "web_recall": 0.5280728376327769,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.1,
+   "web_precision_independent": 0.6818181818181818,
+   "web_recall_independent": 0.407098121085595
+  },
+  "0.275": {
+   "web_precision": 0.6358490566037736,
+   "web_recall": 0.511380880121396,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.1,
+   "web_precision_independent": 0.6962962962962963,
+   "web_recall_independent": 0.3924843423799583
+  },
+  "0.300": {
+   "web_precision": 0.6342412451361867,
+   "web_recall": 0.4946889226100152,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.075,
+   "web_precision_independent": 0.7011494252873564,
+   "web_recall_independent": 0.38204592901878914
+  },
+  "0.325": {
+   "web_precision": 0.6369047619047619,
+   "web_recall": 0.48710166919575115,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.075,
+   "web_precision_independent": 0.7003891050583657,
+   "web_recall_independent": 0.3757828810020877
+  },
+  "0.350": {
+   "web_precision": 0.650103519668737,
+   "web_recall": 0.4764795144157815,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.05,
+   "web_precision_independent": 0.7322175732217573,
+   "web_recall_independent": 0.3653444676409186
+  },
+  "0.375": {
+   "web_precision": 0.6546610169491526,
+   "web_recall": 0.46889226100151743,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.7381974248927039,
+   "web_recall_independent": 0.35908141962421714
+  },
+  "0.400": {
+   "web_precision": 0.6585903083700441,
+   "web_recall": 0.4537177541729894,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.740909090909091,
+   "web_recall_independent": 0.34029227557411273
+  },
+  "0.425": {
+   "web_precision": 0.6628959276018099,
+   "web_recall": 0.44461305007587254,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.7417840375586855,
+   "web_recall_independent": 0.3298538622129436
+  },
+  "0.450": {
+   "web_precision": 0.6682027649769585,
+   "web_recall": 0.4400606980273141,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.75,
+   "web_recall_independent": 0.325678496868476
+  },
+  "0.475": {
+   "web_precision": 0.6705882352941176,
+   "web_recall": 0.4324734446130501,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.7463414634146341,
+   "web_recall_independent": 0.31941544885177453
+  },
+  "0.500": {
+   "web_precision": 0.672289156626506,
+   "web_recall": 0.4233687405159332,
+   "terminal_recall": 0.9946236559139785,
+   "terminal_fp_per_screen": 0.025,
+   "web_precision_independent": 0.7437185929648241,
+   "web_recall_independent": 0.3089770354906054
+  }
+ }
+}

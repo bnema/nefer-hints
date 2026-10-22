@@ -41,6 +41,13 @@ letterboxing; 16:9 whole frames match Ultralytics minimal rectangular padding.
 build/nefer-hints --model models --imgsz 1280 --conf 0.05 --iou 0.7 --gpu auto
 ```
 
+An optional `model.json` beside the model supplies defaults, for example
+`{"name":"terminal-v1","conf":0.075,"iou":0.4}`. Precedence is built-in
+conf 0.05 / IoU 0.7 < model metadata < explicit `--conf` / `--iou` flags,
+regardless of argument order. Effective settings and the optional name appear on
+stderr. Directory models use `DIR/model.json`; prefixes and `.ncnn.param` paths
+try `<prefix>.json` first, then `model.json` in that directory.
+
 This is not a PNG command-line reader: stdin/stdout carry the binary protocol.
 After load and warmup, `NHNT` announces readiness and the device. Each `NHRQ`
 contains a sequence number, BGRA frame and optional independent crop regions;

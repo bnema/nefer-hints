@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
+#include "model_config.h"
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -153,7 +154,8 @@ int main(int argc, char **argv) {
   signal(SIGPIPE, SIG_IGN);
   Detector d;
   std::string model, gpu = "auto", device = "CPU";
-  bool hello = false;
+  bool hello = false, conf_set = false, iou_set = false;
+  std::string model_name;
   try {
     for (int i = 1; i < argc; i++) {
       std::string a = argv[i];
@@ -168,16 +170,36 @@ int main(int argc, char **argv) {
         model = v;
       else if (a == "--imgsz")
         d.size = std::stoi(v);
-      else if (a == "--conf")
+      else if (a == "--conf") {
         d.conf = std::stof(v);
-      else if (a == "--iou")
+        conf_set = true;
+      } else if (a == "--iou") {
         d.threshold = std::stof(v);
+        iou_set = true;
+      }
       else if (a == "--max-det")
         d.maxdet = std::stoi(v);
       else if (a == "--gpu")
         gpu = v;
       else
         throw std::runtime_error("unknown option: " + a);
+    }
+    std::filesystem::path metadata;
+    if (std::filesystem::is_directory(model)) {
+      metadata = std::filesystem::path(model) / "model.json";
+      model += "/icon_detect-" + std::to_string(d.size);
+    } else {
+      if (model.size() > 11 && model.substr(model.size() - 11) == ".ncnn.param")
+        model.resize(model.size() - 11);
+      metadata = model + ".json";
+      if (!std::filesystem::exists(metadata))
+        metadata = std::filesystem::path(model).parent_path() / "model.json";
+    }
+    if (std::filesystem::exists(metadata)) {
+      float conf = d.conf, threshold = d.threshold;
+      ModelConfig().load(metadata.string(), conf, threshold, model_name);
+      if (!conf_set) d.conf = conf;
+      if (!iou_set) d.threshold = threshold;
     }
     if (model.empty() || d.size < 32 || d.size > 4096 || d.size % 32 ||
         d.maxdet < 1 || d.maxdet > 10000 || !std::isfinite(d.conf) ||
@@ -204,10 +226,6 @@ int main(int argc, char **argv) {
     if (d.fp32)
       d.net.opt.use_fp16_packed = d.net.opt.use_fp16_storage =
           d.net.opt.use_fp16_arithmetic = false;
-    if (std::filesystem::is_directory(model))
-      model += "/icon_detect-" + std::to_string(d.size);
-    if (model.size() > 11 && model.substr(model.size() - 11) == ".ncnn.param")
-      model.resize(model.size() - 11);
     d.rectnet.opt = d.net.opt;
     if (index >= 0)
       d.rectnet.set_vulkan_device(index);
@@ -221,7 +239,10 @@ int main(int argc, char **argv) {
     d.detect(warm, 128, {0, 0, 32, 32}, 0, d.conf, ms);
     std::vector<unsigned char> wide(16 * 9 * 4, 114);
     d.detect(wide, 64, {0, 0, 16, 9}, 0, d.conf, ms);
-    std::cerr << "device: " << device << "; fp32=" << d.fp32 << "\n";
+    std::cerr << "device: " << device << "; fp32=" << d.fp32
+              << "; conf=" << d.conf << "; iou=" << d.threshold;
+    if (!model_name.empty()) std::cerr << "; model=" << model_name;
+    std::cerr << "\n";
     fwrite("NHNT", 1, 4, stdout);
     put32(1);
     put32(0);

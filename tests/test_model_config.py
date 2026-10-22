@@ -18,7 +18,8 @@ class ModelConfigTests(unittest.TestCase):
             (self.model / source.name).symlink_to(source.resolve())
 
     def run_model(self, metadata, extra=(), model=None):
-        (self.model / 'model.json').write_text(metadata)
+        (self.model / 'model.json').write_bytes(
+            metadata if isinstance(metadata, bytes) else metadata.encode('utf-8'))
         p = subprocess.run([str(ROOT / 'build/nefer-hints'), '--imgsz', '640',
                             '--gpu', 'cpu', *extra, '--model',
                             str(model or self.model)], input=b'',
@@ -64,6 +65,39 @@ class ModelConfigTests(unittest.TestCase):
                          '{} trailing', '{"name":"\\q"}'):
             with self.subTest(metadata=metadata):
                 status, _ = self.run_model(metadata, ('--conf', '.5'))
+                self.assertEqual(status, 1)
+
+    def test_invalid_utf8(self):
+        for raw in (b'\xc2', b'\xe2\x82', b'\xf0\x9f\x98',
+                    b'\xc0\xaf', b'\xe0\x80\xaf', b'\xf0\x80\x80\xaf',
+                    b'\xed\xa0\x80', b'\xed\xbf\xbf',
+                    b'\xf4\x90\x80\x80', b'\xf5\x80\x80\x80', b'\x80'):
+            for metadata in (b'{"name":"' + raw + b'"}',
+                             b'{"' + raw + b'":0}', b'{"name":"' + raw):
+                with self.subTest(metadata=metadata):
+                    status, _ = self.run_model(metadata)
+                    self.assertEqual(status, 1)
+
+    def test_valid_utf8(self):
+        name = 'terminal-é-界-😀-\U0010ffff'
+        status, log = self.run_model(json.dumps({'name': name, 'é': '界'}, ensure_ascii=False))
+        self.assertEqual(status, 0)
+        self.assertIn('model=' + name, log)
+
+    def test_size_limit(self):
+        for size, expected in ((65536, 0), (65537, 1), (1024 * 1024, 1)):
+            with self.subTest(size=size):
+                status, _ = self.run_model(b'{}' + b' ' * (size - 2))
+                self.assertEqual(status, expected)
+
+    def test_duplicate_keys(self):
+        for metadata in ('{"conf":0.1,"conf":0.2}',
+                         '{"name":"a","name":"b"}',
+                         '{"ignored":0,"ignored":1}',
+                         '{"conf":0.1,"con\\u0066":0.2}',
+                         '{"é":0,"\\u00e9":1}'):
+            with self.subTest(metadata=metadata):
+                status, _ = self.run_model(metadata)
                 self.assertEqual(status, 1)
 
     def test_empty_and_escaped_strings(self):

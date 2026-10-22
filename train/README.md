@@ -25,7 +25,7 @@ About 2 min/epoch on an RX 9070 XT; run it as a memory-capped systemd user unit.
 ## Export and evaluation
 
 ```sh
-train/export_ft.sh runs/ft/weights/best.pt                         # models-ft/ (ncnn), runner hello check
+NAME=terminal-v1 CONF=0.075 IOU=0.4 train/export_ft.sh runs/ft/weights/best.pt                         # models-ft/ (ncnn), runner hello check
 venv/bin/python train/sweep.py --model models-ft --name ft --iou 0.4
 python3 train/gate.py --sweep train/results/sweep-base.json train/results/sweep-ft.json
 ```
@@ -53,7 +53,16 @@ cost precision. Base at IoU 0.4 reaches P 62.5 % / R 63.7 % at conf 0.05, so the
 trails the best base setting on GUI precision. Per scene, it gains on dense text and Mattermost and
 loses on GitHub, MDN, forms and the GTK editor.
 
-Run the runner with `--conf 0.075 --iou 0.4` for this model.
+The shipped model directory carries `model.json` with name `terminal-v1`, conf 0.075
+and IoU 0.4; the runner uses these defaults without flags. Export accepts optional
+`NAME`, `CONF` and `IOU` environment variables (any subset) and writes `model.json`
+only when at least one is supplied. Explicit runner flags override the metadata.
+
+## Model versions
+
+- **terminal-v1** = `runs/ft/weights/best.pt` (epoch 39 of 40).
+  SHA-256 of `models-ft/icon_detect-1280.ncnn.bin`:
+  `184b0c0d23c77b276664cdf7cf1192d7a06b2d2e5096610f90428c9c4b0cf4f2`.
 
 ## Next steps
 

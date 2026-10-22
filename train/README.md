@@ -70,8 +70,10 @@ A row fails if base cannot reach its precision. At that matched operating point:
 - terminal FP/screen is at most 1.0 and at most 20% of matched base;
 - terminal link recall is at least 80%.
 
-All passing rows rank by web-only recall margin over matched base, then web-only
-precision, then native recall margin (zero when absent), all descending.
+All passing rows rank by absolute web-only recall, then web-only precision, then
+native recall (zero when absent), all descending. Ranking by the margin over base
+would favour high thresholds where base collapses, which makes the TEST comparison
+weak and ships a lower-recall operating point.
 The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
 `score > conf`, matching the runner. The final JSON line records frozen `conf`, `iou`, and `base_conf`.
 
@@ -95,6 +97,9 @@ group containing it also contains a TUNE scene (ungrouped scenes are independent
   select sweep (v3 failed only on web-only recall at base's fixed 0.05 point while
   matched-precision recall was equal): a deviation from the commitment not to
   change the rule after the select sweep; TEST still unseen for ft3 and run once.
+  Its first ranking (recall margin over base) picked conf 0.125 against base 0.45,
+  where base recall collapses; the ranking uses absolute web-only recall instead,
+  also decided before any ft3 TEST run.
 
 TEST runs per model: **base 1, ft1 1, ft2 0, ft3 0 (planned 1)**.
 

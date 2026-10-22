@@ -109,9 +109,9 @@ def main():
                 print('OVERALL FAIL: no validation pair passes')
                 return 1
             ft, conf, iou, base, base_conf = max(candidates, key=lambda c: (
-                c[0]['web_only_recall'] - c[3]['web_only_recall'],
+                c[0]['web_only_recall'],
                 c[0]['web_only_precision'],
-                c[0].get('native_recall', 0) - c[3].get('native_recall', 0)))
+                c[0].get('native_recall', 0)))
             print(f'Selected conf={conf:g}, IoU={iou:g}, base conf={base_conf:g}')
             for name, metrics in ((f'base({base_conf:.3f})', base), ('ft', ft)):
                 print(name, json.dumps(metrics, sort_keys=True))

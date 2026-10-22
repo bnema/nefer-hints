@@ -101,7 +101,12 @@ group containing it also contains a TUNE scene (ungrouped scenes are independent
   where base recall collapses; the ranking uses absolute web-only recall instead,
   also decided before any ft3 TEST run.
 
-TEST runs per model: **base 1, ft1 1, ft2 0, ft3 0 (planned 1)**.
+TEST runs per model: **base 1, ft1 1, ft2 0, ft3 1**.
+
+ft3 TEST (frozen conf 0.04, IoU 0.4, base conf 0.175): **FAIL** on pooled GUI precision
+(57.0% vs base 64.2%, drop 7.2 pts); pooled GUI recall 62.1% vs 51.6% (pass); terminal
+FP/screen 0.47 vs 16.3 and link recall 98.4% (pass). Informational: TEST web P 54.4% /
+R 59.7%, TEST native P 66.7% / R 70.3%.
 
 ### Limitations
 

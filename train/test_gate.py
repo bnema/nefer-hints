@@ -45,7 +45,7 @@ class SelectTests(unittest.TestCase):
         self.assertTrue(all(checks.values()))
         self.assertFalse(all(gate.check(dict(self.base, web_precision=0.9), ft).values()))
 
-    def run_select(self, documents, mode="select", extra=()):
+    def run_select(self, documents, mode="select", extra=(), root=None):
         with tempfile.TemporaryDirectory() as directory:
             paths = []
             for i, doc in enumerate(documents):
@@ -53,7 +53,7 @@ class SelectTests(unittest.TestCase):
                 path.write_text(json.dumps(doc))
                 paths.append(str(path))
             out, err = io.StringIO(), io.StringIO()
-            with patch.object(gate, 'RESULTS', Path(directory)), patch('sys.argv', ['gate', mode, *paths, *extra]), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            with patch.object(gate, 'ROOT', root or Path(directory)), patch.object(gate, 'RESULTS', Path(directory)), patch('sys.argv', ['gate', mode, *paths, *extra]), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
                 try:
                     code = gate.main()
                 except SystemExit as error:
@@ -62,7 +62,7 @@ class SelectTests(unittest.TestCase):
                 frozen = json.loads((Path(directory) / 'frozen-ft.json').read_text())
                 self.assertEqual(frozen, json.loads(out.getvalue().splitlines()[-1]))
                 self.assertEqual(frozen['select_files'], {
-                    path: hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in paths})
+                    Path(path).name: hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in paths})
             return code, out.getvalue(), err.getvalue()
 
     def document(self, iou, thresholds):
@@ -158,13 +158,38 @@ class SelectTests(unittest.TestCase):
         self.assertIn('IoU=0.4 conf=0.010: failed checks: terminal link recall', out)
         self.assertEqual(out.splitlines()[-1], 'OVERALL FAIL: no validation pair passes')
 
+    def test_final_verifies_selection_hashes_relative_to_repo(self):
+        docs = [dict(set='test', iou=0.7, thresholds={'0.100': self.base}),
+                dict(name='ft', set='test', iou=0.4, thresholds={'0.020': metrics()})]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            selection = root / 'select.json'
+            selection.write_text('selection input')
+            digest = hashlib.sha256(selection.read_bytes()).hexdigest()
+            frozen_path = root / 'frozen.json'
+            for path, expected, message in (
+                    ('select.json', digest, ''),
+                    ('select.json', '0' * 64, 'SHA-256 mismatch: select.json'),
+                    ('missing.json', digest, 'cannot read frozen selection file missing.json'),
+                    (str(selection), digest, 'must be repo-relative'),
+                    ('../select.json', digest, 'must be repo-relative')):
+                frozen_path.write_text(json.dumps(dict(name='ft', conf=0.02, iou=0.4,
+                    base_conf=0.1, select_files={path: expected})))
+                code, out, err = self.run_select(
+                    docs, 'final', ['--frozen', str(frozen_path)], root=root)
+                self.assertEqual(code, 2 if message else 0)
+                if message:
+                    self.assertIn(message, err)
+                else:
+                    self.assertIn('OVERALL PASS', out)
+
     def test_final_frozen_base_and_missing_threshold(self):
         docs = [dict(set='test', iou=0.7, thresholds={
             '0.050': dict(self.base, web_precision=0.9), '0.100': self.base}),
             dict(name='ft', set='test', iou=0.4, thresholds={'0.020': metrics()})]
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'frozen.json'
-            frozen = dict(name='ft', conf=0.02, iou=0.4, base_conf=0.1)
+            frozen = dict(name='ft', conf=0.02, iou=0.4, base_conf=0.1, select_files={})
             path.write_text(json.dumps(frozen))
             code, out, err = self.run_select(docs, 'final', ['--frozen', str(path)])
             self.assertEqual((code, err), (0, ''))

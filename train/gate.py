@@ -5,7 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 
-RESULTS = Path(__file__).resolve().parent / 'results'
+ROOT = Path(__file__).resolve().parents[1]
+RESULTS = ROOT / 'train/results'
 
 
 def check(base, ft):
@@ -50,6 +51,19 @@ def read(path, expected_set, base=False):
     if base and data['iou'] != 0.7:
         raise ValueError(f'{path}: base reference must have IoU 0.7')
     return data
+
+
+def verify_selection(frozen):
+    for path, expected in frozen['select_files'].items():
+        relative = Path(path)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError(f'selection path must be repo-relative: {path}')
+        try:
+            actual = hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+        except OSError as error:
+            raise ValueError(f'cannot read frozen selection file {path}: {error.strerror}') from error
+        if actual != expected:
+            raise ValueError(f'frozen selection SHA-256 mismatch: {path}')
 
 
 def threshold_row(data, conf, path):
@@ -126,7 +140,7 @@ def main():
             for label, passed in check_select(base, ft).items():
                 print('PASS' if passed else 'FAIL', label)
             frozen = dict(name=names.pop(), conf=conf, iou=iou, base_conf=base_conf,
-                          select_files={str(Path(path)): hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                          select_files={str(Path(path).resolve().relative_to(ROOT)): hashlib.sha256(Path(path).read_bytes()).hexdigest()
                                         for path in [args.base, *args.ft]})
             RESULTS.mkdir(exist_ok=True)
             (RESULTS / f"frozen-{frozen['name']}.json").write_text(json.dumps(frozen, indent=2) + '\n')
@@ -134,6 +148,7 @@ def main():
             return 0
         data = read(args.ft, expected)
         frozen = json.loads(args.frozen.read_text())
+        verify_selection(frozen)
         if data['iou'] != frozen['iou'] or data['name'] != frozen['name']:
             raise ValueError('TEST name and IoU must match frozen selection')
         base = threshold_row(base_data, frozen['base_conf'], args.base)

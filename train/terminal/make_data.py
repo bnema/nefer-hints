@@ -17,6 +17,9 @@ import gen
 from themes import THEMES, DARK, LIGHT
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from train.tmpdirs import private_dir
+
 FAKE = Path('/tmp/nh-term')
 TERMS = ['kitty', 'foot', 'alacritty']
 TRAIN_FONTS = ['JetBrains Mono', 'DejaVu Sans Mono', 'Hack', 'FiraCode Nerd Font Mono']
@@ -262,6 +265,7 @@ def main():
     ap.add_argument('--workers', type=int, default=4); ap.add_argument('--start', type=int, default=0)
     ap.add_argument('--overlays', type=int, default=0, help='save overlays for the first N scenes')
     a = ap.parse_args()
+    private_dir(FAKE)
     out = Path(a.out) / a.split
     for w in range(a.workers):
         (FAKE / ('w%d' % w)).mkdir(parents=True, exist_ok=True)

@@ -18,6 +18,7 @@ from multiprocessing import Pool
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from train.web.collect_web import stop_process
+from train.tmpdirs import private_dir
 
 OUT = ROOT / 'data/native'
 MANIFEST = ROOT / 'train/native/manifest.json'
@@ -108,7 +109,8 @@ def hard_timeout(signum, frame):
 def worker(job):
     from PIL import Image
     index, tasks = job
-    base = FAKE / str(index)
+    private_dir(FAKE)
+    base = private_dir(FAKE / str(index))
     env = env_for(base)
     cfg = base / 'native.conf'
     cfg.write_text('terminal.auto-open = off\nborder.width = 0\nfocus.flash = off\nhint.enable = off\n')

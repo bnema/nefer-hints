@@ -2,6 +2,9 @@
 """Run under dbus-run-session. Bounded headless capture with fresh fake HOME."""
 import json, os, re, shutil, signal, subprocess as sp, time, urllib.request
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from train.tmpdirs import private_dir, capture_env
 import websocket
 from PIL import Image, ImageDraw
 ROOT=Path(__file__).resolve().parent
@@ -12,9 +15,9 @@ def main():
  BIN = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
  if not BIN:
   raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
- home=Path('/tmp/nh-eval/home'); home.mkdir(parents=True,exist_ok=True)
- env=os.environ.copy()
- for k in ('NEFERWL_STATE','NEFERWL_SLOT','DISPLAY'):env.pop(k,None)
+ private_dir('/tmp/nh-eval')
+ home=private_dir('/tmp/nh-eval/home')
+ env=capture_env(home)
  env.update(HOME=str(home),XDG_CONFIG_HOME=str(home/'config'),XDG_DATA_HOME=str(home/'data'),XDG_CACHE_HOME=str(home/'cache'),XDG_STATE_HOME=str(home/'state'),WAYLAND_DISPLAY='nh-eval-unused',GDK_BACKEND='wayland',MOZ_ENABLE_WAYLAND='1')
  for k in ('XDG_CONFIG_HOME','XDG_DATA_HOME','XDG_CACHE_HOME','XDG_STATE_HOME'):Path(env[k]).mkdir(exist_ok=True)
  for folder in ('Documents','Projects/demo-app','Music','Pictures'): (home/folder).mkdir(parents=True,exist_ok=True)

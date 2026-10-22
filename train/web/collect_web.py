@@ -11,11 +11,15 @@ Eval domains (eval/scenes.json) are excluded.
   venv/bin/python train/web/collect_web.py plan     # discover pages (plain HTTP GET, public) -> data/web/plan.json
   venv/bin/python train/web/collect_web.py run --workers 5
 """
+import sys
 import hashlib, json, os, random, re, shutil, signal, subprocess as sp, time, urllib.request, urllib.parse
 from html.parser import HTMLParser
 from multiprocessing import Pool
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from train.tmpdirs import private_dir
+
 OUT = ROOT / 'data/web'
 FAKE = Path('/tmp/nh-term')
 
@@ -178,7 +182,8 @@ def page_timeout(signum, frame):
 
 
 def env_for(tag, wayland=None):
-    base = FAKE / tag
+    private_dir(FAKE)
+    base = private_dir(FAKE / tag)
     for directory in ('home', 'home/config', 'home/data', 'home/cache'):
         (FAKE / directory).mkdir(parents=True, exist_ok=True)
     e = dict(PATH=os.environ['PATH'], HOME=str(FAKE / 'home'), XDG_CONFIG_HOME=str(FAKE / 'home/config'), XDG_DATA_HOME=str(FAKE / 'home/data'),
@@ -211,7 +216,8 @@ def worker(args):
     import websocket
     from PIL import Image
     tag = 'web%d' % w
-    base = FAKE / tag
+    private_dir(FAKE)
+    base = private_dir(FAKE / tag)
     for sub in ('state', 'run', 'shots'):
         shutil.rmtree(base / sub, ignore_errors=True); (base / sub).mkdir(parents=True)
     os.chmod(base / 'run', 0o700)
@@ -240,11 +246,23 @@ def worker(args):
         stop_process(comp); comp = None
         if profile:
             shutil.rmtree(profile, ignore_errors=True)
+        lp = base / 'state/neferwl/runs/headless/latest.log'
+        lp.unlink(missing_ok=True)
         comp = sp.Popen([NEFERWL, '--backend=headless', '--size', size, '--no-xwayland', '--no-terminal', '--config', str(cfg), '--input', str(fifo),
                          '--screenshot', str(base / 'shots'), '--timeout', '7200s'], env=env_for(tag), stdout=log, stderr=log, stdin=sp.DEVNULL, start_new_session=True)
-        time.sleep(2)
-        lp = base / 'state/neferwl/runs/headless/latest.log'
-        wd = re.search(r'wayland-\d+', ''.join(l for l in lp.read_text().splitlines(True) if 'listening' in l)).group(0)
+        deadline = time.monotonic() + 15
+        wd = None
+        while time.monotonic() < deadline:
+            if comp.poll() is not None:
+                raise RuntimeError('compositor exited; see ' + str(base / 'log'))
+            text = lp.read_text() if lp.exists() else ''
+            match = re.search(r'wayland-\d+', '\n'.join(l for l in text.splitlines() if 'listening' in l))
+            if match:
+                wd = match[0]
+                break
+            time.sleep(0.1)
+        if not wd:
+            raise TimeoutError('no listening entry')
         profile = FAKE / 'home' / ('chromium-%s-%d' % (tag, int(time.time())))
         browser = sp.Popen(['chromium', '--ozone-platform=wayland', '--no-first-run', '--no-default-browser-check', '--disable-sync', '--disable-session-crashed-bubble',
                             '--disable-features=Translate', '--password-store=basic', '--use-mock-keychain',

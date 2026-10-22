@@ -1,18 +1,21 @@
 """Bounded native captures; run under dbus-run-session with fake HOME inherited."""
 import os,json,re,shutil,subprocess as sp,time,signal
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from train.tmpdirs import private_dir, capture_env
 R=Path(__file__).resolve().parent
 
 def main():
  B = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
  if not B:
   raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
- home=Path('/tmp/nh-eval/home');content=home/'Fictional';content.mkdir(exist_ok=True)
+ private_dir('/tmp/nh-eval')
+ home=private_dir('/tmp/nh-eval/home');content=home/'Fictional';content.mkdir(exist_ok=True)
  for f in ('Documents','Projects','Music','Pictures'):(content/f).mkdir(exist_ok=True)
  (content/'notes.txt').write_text('Fictional project notes\nReview the demo interface.\n')
  (content/'report-2026.odt').write_text('Fictional placeholder')
- env=os.environ.copy()
- for k in ('NEFERWL_STATE','NEFERWL_SLOT','DISPLAY'):env.pop(k,None)
+ env=capture_env(home)
  env.update(GIO_USE_VOLUME_MONITOR='unix', HOME=str(home),XDG_CONFIG_HOME=str(home/'config'),XDG_DATA_HOME=str(home/'data'),XDG_CACHE_HOME=str(home/'cache'),XDG_STATE_HOME=str(home/'state'),WAYLAND_DISPLAY='nh-eval-unused',GDK_BACKEND='wayland',MOZ_ENABLE_WAYLAND='1')
  fifo=home/'input-native'
  if not fifo.exists():os.mkfifo(fifo)

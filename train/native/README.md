@@ -14,7 +14,7 @@ Validation holds out the entire `preferences-dialog` and `table` templates in bo
 toolkits; the other eight templates are training only. The deterministic plan has
 260 train and 50 validation screens per toolkit (620 total). Theme, accent, font
 scale and output size (1920×1080 or 2560×1440) vary by seed. Actual collected
-counts: **pending collection**. `manifest.json` records successful screens; reruns
+counts: 260 train and 50 validation screens per toolkit (620), no failed screens. `manifest.json` records successful screens; reruns
 skip existing images and recover worker checkpoints.
 
 ```sh

@@ -10,7 +10,7 @@ class Client:
     def __init__(self, size=1280, extra=()):
         self.log = open(ROOT/'weights/test-stderr.log', 'ab')
         start = time.perf_counter()
-        self.p = subprocess.Popen([str(ROOT/'build/nefer-hints'), '--model', str(ROOT/'models'), '--imgsz', str(size), *extra], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.log, bufsize=0)
+        self.p = subprocess.Popen([os.environ.get('NEFER_HINTS_RUNNER', str(ROOT/'build/nefer-hints')), '--model', str(ROOT/'models'), '--imgsz', str(size), *extra], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.log, bufsize=0)
         assert self.read(4) == b'NHNT'
         version, status = self.unpack('II')
         assert version == 1

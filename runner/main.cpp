@@ -184,6 +184,7 @@ int main(int argc, char **argv) {
       else
         throw std::runtime_error("unknown option: " + a);
     }
+    if (model.empty()) throw std::runtime_error("missing --model");
     std::filesystem::path metadata;
     if (std::filesystem::is_directory(model)) {
       metadata = std::filesystem::path(model) / "model.json";

@@ -1,5 +1,6 @@
 """Startup metadata lookup, validation and precedence over binary hello."""
 import json
+import os
 from pathlib import Path
 import struct
 import subprocess
@@ -20,7 +21,7 @@ class ModelConfigTests(unittest.TestCase):
     def run_model(self, metadata, extra=(), model=None):
         (self.model / 'model.json').write_bytes(
             metadata if isinstance(metadata, bytes) else metadata.encode('utf-8'))
-        p = subprocess.run([str(ROOT / 'build/nefer-hints'), '--imgsz', '640',
+        p = subprocess.run([os.environ.get('NEFER_HINTS_RUNNER', str(ROOT / 'build/nefer-hints')), '--imgsz', '640',
                             '--gpu', 'cpu', *extra, '--model',
                             str(model or self.model)], input=b'',
                            capture_output=True, timeout=60)
@@ -31,6 +32,15 @@ class ModelConfigTests(unittest.TestCase):
         self.assertTrue(message)
         self.assertEqual(p.returncode, status)
         return status, p.stderr.decode()
+
+    def test_missing_model(self):
+        # A local metadata file must not mask the missing required option.
+        (self.model / 'model.json').write_text('{')
+        p = subprocess.run([os.environ.get('NEFER_HINTS_RUNNER', str(ROOT / 'build/nefer-hints'))],
+                           cwd=self.model, input=b'', capture_output=True, timeout=60)
+        self.assertEqual(p.returncode, 1)
+        self.assertIn(b'missing --model', p.stdout)
+        self.assertNotIn(b'invalid model.json', p.stdout)
 
     def test_defaults_and_cli(self):
         metadata = json.dumps(dict(name='terminal-v1', conf=.075, iou=.4,
@@ -60,12 +70,18 @@ class ModelConfigTests(unittest.TestCase):
     def test_invalid(self):
         for metadata in ('{', '[]', '{"conf":0}', '{"conf":1.1}',
                          '{"iou":-0.1}', '{"iou":1.1}', '{"conf":NaN}',
-                         '{"conf":1e999}', '{"name":1}', '{"conf":".1"}',
+                         '{"conf":1e-400}', '{"conf":1e999}', '{"name":1}', '{"conf":".1"}',
                          '{"conf":.1}', '{"conf":01}', '{"iou":0,}',
                          '{} trailing', '{"name":"\\q"}'):
             with self.subTest(metadata=metadata):
                 status, _ = self.run_model(metadata, ('--conf', '.5'))
                 self.assertEqual(status, 1)
+
+    def test_underflow_is_invalid_metadata(self):
+        for key in ('conf', 'iou'):
+            status, log = self.run_model('{"' + key + '":1e-400}')
+            self.assertEqual(status, 1)
+            self.assertIn('invalid model.json', log)
 
     def test_invalid_utf8(self):
         for raw in (b'\xc2', b'\xe2\x82', b'\xf0\x9f\x98',

@@ -139,7 +139,9 @@ public:
           name = value;
         } else if (key == "conf" || key == "iou") {
           if (is_string) invalid();
-          double n = std::stod(value);
+          double n;
+          try { n = std::stod(value); }
+          catch (const std::exception &) { invalid(); }
           if (!std::isfinite(n) || n > 1 || (key == "conf" ? n <= 0 : n < 0)) invalid();
           float f = float(n);
           if (key == "conf") { if (f <= 0) invalid(); conf = f; }

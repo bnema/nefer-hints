@@ -1,0 +1,12 @@
+{
+  "name": "ft3",
+  "conf": 0.04,
+  "iou": 0.4,
+  "base_conf": 0.175,
+  "select_files": {
+    "train/results/sweep-base-select-iou0.7.json": "f673377b9d8978454c040a0ab8549188d40e97ce8ca8d58a0de0e5379a53d7dd",
+    "train/results/sweep-ft3-select-iou0.7.json": "737a3c759ecb59eeb6911c157100d0e5eb152e3bc2fe8ab5ee38ca20d1ecd204",
+    "train/results/sweep-ft3-select-iou0.5.json": "9d72b8fae65fc9a3a890487c272f254ba010f55ef13a1fb47467315297413a34",
+    "train/results/sweep-ft3-select-iou0.4.json": "60cc6c929afa1eefd6e5a646bcb739e5c51b4d60d1b9e92550e8b8f8510d5b76"
+  }
+}

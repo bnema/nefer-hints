@@ -61,7 +61,11 @@ def main():
     ap.add_argument('--set', choices=('select', 'test'), required=True)
     ap.add_argument('--gpu', default='cpu')
     ap.add_argument('--iou', type=float, default=0.7)
+    ap.add_argument('--force', action='store_true', help='allow replacing TEST results')
     a = ap.parse_args()
+    destination = R / 'train/results' / f'sweep-{a.name}-{a.set}-iou{a.iou:g}.json'
+    if a.set == 'test' and destination.exists() and not a.force:
+        ap.error(f'{destination.name} exists; use --force to overwrite')
     runner = Path(os.environ.get('NEFER_HINTS_RUNNER', R / 'build/nefer-hints')).resolve()
     model = a.model.resolve()
     protocol = load(R / 'tests/protocol.py', 'protocol')
@@ -137,7 +141,9 @@ def main():
         out['thresholds'][f'{t:.3f}'] = metrics
     destination = R / 'train/results' / f'sweep-{a.name}-{a.set}-iou{a.iou:g}.json'
     destination.parent.mkdir(exist_ok=True)
-    destination.write_text(json.dumps(out, indent=1) + '\n')
+    mode = 'x' if a.set == 'test' and not a.force else 'w'
+    with destination.open(mode) as stream:
+        stream.write(json.dumps(out, indent=1) + '\n')
     print(destination.relative_to(R))
     print(json.dumps(out['thresholds'], indent=1))
 

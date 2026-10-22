@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Select a matched-precision operating point, then gate frozen thresholds on TEST."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
+
+RESULTS = Path(__file__).resolve().parent / 'results'
 
 
 def check(base, ft):
@@ -65,8 +68,7 @@ def main():
     final = modes.add_parser('final')
     final.add_argument('base')
     final.add_argument('ft')
-    final.add_argument('--conf', type=float, required=True)
-    final.add_argument('--base-conf', type=float, required=True)
+    final.add_argument('--frozen', type=Path, required=True)
     args = parser.parse_args()
     try:
         expected = 'select' if args.mode == 'select' else 'test'
@@ -78,8 +80,14 @@ def main():
             candidates = []
             diagnostics = []
             seen = set()
+            names = set()
             for path in args.ft:
                 data = read(path, expected)
+                names.add(data['name'])
+                if len(names) != 1:
+                    raise ValueError('fine-tuned names must match')
+                if Path(data['name']).name != data['name'] or data['name'] in ('', '.', '..'):
+                    raise ValueError('name must be a basename')
                 if 'gui_sets' not in data or data['gui_sets'] != gui_sets:
                     raise ValueError(f'{path}: gui_sets must match base {gui_sets!r}')
                 if data['iou'] in seen:
@@ -117,12 +125,20 @@ def main():
                 print(name, json.dumps(metrics, sort_keys=True))
             for label, passed in check_select(base, ft).items():
                 print('PASS' if passed else 'FAIL', label)
-            print(json.dumps(dict(conf=conf, iou=iou, base_conf=base_conf)))
+            frozen = dict(name=names.pop(), conf=conf, iou=iou, base_conf=base_conf,
+                          select_files={str(Path(path)): hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                                        for path in [args.base, *args.ft]})
+            RESULTS.mkdir(exist_ok=True)
+            (RESULTS / f"frozen-{frozen['name']}.json").write_text(json.dumps(frozen, indent=2) + '\n')
+            print(json.dumps(frozen))
             return 0
         data = read(args.ft, expected)
-        base = threshold_row(base_data, args.base_conf, args.base)
-        ft = threshold_row(data, args.conf, args.ft)
-        print(f"Frozen conf={args.conf:g}, IoU={data['iou']:g}, base conf={args.base_conf:g}")
+        frozen = json.loads(args.frozen.read_text())
+        if data['iou'] != frozen['iou'] or data['name'] != frozen['name']:
+            raise ValueError('TEST name and IoU must match frozen selection')
+        base = threshold_row(base_data, frozen['base_conf'], args.base)
+        ft = threshold_row(data, frozen['conf'], args.ft)
+        print(f"Frozen conf={frozen['conf']:g}, IoU={data['iou']:g}, base conf={frozen['base_conf']:g}")
         for name, metrics in (('base', base), ('ft', ft)):
             print(name, json.dumps(metrics, sort_keys=True))
             info = {key: value for key, value in metrics.items()

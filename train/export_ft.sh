@@ -7,7 +7,7 @@ set -euo pipefail
 R="$(cd "$(dirname "$0")/.." && pwd)"
 PT="$(realpath "$1")"; OUT="${2:-$R/models-ft}"
 PY="${PY:-$R/venv/bin/python}"
-BIN=$HOME/.local/share/nefer-hints-test/bin/nefer-hints
+BIN="${NEFER_HINTS_RUNNER:-$R/build/nefer-hints}"
 mkdir -p "$OUT"; OUT="$(realpath "$OUT")"
 OMP_NUM_THREADS="${OMP_NUM_THREADS:-4}" "$PY" "$R/export/export_ncnn.py" --weights "$PT" --output "$OUT"
 for s in 640 1280; do for x in "" -rect; do for e in param bin; do

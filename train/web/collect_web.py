@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'data/web'
 FAKE = Path('/tmp/nh-term')
-NEFERWL = '$HOME/.local/share/nefer-hints-test/bin/neferwl'
+
 DOM_JS = (ROOT / 'eval/dom.js').read_text()
 EVAL_HOSTS = ('news.ycombinator.com', 'lobste.rs', 'wikipedia.org', 'developer.mozilla.org', 'archlinux.org', 'github.com', 'go.dev', 'httpbin.org', 'docs.python.org', '127.0.0.1')
 SITES = {  # name -> home URL
@@ -107,6 +107,9 @@ def blocked(title, text):
 
 
 def worker(args):
+    NEFERWL = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
+    if not NEFERWL:
+        raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
     w, size, tasks = args
     import websocket
     from PIL import Image

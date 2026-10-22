@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import gen
 from themes import THEMES, DARK, LIGHT
 
-NEFERWL = '$HOME/.local/share/nefer-hints-test/bin/neferwl'
+
 FAKE = Path('/tmp/nh-term')
 TERMS = ['kitty', 'foot', 'alacritty']
 TRAIN_FONTS = ['JetBrains Mono', 'DejaVu Sans Mono', 'Hack', 'FiraCode Nerd Font Mono']
@@ -137,6 +137,9 @@ def boxes_from(imB, pad=2):
 
 
 def capture(spec, w, work):
+    NEFERWL = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
+    if not NEFERWL:
+        raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
     shutil.rmtree(work, ignore_errors=True)
     for sub in ('shots', 'cfg'):
         (work / sub).mkdir(parents=True)

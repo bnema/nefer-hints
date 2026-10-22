@@ -21,3 +21,10 @@ Chromium/CDP connections died (every later attempt: `Connection timed out`, ~277
 sites. The orchestrator decided to stop and not retry; the run was killed. Earlier failures also came
 from sites returning no clickable boxes. Sites that blocked or timed out most: bbc, guardian,
 weathergov, codeberg, osm, gutenberg. Several sites therefore have few or no images.
+
+## Executable configuration
+
+Set `NEFERWL` to the compositor executable; by default `neferwl` is resolved on
+`PATH` (a missing executable is an error). Evaluation/export scripts use
+`NEFER_HINTS_RUNNER`, defaulting to `<repo>/build/nefer-hints`. Shell scripts
+accept `PY` for Python, defaulting to `<repo>/venv/bin/python`.

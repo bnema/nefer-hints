@@ -6,7 +6,7 @@ set -euo pipefail
 R="$(cd "$(dirname "$0")/.." && pwd)"
 MODELS="$(realpath "$1")"; NAME="$2"; GPU="${3:-cpu}"
 PY="${PY:-$R/venv/bin/python}"
-BIN=$HOME/.local/share/nefer-hints-test/bin/nefer-hints
+BIN="${NEFER_HINTS_RUNNER:-$R/build/nefer-hints}"
 T="$(mktemp -d /tmp/nh-evalall.XXXXXX)"; trap 'rm -rf "$T"' EXIT
 # score.py writes results/out into its dataset dir: use a scratch copy (symlinked inputs)
 mkdir -p "$T/ds" "$T/root/build" "$T/root/weights"

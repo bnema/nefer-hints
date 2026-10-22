@@ -5,7 +5,11 @@ clickable definition, boxes pad 0, multiplied by devicePixelRatio for 90/110 % b
 Differences from eval: the frame is the compositor screenshot (`--screenshot latest.png`, grim is
 refused by the headless compositor), and dark mode is prefers-color-scheme + auto-dark (as eval's `-dark`
 scenes, ~33 % of images). Eval domains (hn, lobste.rs, wikipedia, mdn, archlinux, github, go.dev,
-httpbin, python docs, local Mattermost) are excluded. `add_eval_tune.py` adds the 13 eval TUNE scenes
+httpbin, python docs, local Mattermost) are excluded. The blocked set combines the existing
+exclusions with URL hostnames from `eval/scenes.json`, including subdomains. Redirects to
+blocked hosts are logged and skipped before saving images or labels. New manifest entries
+include `final_url` (null if navigation failed before it could be read).
+`add_eval_tune.py` adds the 13 eval TUNE scenes
 (never TEST) to train.
 
 ## Final counts

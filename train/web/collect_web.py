@@ -51,13 +51,32 @@ class Links(HTMLParser):
                     self.h.append(v)
 
 
+def normalized_host(host):
+    host = host.lower().rstrip('.')
+    return host.removeprefix('www.')
+
+
+def excluded(host, blocked):
+    host = normalized_host(host)
+    return any(host == d or host.endswith('.' + d)
+               for d in map(normalized_host, blocked))
+
+
+def blocked_domains():
+    scenes = json.loads((ROOT / 'eval/scenes.json').read_text())
+    hosts = {urllib.parse.urlparse(scene['url']).hostname
+             for scene in scenes.values() if scene.get('url')}
+    return {normalized_host(host) for host in hosts if host} | set(EVAL_HOSTS)
+
+
 def plan(per_site=6):
+    domains = blocked_domains()
     rng = random.Random(7)
     tasks = []
     info = {}
     for name, home in SITES.items():
         host = urllib.parse.urlparse(home).netloc
-        assert not any(host.endswith(e) for e in EVAL_HOSTS), host
+        assert not excluded(urllib.parse.urlparse(home).hostname or '', domains), host
         urls = [home]
         try:
             req = urllib.request.Request(home, headers={'User-Agent': UA})
@@ -111,6 +130,7 @@ def worker(args):
     if not NEFERWL:
         raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
     w, size, tasks = args
+    domains = blocked_domains()
     import websocket
     from PIL import Image
     tag = 'web%d' % w
@@ -163,6 +183,7 @@ def worker(args):
         cur_zoom = 100
         for t in tasks:
             tid = t['id']
+            final_url = None
             try:
                 call('Emulation.setEmulatedMedia', {'features': [{'name': 'prefers-color-scheme', 'value': 'dark' if t['dark'] else 'light'}]})
                 call('Emulation.setAutoDarkModeOverride', {'enabled': bool(t['dark'])})
@@ -187,6 +208,12 @@ def worker(args):
                 ev("document.querySelectorAll('video,audio').forEach(e=>e.pause()); document.documentElement.style.scrollBehavior='auto';")
                 time.sleep(1.5)
                 gt = ev(DOM_JS)
+                final_url = gt.get('url') or ev('location.href')
+                if excluded(urllib.parse.urlparse(final_url).hostname or '', domains):
+                    reason = 'excluded final URL: %s' % final_url
+                    results.append(dict(t, final_url=final_url, ok=False, error=reason))
+                    print('SKIP', tid, reason, flush=True)
+                    continue
                 if abs(gt['viewport']['width'] * dpr - W) > 3 or abs(gt['viewport']['height'] * dpr - H) > 3:
                     raise RuntimeError('viewport %s dpr %s != %s' % (gt['viewport'], dpr, size))
                 body = ev('document.body?document.body.innerText.slice(0,600):""') or ''
@@ -207,10 +234,10 @@ def worker(args):
                 (OUT / split / 'images').mkdir(parents=True, exist_ok=True); (OUT / split / 'labels').mkdir(parents=True, exist_ok=True)
                 img.save(OUT / split / 'images' / (tid + '.png'))
                 (OUT / split / 'labels' / (tid + '.txt')).write_text(''.join('0 %.6f %.6f %.6f %.6f\n' % ((a + c) / 2 / W, (b + d) / 2 / H, (c - a) / W, (d - b) / H) for a, b, c, d in boxes))
-                results.append(dict(t, split=split, boxes=len(boxes), title=gt.get('title'), wall=wall, ok=True))
+                results.append(dict(t, final_url=final_url, split=split, boxes=len(boxes), title=gt.get('title'), wall=wall, ok=True))
                 print(tid, len(boxes), flush=True)
             except Exception as e:
-                results.append(dict(t, ok=False, error=str(e)[:300]))
+                results.append(dict(t, final_url=final_url, ok=False, error=str(e)[:300]))
                 print('FAIL', tid, str(e)[:150], flush=True)
                 try:
                     ws.close()
@@ -221,7 +248,7 @@ def worker(args):
                     target = next(x for x in targets if x['type'] == 'page')
                     ws = websocket.create_connection(target['webSocketDebuggerUrl'], origin='http://localhost:%d' % port, timeout=40)
                 except Exception as e2:
-                    results.append(dict(error='reconnect failed %r' % (e2,))); break
+                    results.append(dict(final_url=final_url, error='reconnect failed %r' % (e2,))); break
     finally:
         if browser:
             try:

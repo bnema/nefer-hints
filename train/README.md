@@ -22,10 +22,9 @@ train/run_train.sh nh-train --name ft     # runs/ft/weights/best.pt, log /tmp/nh
 ```
 
 `run_train.sh` starts `finetune.py` as a systemd user unit with capped RAM (`MEMORY_MAX`, default
-24G), low CPU/IO weight and nice 10. `finetune.py` caps its GPU memory with `--vram-gib` (default
-10 of 16 GiB) so the compositor keeps room for its framebuffers; an uncapped run fills VRAM and
-freezes the desktop session. The cap needs `--batch 2`; Ultralytics accumulates gradients to a
-nominal batch of 64, so the effective batch is unchanged.
+24G), low CPU/IO weight and nice 10. `--vram-gib N` optionally caps GPU memory (default: no cap);
+a cap below about 9 GiB needs `--batch 2`. Ultralytics accumulates gradients to a nominal batch of
+64, so the effective batch does not depend on `--batch`.
 
 Start: `weights/base.pt` (OmniParser v2 icon_detect). 1280 px, AdamW lr0 0.002, 40 epochs, patience 10,
 light augmentation (no flips, no mosaic), fp32 (`amp=False`: fp16 with MIOpen gives wrong results).

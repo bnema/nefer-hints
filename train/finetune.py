@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Fine-tune the OmniParser icon_detect base on terminal (links only) + web data.
 
-  venv/bin/python train/finetune.py [--batch 2] [--epochs 40] [--device 0] [--vram-gib 10]
+  venv/bin/python train/finetune.py [--batch 4] [--epochs 40] [--device 0] [--vram-gib 0]
 
 Use train/run_train.sh to run it as a low-priority, memory-capped systemd unit.
---vram-gib caps this process's GPU memory so the compositor keeps room for its
-framebuffers; without it, training fills the whole GPU and the session freezes.
+--vram-gib optionally caps this process's GPU memory (default: no cap).
 """
 import os
 os.environ.update(YOLO_OFFLINE='true', HF_HUB_OFFLINE='1', YOLO_AUTOINSTALL='false')
@@ -17,9 +16,9 @@ R = Path(__file__).resolve().parents[1]
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--batch', type=int, default=2); ap.add_argument('--epochs', type=int, default=40)
+    ap.add_argument('--batch', type=int, default=4); ap.add_argument('--epochs', type=int, default=40)
     ap.add_argument('--device', default='0'); ap.add_argument('--workers', type=int, default=2); ap.add_argument('--name', default='ft')
-    ap.add_argument('--vram-gib', type=float, default=10, help='GPU memory cap for this process (0 = no cap)')
+    ap.add_argument('--vram-gib', type=float, default=0, help='GPU memory cap for this process (0 = no cap)')
     ap.add_argument('--fraction', type=float, default=1.0, help='dataset fraction (smoke tests)')
     a = ap.parse_args()
     if a.vram_gib > 0 and a.device.isdigit():

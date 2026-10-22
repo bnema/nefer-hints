@@ -70,3 +70,11 @@ Earlier experiments, frames and annotations live under `poc/`.
 
 AGPL-3.0: detector weights and Ultralytics are AGPL. NeferWL (GPLv3) can call it
 as a subprocess.
+
+## Models and data
+
+Base weights are `microsoft/OmniParser-v2.0` `icon_detect` (AGPL-3.0).
+`terminal-v1` and `terminal-v2` are fine-tuned derivatives under the same licence.
+`eval/frames` contains screenshots of third-party public sites for evaluation,
+including Wikipedia and MDN content under CC BY-SA. Attribution belongs to their
+respective owners; scene URLs are recorded in `eval/scenes.json`.

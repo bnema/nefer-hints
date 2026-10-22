@@ -6,8 +6,8 @@
 variants), 8 native GTK, one Firefox hamburger scene and 3 Mattermost scenes.
 1,704 targets. Primary GT
 is DOM for web (with recorded visual corrections), manual for native/Firefox.
-Every web `_gt.png` was opened for visual mapping review. Fullscreen viewport
-origin is (0,0), DPR 1; Chromium startup alone left an 87px toolbar, fixed by F11.
+Web `_gt.png` overlays support visual mapping review. Fullscreen viewport
+origin is (0,0), DPR 1; F11 removes the Chromium toolbar.
 Single-annotator exploratory set, not a comprehensive clickability benchmark.
 [Scene inventory, measurements and miss counts](results/table.md).
 
@@ -23,7 +23,7 @@ dbus-run-session -- venv/bin/python eval/capture_web.py
 dbus-run-session -- venv/bin/python eval/capture_native.py
 # annotate_native.py / annotate_firefox.py record manual coordinates for saved frames.
 venv/bin/python -m unittest discover -s eval -v
-venv/bin/python eval/score.py --runner-root ../ncnn-runner
+venv/bin/python eval/score.py --runner-root .
 venv/bin/python eval/report.py
 ```
 
@@ -34,28 +34,32 @@ viewport/overflow clipping, ancestor visibility/opacity, minimum 4×4 dimensions
 and centre hit testing. Light DOM misses shadow DOM and iframe controls; visible
 corrections are explicitly recorded in `review_web.py`. Computed pointer cursor
 is inherited; some innermost fragments are consequently classified `other`.
-No detector predictions were used to construct GT.
+GT construction uses no detector predictions.
 
 `scenes.json` maps scene to category; `split.json` assigns 13 tune/12 test,
 covering dense text, content, modern web, forms, sidebar docs, themes, GTK and
 menus. HN light/dark stay in tune, but Arch light/dark cross splits: the test is
 scene-level, **not independent by site/application**. TUNE scenes are used for training data; confidence and NMS IoU are selected on
 separate web and terminal validation sets, then frozen before the final TEST gate.
-`groups.json` records shared pages/app sessions for informational independent-subset metrics.
+`groups.json` records shared hosts/pages/app sessions for informational independent-subset
+metrics in `train/sweep.py`: a TEST scene is independent if no group containing it
+also contains a TUNE scene; ungrouped scenes are independent. `score.py` does not
+read this metadata. Stored `*_independent` metrics use grouping without github/login
+and mdn/mdn-forms, so they include github and mdn despite sharing hosts with TUNE
+pages and are optimistic. Truly independent scenes are lobsters, go, httpbin-form
+and firefox-menu. Stored TEST metrics stay unchanged.
 No old PoC scenes are included.
 
 ## Privacy
 
-Apps ran under a private dbus-run-session and headless Wayland display, with
+Capture scripts run under a private dbus-run-session and headless Wayland display, with
 HOME `/tmp/nh-eval/home`, XDG config/data/cache/state below it, fresh Chromium
 profiles and a dedicated fresh Firefox profile, no accounts except fictional
-local Mattermost users. NEFERWL_STATE, NEFERWL_SLOT and DISPLAY are removed.
-File managers opened only `Fictional/` with Documents, Music, Pictures, Projects,
+local Mattermost users. The environment allowlists PATH and a fixed locale, uses a private 0700 runtime
+directory, and excludes host display variables and credentials such as SSH_AUTH_SOCK.
+File managers open only `Fictional/` with Documents, Music, Pictures, Projects,
 notes.txt and a fictional report. `GIO_USE_VOLUME_MONITOR=unix` disables GVfs
-host-volume names; initial captures exposing those labels were overwritten and
-never committed. No weights, venvs, builds or browser profiles are tracked.
-Historical real-home PoC images and associated GT/dumps were removed, including
-nautilus-menu; old numeric scores were not recomputed. Git history is unchanged.
+host-volume names. No weights, venvs, builds or browser profiles are tracked.
 
 ## Scoring and results
 
@@ -83,8 +87,7 @@ links, 230 other fragments, 38 icons/buttons, 12 fields, 12 other links,
 6 menu items, 2 rows (625 total). Small = height <18 or width <16. These are
 morphology proxies, not proven causes; merged-link attribution remains pending.
 The switcher has 20 innermost DOM fragments, and background detections count as
-FP when the modal covers them. The fresh timing run was slower than the previous
-run; one sample per scene is not a stable performance comparison.
+FP when the modal covers them. One sample per scene is not a stable performance comparison.
 
 ### Mattermost reproduction
 
@@ -107,26 +110,20 @@ docker rm -f nh-eval-mattermost
 REST login supplies MMAUTHTOKEN; explicit cookie path `/` and MMUSERID are needed
 by this preview. CDP evaluation awaits promises, reports JS exceptions and maps
 undefined to None. Channel DOM waits are bounded to 30s. Browser-app chooser and
-onboarding are dismissed before capture. All three final overlays were opened:
-channel with three visible reply groups, RHS with root plus two replies, Ctrl+K
-switcher. Channel/RHS go to tune; switcher to test. Same app spans the splits.
-Only fictional users/posts were present; container removed after capture.
+onboarding are dismissed before capture. The three overlays show a channel with three visible reply groups, RHS with
+root plus two replies, and a Ctrl+K switcher. Channel/RHS go to tune; switcher to test. Same app spans the splits.
+Only fictional users/posts belong in the capture container; remove it after capture.
 
 ## Failed / pending work
 
-- Reddit returned “Your request has been blocked due to a network policy”;
-  excluded, Lobsters used. Guardian/BBC/W3Schools/YouTube produced no visible
-  targets after the bounded wait; skipped, httpbin form and Python docs added.
-  `results/web-capture-errors.json` records failures.
-- Mattermost initial CDP error resolved in this follow-up. Historical diagnostics,
-  image digest and completion status are in `results/mattermost-status.json`;
-  `mattermost-capture-errors.json` is empty for the successful final capture.
+- `results/web-capture-errors.json` contains three Mattermost entries
+  (`mattermost-channel`, `mattermost-thread`, `mattermost-switcher`), each with
+  the error `"'value'"`; it does not record public-site failures.
+  `mattermost-capture-errors.json` is empty. Diagnostic details are in
+  `results/mattermost-status.json`.
 - GTK light/dark paired variants not completed (captured Nautilus is dark).
 - Scale 1.5 documented as `output.<name>.scale` in NeferWL config, not yet
   exercised; three scale variants pending, not declared unsupported.
 - VSCodium, Dolphin, gnome-control-center not installed; pending, not installed.
 - Target ~26 scenes: 25 admitted. Manual annotation quality and
   full causal miss review would benefit from a second annotator.
-
-Six matching/aggregation unit tests pass, and the scorer ran successfully on all
-25 frames at both thresholds. No public contracts changed, no push or merge.

@@ -8,7 +8,8 @@ terminal text and keeps detecting GUI targets. Bare paths, prompts and status ba
 | Set | Train | Val | Test | Labels |
 |---|---:|---:|---:|---|
 | Synthetic terminal screens (`terminal/`) | 500 | 60 | 40 | magenta-diff link boxes, see `terminal/README.md` |
-| Web pages (`web/`) | 264 | 39 | - | DOM clickables, see `web/README.md` (includes the 13 eval TUNE scenes) |
+| Web pages (`web/`) | 894 | 39 | - | DOM clickables, see `web/README.md` (includes the 13 eval TUNE scenes) |
+| Native GUI (`native/`) | 520 | 100 | - | synthetic GTK/Qt clickables |
 
 The web pages stop the model from forgetting GUI targets. Exact eval TEST scenes are never
 trained on, but some TEST scenes share a page/app session with trained TUNE scenes; see
@@ -46,10 +47,11 @@ done
 venv/bin/python train/gate.py select train/results/sweep-base-select-iou0.7.json \
   train/results/sweep-ft-select-iou0.7.json train/results/sweep-ft-select-iou0.5.json \
   train/results/sweep-ft-select-iou0.4.json
-# Freeze the printed pair before the single fine-tuned TEST sweep:
-venv/bin/python train/sweep.py --model models-ft --name ft --set test --iou 0.4
+# Read the frozen IoU before the single TEST sweep:
+FROZEN_IOU=$(venv/bin/python -c 'import json; print(format(json.load(open("train/results/frozen-ft.json"))["iou"], "g"))')
+venv/bin/python train/sweep.py --model models-ft --name ft --set test --iou "$FROZEN_IOU"
 venv/bin/python train/gate.py final train/results/sweep-base-test-iou0.7.json \
-  train/results/sweep-ft-test-iou0.4.json --conf 0.01 --base-conf 0.05
+  "train/results/sweep-ft-test-iou${FROZEN_IOU}.json" --frozen train/results/frozen-ft.json
 ```
 
 Training uses terminal train twice (oversampling) plus web train and native train.
@@ -75,14 +77,17 @@ native recall (zero when absent), all descending. Ranking by the margin over bas
 would favour high thresholds where base collapses, which makes the TEST comparison
 weak and ships a lower-recall operating point.
 The grid is 0.01–0.04 by 0.01, then 0.05–0.5 by 0.025. Offline filtering is strictly
-`score > conf`, matching the runner. The final JSON line records frozen `conf`, `iou`, and `base_conf`.
+`score > conf`, matching the runner. Selection writes `train/results/frozen-<name>.json` with `name`, `conf`, `iou`,
+`base_conf` and SHA-256 hashes of every selection input. `final --frozen` requires
+the TEST name and IoU to match and uses only the frozen thresholds. TEST sweeps
+refuse to overwrite results unless `--force` is explicit.
 
 TEST compares ft at its frozen conf against base at the base conf frozen on validation: pooled GUI `web_precision` and `web_recall` each drop
 by at most 2 points, with the same terminal checks. The frozen pair is evaluated
 once on eval TEST plus terminal test. Per-category TEST web/native metrics and
 independent-subset metrics are informational. A TEST scene is independent when no
 group containing it also contains a TUNE scene (ungrouped scenes are independent).
-`eval_all.sh` remains a legacy fixed-threshold report producer, not a selection gate.
+`eval_all.sh` produces the fixed-threshold terminal report, not a selection gate.
 
 ### Selection rule history
 
@@ -150,7 +155,10 @@ No TEST-driven retuning follows this result.
 | TEST independent | base | 0.05 | 0.7 | 66.67% | 58.04% | — | — |
 | TEST independent | ft (frozen) | 0.01 | 0.4 | 54.26% | 69.10% | — | — |
 
-The independent scenes are lobsters, mdn, github, go, httpbin-form and firefox-menu.
+Stored `*_independent` metrics use grouping without the github/login and mdn/mdn-forms
+groups. They include github and mdn, which share hosts with TUNE pages, so they are
+optimistic. The truly independent scenes are lobsters, go, httpbin-form and firefox-menu.
+The added groups affect future sweep subset membership only; stored TEST metrics stay unchanged.
 “Web” includes native GUI scenes in the eval TEST split. Terminal columns use the entire
 corresponding terminal split, not the independent web subset.
 

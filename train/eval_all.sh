@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # usage: train/eval_all.sh <models-dir> <name> [gpu=cpu]
-# eval/score.py (TEST split, 0.05/0.25) + train/eval_terminal.py -> train/results/<name>-summary.json
+# Fixed-threshold terminal report: eval/score.py (TEST split, 0.05/0.25) + train/eval_terminal.py -> train/results/<name>-summary.json
 set -euo pipefail
 [ $# -ge 2 ] || { echo "usage: $0 <models-dir> <name> [gpu]" >&2; exit 2; }
 R="$(cd "$(dirname "$0")/.." && pwd)"

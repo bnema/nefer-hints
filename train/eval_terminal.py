@@ -80,7 +80,9 @@ def main():
                                        status_fp=len(sfp), has_status=has_status, boxes=boxes, gt=gt, pairs=pairs, fp_idx=fp))
     finally:
         client.close(); shutil.rmtree(tmp, ignore_errors=True)
-    res = dict(model=str(a.model), name=a.name, gpu=a.gpu, screens=len(screens[THRESHOLDS[0]]), status_rule=f'bottom {BAND:.0%} of frame on screens with a status-bar window (no window geometry in manifest)')
+    model = a.model.resolve()
+    model_label = str(model.relative_to(R)) if model.is_relative_to(R) else model.name
+    res = dict(model=model_label, name=a.name, gpu=a.gpu, screens=len(screens[THRESHOLDS[0]]), status_rule=f'bottom {BAND:.0%} of frame on screens with a status-bar window (no window geometry in manifest)')
     for t in THRESHOLDS:
         s = screens[t]; nl = [x for x in s if x['targets'] == 0]
         gtn = sum(x['targets'] for x in s)

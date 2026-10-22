@@ -1,13 +1,13 @@
 # PoC 2026-10-21: OmniParser v2 vs NeferWL OCR
 
-Historical experiment: seven NeferWL headless captures (1920×1080, scale 1), 595 clickable regions annotated by hand (single annotator, exploratory).
+Exploratory experiment: seven NeferWL headless captures (1920×1080, scale 1),
+595 clickable regions annotated by hand by a single annotator.
 
-nautilus-home scene removed for privacy; see eval/.
-The nautilus-menu scene also exposed the real home directory and its frames,
-hint dumps and GT were removed. No result images exist in `results/`.
-Tables and numerical results below are historical, include the removed scenes,
-and have deliberately not been recomputed. Removal affects the current tree,
-not earlier Git history. Fresh isolated replacements are pending in `eval/`.
+Privacy-sensitive nautilus-home and nautilus-menu frames, hint dumps and GT are
+absent from the current tree. `results/` contains no result images. Tables and
+numerical results include those scenes and do not describe the available frame
+subset. Earlier Git history can contain privacy-sensitive material. Isolated
+evaluation captures live in `eval/`.
 
 - Detector: `microsoft/OmniParser-v2.0`, `icon_detect/model.pt` (Hugging Face), Ultralytics 8.4, CPU torch, Ryzen 9 7900X3D.
 - OCR: NeferWL `main` hint mode with `NEFERWL_HINT_DEBUG=1` (no AT-SPI targets in the private D-Bus session).

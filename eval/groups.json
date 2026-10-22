@@ -25,5 +25,13 @@
     "mattermost-channel",
     "mattermost-thread",
     "mattermost-switcher"
+  ],
+  "github": [
+    "github",
+    "login"
+  ],
+  "mdn": [
+    "mdn",
+    "mdn-forms"
   ]
 }

@@ -5,9 +5,14 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import time
 from PIL import Image, ImageDraw
 from gtk_app import TEMPLATES
+
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from train.tmpdirs import private_dir
 
 
 def stop(process):
@@ -40,7 +45,7 @@ def main():
     parser.add_argument('--seeds', nargs='+', type=int, default=[1, 2])
     parser.add_argument('--themes', nargs='+', choices=['light', 'dark'], default=['light', 'dark'])
     args = parser.parse_args()
-    base = Path('/tmp/nh-native-gtk')
+    base = private_dir('/tmp/nh-native-gtk')
     env = os.environ.copy()
     for key in ('NEFERWL_STATE', 'NEFERWL_SLOT', 'DISPLAY', 'WAYLAND_DISPLAY', 'DBUS_SESSION_BUS_ADDRESS'):
         env.pop(key, None)

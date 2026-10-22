@@ -15,7 +15,7 @@ def main():
  for f in ('Documents','Projects','Music','Pictures'):(content/f).mkdir(exist_ok=True)
  (content/'notes.txt').write_text('Fictional project notes\nReview the demo interface.\n')
  (content/'report-2026.odt').write_text('Fictional placeholder')
- env=capture_env(home)
+ env=capture_env(home, keep_bus=True)
  env.update(GIO_USE_VOLUME_MONITOR='unix', HOME=str(home),XDG_CONFIG_HOME=str(home/'config'),XDG_DATA_HOME=str(home/'data'),XDG_CACHE_HOME=str(home/'cache'),XDG_STATE_HOME=str(home/'state'),WAYLAND_DISPLAY='nh-eval-unused',GDK_BACKEND='wayland',MOZ_ENABLE_WAYLAND='1')
  fifo=home/'input-native'
  if not fifo.exists():os.mkfifo(fifo)

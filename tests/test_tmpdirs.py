@@ -40,3 +40,17 @@ class ScratchTests(unittest.TestCase):
                                        'XDG_DATA_HOME', 'XDG_CACHE_HOME', 'XDG_STATE_HOME',
                                        'XDG_RUNTIME_DIR'})
             self.assertEqual(stat.S_IMODE(Path(env['XDG_RUNTIME_DIR']).stat().st_mode), 0o700)
+
+    def test_private_bus_is_opt_in(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            home = Path(tmp) / 'home'
+            for value in ('unix:path=/private/session-bus', '', None):
+                with self.subTest(value=value), patch.dict(os.environ, {}, clear=True):
+                    if value is not None:
+                        os.environ['DBUS_SESSION_BUS_ADDRESS'] = value
+                    self.assertNotIn('DBUS_SESSION_BUS_ADDRESS', capture_env(home))
+                    env = capture_env(home, keep_bus=True)
+                    if value:
+                        self.assertEqual(env['DBUS_SESSION_BUS_ADDRESS'], value)
+                    else:
+                        self.assertNotIn('DBUS_SESSION_BUS_ADDRESS', env)

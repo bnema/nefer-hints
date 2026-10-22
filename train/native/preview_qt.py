@@ -9,11 +9,16 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 import time
 
 from qt_app import TEMPLATES
 
 BASE = Path('/tmp/nh-native-qt')
+
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from train.tmpdirs import private_dir
 
 
 def stop(process):
@@ -49,6 +54,7 @@ def main():
     binary = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
     if not binary:
         parser.error('Set NEFERWL to the compositor executable')
+    private_dir(BASE)
     env = os.environ.copy()
     for key in ('NEFERWL_STATE', 'NEFERWL_SLOT', 'DISPLAY', 'WAYLAND_DISPLAY'):
         env.pop(key, None)

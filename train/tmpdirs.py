@@ -17,11 +17,13 @@ def private_dir(path):
     return path
 
 
-def capture_env(home):
-    """Allow only PATH and fixed locale into an isolated capture session."""
+def capture_env(home, *, keep_bus=False):
+    """Isolate capture state; optionally retain the caller's private session bus."""
     home = private_dir(home)
     env = dict(PATH=os.environ.get('PATH', '/usr/bin:/bin'), LANG='C.UTF-8')
     env['HOME'] = str(home)
+    if keep_bus and os.environ.get('DBUS_SESSION_BUS_ADDRESS'):
+        env['DBUS_SESSION_BUS_ADDRESS'] = os.environ['DBUS_SESSION_BUS_ADDRESS']
     for key, sub in (('XDG_CONFIG_HOME', 'config'), ('XDG_DATA_HOME', 'data'),
                      ('XDG_CACHE_HOME', 'cache'), ('XDG_STATE_HOME', 'state'),
                      ('XDG_RUNTIME_DIR', 'run')):

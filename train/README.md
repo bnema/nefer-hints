@@ -18,12 +18,18 @@ The 39 web validation pages come from sites held out from training.
 ## Training
 
 ```sh
-venv/bin/python train/finetune.py --batch 4 --workers 2     # runs/ft/weights/best.pt
+train/run_train.sh nh-train --name ft     # runs/ft/weights/best.pt, log /tmp/nh-train/nh-train.log
 ```
+
+`run_train.sh` starts `finetune.py` as a systemd user unit with capped RAM (`MEMORY_MAX`, default
+24G), low CPU/IO weight and nice 10. `finetune.py` caps its GPU memory with `--vram-gib` (default
+10 of 16 GiB) so the compositor keeps room for its framebuffers; an uncapped run fills VRAM and
+freezes the desktop session. The cap needs `--batch 2`; Ultralytics accumulates gradients to a
+nominal batch of 64, so the effective batch is unchanged.
 
 Start: `weights/base.pt` (OmniParser v2 icon_detect). 1280 px, AdamW lr0 0.002, 40 epochs, patience 10,
 light augmentation (no flips, no mosaic), fp32 (`amp=False`: fp16 with MIOpen gives wrong results).
-About 2 min/epoch on an RX 9070 XT; run it as a memory-capped systemd user unit.
+About 2 to 3.5 min/epoch on an RX 9070 XT, depending on the dataset size.
 
 ## Export and evaluation
 

@@ -38,3 +38,10 @@ venv/bin/python train/terminal/make_data.py --out data/terminal --split train --
 venv/bin/python train/terminal/make_data.py --out data/terminal --split val   --n 60  --seed0 5000 --workers 6
 venv/bin/python train/terminal/make_data.py --out data/terminal --split test  --n 40  --seed0 9000 --workers 6
 ```
+
+## Executable configuration
+
+Set `NEFERWL` to the compositor executable; by default `neferwl` is resolved on
+`PATH` (a missing executable is an error). Evaluation/export scripts use
+`NEFER_HINTS_RUNNER`, defaulting to `<repo>/build/nefer-hints`. Shell scripts
+accept `PY` for Python, defaulting to `<repo>/venv/bin/python`.

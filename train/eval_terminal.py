@@ -15,13 +15,13 @@ Whole frame (nregions=0) at conf 0.05 and 0.25. Metrics per threshold:
                 reach the frame bottom are not covered).
 Writes train/results/terminal-NAME.json and <=6 overlays in train/out/NAME/.
 """
-import argparse, importlib.util, json, shutil, sys, tempfile
+import argparse, importlib.util, json, os, shutil, sys, tempfile
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
 R = Path(__file__).resolve().parents[1]
-BIN = Path('$HOME/.local/share/nefer-hints-test/bin/nefer-hints')
+BIN = Path(os.environ.get('NEFER_HINTS_RUNNER', R / 'build/nefer-hints')).resolve()
 BAND = 0.03
 THRESHOLDS = (0.05, 0.25)
 

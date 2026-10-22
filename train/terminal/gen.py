@@ -106,7 +106,7 @@ class B:
         out = [[('diff --git a/%s b/%s' % (f, f), '\x1b[1m')], [('@@ -%d,6 +%d,7 @@ func %s()' % (r.randint(1, 90), r.randint(1, 90), r.choice(WORDS)), self.c(6))]]
         for _ in range(r.randint(4, 9)):
             k = r.random()
-            text = '    ' + r.choice(['return ', 'x := ', 'if err != nil {', 'let ', 'for i in ', 'self.']) + r.choice(WORDS) + r.choice(['()', ';', ' {', '']) 
+            text = '    ' + r.choice(['return ', 'x := ', 'if err != nil {', 'let ', 'for i in ', 'self.']) + r.choice(WORDS) + r.choice(['()', ';', ' {', ''])
             if k < 0.3:
                 out.append([('-' + text, self.c(1))])
             elif k < 0.6:

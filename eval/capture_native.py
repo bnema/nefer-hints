@@ -1,9 +1,12 @@
 """Bounded native captures; run under dbus-run-session with fake HOME inherited."""
-import os,json,re,subprocess as sp,time,signal
+import os,json,re,shutil,subprocess as sp,time,signal
 from pathlib import Path
 R=Path(__file__).resolve().parent
-B='$HOME/.local/share/nefer-hints-test/bin/neferwl'
+
 def main():
+ B = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
+ if not B:
+  raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
  home=Path('/tmp/nh-eval/home');content=home/'Fictional';content.mkdir(exist_ok=True)
  for f in ('Documents','Projects','Music','Pictures'):(content/f).mkdir(exist_ok=True)
  (content/'notes.txt').write_text('Fictional project notes\nReview the demo interface.\n')

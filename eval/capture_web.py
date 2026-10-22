@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """Run under dbus-run-session. Bounded headless capture with fresh fake HOME."""
-import json, os, re, signal, subprocess as sp, time, urllib.request
+import json, os, re, shutil, signal, subprocess as sp, time, urllib.request
 from pathlib import Path
 import websocket
 from PIL import Image, ImageDraw
 ROOT=Path(__file__).resolve().parent
-BIN='$HOME/.local/share/nefer-hints-test/bin/neferwl'
+
 PAGES=[('hn','https://news.ycombinator.com','dense_text'),('lobsters','https://lobste.rs','dense_text'),('wiki','https://en.wikipedia.org/wiki/Wayland_(protocol)','content'),('mdn','https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button','content'),('arch','https://archlinux.org','content'),('news','https://www.theguardian.com/international','content'),('github','https://github.com/torvalds/linux','modern_web'),('login','https://github.com/login','forms'),('forms','https://www.w3schools.com/html/html_forms.asp','forms'),('youtube','https://www.youtube.com','modern_web'),('go','https://go.dev/doc/','docs_sidebar'),('hn-dark','https://news.ycombinator.com','theme_variant'),('arch-dark','https://archlinux.org','theme_variant')]
 
 def main():
+ BIN = shutil.which(os.environ.get('NEFERWL', 'neferwl'))
+ if not BIN:
+  raise SystemExit('NeferWL executable not found; set NEFERWL or add neferwl to PATH')
  home=Path('/tmp/nh-eval/home'); home.mkdir(parents=True,exist_ok=True)
  env=os.environ.copy()
  for k in ('NEFERWL_STATE','NEFERWL_SLOT','DISPLAY'):env.pop(k,None)
